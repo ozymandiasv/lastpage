@@ -1,5 +1,5 @@
 ---
-type: "Essay"
+type: "Blog"
 published: true
 date: "2026-06-15"
 tags:

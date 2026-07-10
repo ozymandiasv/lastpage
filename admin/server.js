@@ -406,20 +406,44 @@ route('POST', '/api/git/commit', async (req, res, params, body) => {
 });
 route('POST', '/api/publish', async (req, res, params, body) => {
   const log = [];
+
   const build = await run('node', ['scripts/build.js']);
   log.push({ step: 'build', ...build });
-  if (!build.ok) return sendJson(res, 500, { ok: false, log });
+  if (!build.ok) {
+    return sendJson(res, 500, { ok: false, log });
+  }
 
-  await run('git', ['add', '-A']);
-  const commit = await run('git', ['commit', '-m', body.message || 'Publish site update']);
+  const add = await run('git', ['add', '-A']);
+  log.push({ step: 'add', ...add });
+  if (!add.ok) {
+    return sendJson(res, 500, { ok: false, log });
+  }
+
+  const commit = await run('git', [
+    'commit',
+    '-m',
+    body.message || 'Publish site update'
+  ]);
   log.push({ step: 'commit', ...commit });
 
-  const push = await run('git', ['push']);
-  log.push({ step: 'push', ...push });
+  // Nothing changed isn't an error.
+if (
+  !commit.ok &&
+  !commit.stdout.includes('nothing to commit') &&
+  !commit.stderr.includes('nothing to commit')
+) {
+  return sendJson(res, 500, { ok: false, log });
+}
 
-  sendJson(res, 200, { ok: true, log });
+const push = await run('git', ['push']);
+log.push({ step: 'push', ...push });
+
+if (!push.ok) {
+  return sendJson(res, 500, { ok: false, log });
+}
+
+return sendJson(res, 200, { ok: true, log });
 });
-
 // ---------------------------------------------------------------------------
 // Server
 // ---------------------------------------------------------------------------

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body>
+<div id="progress-bar"></div>
+{{> nav}}
+
+<div class="list-page-wrap">
+  <h1 class="list-title">Notes</h1>
+  <p class="list-sub">{{count}} short {{countLabel}}.</p>
+
+  {{#each notes}}
+  <a href="{{url}}" class="notes-feed-card">
+    <div class="notes-feed-text">{{{bodyHtml}}}</div>
+    <div class="notes-feed-meta">
+      {{dateLabel}}
+      {{#if tags}}
+      {{#each tags}}<span class="notion-tag tag-{{colour}}" style="font-size:11px;padding:2px 7px;margin-left:6px;">{{name}}</span>{{/each}}
+      {{/if}}
+    </div>
+  </a>
+  {{/each}}
+</div>
+
+{{> footer}}
+{{> scripts}}
+</body>
+</html>

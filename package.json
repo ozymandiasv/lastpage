@@ -1,0 +1,14 @@
+{
+  "name": "last-page",
+  "version": "1.0.0",
+  "description": "Last Page — a lightweight, Git-powered static publishing platform. No build dependencies required.",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.js",
+    "admin": "node admin/server.js",
+    "serve": "node scripts/serve.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

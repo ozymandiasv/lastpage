@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body>
+<div id="progress-bar"></div>
+{{> nav}}
+
+<div class="article-shell">
+  <article class="post-wrap">
+    <div class="post-eyebrow">
+      <span class="badge badge-{{typeLC}}">{{type}}</span>
+      {{#if category}}<a href="/category/{{categorySlug}}/">{{category}}</a><span>·</span>{{/if}}
+      <span>{{dateLabel}}</span>
+      <span>·</span>
+      <span>{{readTime}} min read</span>
+    </div>
+
+    <h1 class="post-h1">{{postTitle}}</h1>
+    {{#if subtitle}}<p class="post-subtitle">{{subtitle}}</p>{{/if}}
+
+    {{#if cover}}
+    <div class="post-feat-img"><img src="{{cover}}" alt="{{postTitle}}"></div>
+    {{/if}}
+
+    {{#if isReview}}
+    <div class="review-meta-box">
+      <div class="review-meta-item">
+        <span class="review-meta-label">Type</span>
+        <span class="review-meta-value">{{reviewType}}</span>
+      </div>
+      <div class="review-meta-item">
+        <span class="review-meta-label">Rating</span>
+        <span class="rating-number">{{rating}}</span><span class="rating-out-of">/10</span>
+      </div>
+      <div class="review-meta-item">
+        <span class="review-meta-label">Stars</span>
+        <span class="stars">{{starsDisplay}}</span>
+      </div>
+    </div>
+    {{/if}}
+
+    <div class="post-body">{{{bodyHtml}}}</div>
+
+    {{#if tags}}
+    <div class="post-tags">
+      {{#each tags}}
+      <span class="notion-tag tag-{{colour}}">{{name}}</span>
+      {{/each}}
+    </div>
+    {{/if}}
+
+    <div class="share-row">
+      <span class="share-label">Share</span>
+      <a class="share-btn" href="{{shareX}}" target="_blank" rel="noopener" aria-label="Share on X"><i class="ti ti-brand-x"></i></a>
+      <a class="share-btn" href="{{shareReddit}}" target="_blank" rel="noopener" aria-label="Share on Reddit"><i class="ti ti-brand-reddit"></i></a>
+    </div>
+
+    <div class="comments-block" style="max-width:100%;margin:0;padding:0;">
+      <div class="comments-label">Comments</div>
+      <div id="giscus-container"></div>
+    </div>
+  </article>
+
+  <aside class="article-toc">
+    {{#if toc}}
+    <div class="toc-label">Contents</div>
+    <ul class="toc-list">
+      {{#each toc}}
+      <li><a href="#{{id}}" class="level-{{level}}">{{text}}</a></li>
+      {{/each}}
+    </ul>
+    {{/if}}
+  </aside>
+</div>
+
+{{> footer}}
+{{> scripts}}
+<script>window.__GISCUS__ = {{{giscusJson}}};</script>
+<script src="/assets/js/toc.js" defer></script>
+<script src="/assets/js/giscus.js" defer></script>
+</body>
+</html>

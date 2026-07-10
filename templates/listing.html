@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body>
+<div id="progress-bar"></div>
+{{> nav}}
+
+<div class="list-page-wrap {{#if isWide}}wide{{/if}}">
+  <h1 class="list-title">{{label}}</h1>
+  <p class="list-sub">{{count}} {{pieceLabel}}</p>
+
+  <div class="type-pills">
+    {{#each typePills}}
+    <a href="{{href}}" class="type-pill {{#if isActive}}active{{/if}}">{{label}}</a>
+    {{/each}}
+  </div>
+
+  <div class="search-box">
+    <span class="search-icon">⌕</span>
+    <input type="text" id="typeSearch" placeholder="Search {{labelLower}}s…">
+  </div>
+
+  <div id="typePostsList">
+    {{#if isWide}}
+    {{#each posts}}
+    <a href="{{url}}" class="recent-post type-post-item" style="padding:20px 0;" data-title="{{titleLower}}" data-sub="{{subLower}}">
+      <div class="recent-post-body">
+        <div class="recent-post-type">{{type}}{{#if category}} · {{category}}{{/if}}</div>
+        <div class="recent-post-title" style="font-size:18px;">{{title}}</div>
+        {{#if subtitle}}<div class="recent-post-sub">{{subtitle}}</div>{{/if}}
+        <div class="recent-post-meta">{{dateLabel}} · {{author}}</div>
+      </div>
+      {{#if cover}}<img class="recent-post-img" src="{{cover}}" alt="{{title}}" loading="lazy" style="width:100px;height:100px;">{{/if}}
+    </a>
+    {{/each}}
+    {{/if}}
+
+    {{#if isReview}}
+    {{#each posts}}
+    <a href="{{url}}" class="review-list-card type-post-item" data-title="{{titleLower}}" data-sub="{{subLower}}">
+      {{#if cover}}<img class="review-list-img" src="{{cover}}" alt="{{title}}" loading="lazy">{{/if}}
+      <div class="review-list-body">
+        <div class="recent-post-type">{{reviewType}}</div>
+        <div class="recent-post-title" style="font-size:17px;">{{title}}</div>
+        <div class="review-list-stars">{{starsDisplay}} <span style="color:var(--text3);font-size:12px;">{{rating}}/10</span></div>
+        <div class="recent-post-meta">{{dateLabel}} · {{author}}</div>
+      </div>
+    </a>
+    {{/each}}
+    {{/if}}
+
+    {{#if isVerse}}
+    {{#each posts}}
+    <a href="{{url}}" class="type-post-item" style="display:block;padding:18px 0;border-bottom:0.5px solid var(--border2);text-decoration:none;color:inherit;" data-title="{{titleLower}}" data-sub="{{subLower}}">
+      <div style="font-family:var(--serif);font-style:italic;font-size:18px;color:var(--text);margin-bottom:6px;">{{title}}</div>
+      <div style="font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:8px;white-space:pre-line;">{{preview}}</div>
+      <div style="font-size:11px;color:var(--text3);">{{dateLabel}}</div>
+    </a>
+    {{/each}}
+    {{/if}}
+  </div>
+
+  <p id="typeNoResults" style="display:none;color:var(--text3);font-size:14px;margin-top:24px;">No results found.</p>
+</div>
+
+{{> footer}}
+{{> scripts}}
+<script src="/assets/js/type-search.js" defer></script>
+</body>
+</html>

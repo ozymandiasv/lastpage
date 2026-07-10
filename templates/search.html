@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body>
+<div id="progress-bar"></div>
+{{> nav}}
+
+<div class="list-page-wrap">
+  <h1 class="list-title">Search</h1>
+  <p class="list-sub">Search across all essays, blogs, reviews, notes, and verse.</p>
+
+  <div class="search-box">
+    <span class="search-icon">⌕</span>
+    <input type="text" id="globalSearch" placeholder="Type to search…" autofocus>
+  </div>
+
+  <div class="type-pills" id="filterPills">
+    <button class="type-pill active" data-filter="all">all</button>
+    {{#each types}}
+    <button class="type-pill" data-filter="{{id}}">{{labelLower}}</button>
+    {{/each}}
+  </div>
+
+  <div id="searchResults"></div>
+  <p id="searchEmpty" style="display:none;color:var(--text3);font-size:14px;">No results found.</p>
+  <p id="searchPrompt" style="color:var(--text3);font-size:14px;">Start typing to search…</p>
+</div>
+
+{{> footer}}
+{{> scripts}}
+<script src="/assets/js/search.js" defer></script>
+</body>
+</html>

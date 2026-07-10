@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://lastpage.example.com/</loc></url>
+  <url><loc>https://lastpage.example.com/about/</loc></url>
+  <url><loc>https://lastpage.example.com/notes/</loc></url>
+  <url><loc>https://lastpage.example.com/archive/</loc></url>
+  <url><loc>https://lastpage.example.com/search/</loc></url>
+  <url><loc>https://lastpage.example.com/type/essay/</loc></url>
+  <url><loc>https://lastpage.example.com/type/blog/</loc></url>
+  <url><loc>https://lastpage.example.com/type/review/</loc></url>
+  <url><loc>https://lastpage.example.com/type/verse/</loc></url>
+  <url><loc>https://lastpage.example.com/category/politics/</loc></url>
+  <url><loc>https://lastpage.example.com/category/history/</loc></url>
+  <url><loc>https://lastpage.example.com/category/philosophy/</loc></url>
+  <url><loc>https://lastpage.example.com/category/literature/</loc></url>
+  <url><loc>https://lastpage.example.com/category/media/</loc></url>
+  <url><loc>https://lastpage.example.com/category/sports/</loc></url>
+  <url><loc>https://lastpage.example.com/category/science/</loc></url>
+  <url><loc>https://lastpage.example.com/category/technology/</loc></url>
+  <url><loc>https://lastpage.example.com/category/culture/</loc></url>
+  <url><loc>https://lastpage.example.com/category/life/</loc></url>
+</urlset>

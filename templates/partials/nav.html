@@ -1,0 +1,42 @@
+<nav class="site-nav">
+  <div class="nav-top">
+    <a href="/" class="nav-logo">
+      <span class="nav-logo-main">O IV</span>
+      <span class="nav-logo-badge">{{siteName}}</span>
+    </a>
+  </div>
+
+  <div class="nav-bottom">
+    <button class="nav-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav-links" id="mainNavLinks">
+      {{#each nav}}
+      <a href="{{href}}" class="{{#if isActive}}active{{/if}}{{#if hideMob}} hide-mob{{/if}}">{{label}}</a>
+      {{/each}}
+      <a href="/about/" class="hide-mob {{#if aboutActive}}active{{/if}}">About</a>
+    </div>
+
+    <div class="nav-actions">
+      <a href="/search/" class="nav-icon" aria-label="Search" title="Search"><i class="ti ti-search"></i></a>
+      <a href="{{socialX}}" target="_blank" rel="noopener" class="nav-icon" aria-label="X / Twitter"><i class="ti ti-brand-x"></i></a>
+      <a href="{{socialReddit}}" target="_blank" rel="noopener" class="nav-icon" aria-label="Reddit"><i class="ti ti-brand-reddit"></i></a>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme"><i class="ti ti-sun"></i></button>
+    </div>
+  </div>
+
+  <div class="nav-mobile-menu" id="mobileMenu">
+    <div class="mobile-links">
+      {{#each nav}}
+      <a href="{{href}}">{{label}}</a>
+      {{/each}}
+      <a href="/about/">About</a>
+      <a href="/search/">Search</a>
+    </div>
+    <div class="mobile-social">
+      <a href="{{socialX}}" target="_blank" rel="noopener"><i class="ti ti-brand-x"></i></a>
+      <a href="{{socialReddit}}" target="_blank" rel="noopener"><i class="ti ti-brand-reddit"></i></a>
+    </div>
+  </div>
+</nav>

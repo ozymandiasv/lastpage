@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body>
+<div id="progress-bar"></div>
+{{> nav}}
+
+<div class="list-page-wrap">
+  {{#if backHref}}<a href="{{backHref}}" style="font-size:13px;color:var(--text3);display:block;margin-bottom:12px;text-decoration:none;">← {{backLabel}}</a>{{/if}}
+  <h1 class="list-title">{{title}}</h1>
+  <p class="list-sub">{{sub}}</p>
+
+  {{#if showPills}}
+  <div class="type-pills">
+    <a href="#" class="type-pill active" id="pill-all" data-filter="all">all</a>
+    {{#each typePills}}
+    <a href="#" class="type-pill" data-filter="{{filter}}">{{label}}</a>
+    {{/each}}
+  </div>
+  {{/if}}
+
+  {{#if isEmpty}}
+  <p style="color:var(--text3);font-size:14px;margin-top:24px;">No posts here yet.</p>
+  {{/if}}
+
+  <div id="archiveList">
+    {{#each months}}
+    <div class="archive-month" id="{{anchorId}}">{{label}}</div>
+    {{#each posts}}
+    <a href="{{url}}" class="archive-row" data-type="{{typeLC}}">
+      <span class="archive-date">{{day}}</span>
+      <span class="archive-row-title {{#if isVerse}}verse-t{{/if}}">{{title}}</span>
+      <span class="badge badge-{{typeLC}}">{{type}}</span>
+      {{#if category}}<span class="archive-cat">{{category}}</span>{{/if}}
+    </a>
+    {{/each}}
+    {{/each}}
+  </div>
+</div>
+
+{{> footer}}
+{{> scripts}}
+{{#if showPills}}<script src="/assets/js/filter-pills.js" defer></script>{{/if}}
+</body>
+</html>

@@ -1,0 +1,12 @@
+# Local-only admin credentials — never commit your real password
+data/admin-config.json
+
+# OS / editor cruft
+.DS_Store
+*.swp
+
+# Node (only relevant if you ever add dependencies)
+node_modules/
+
+# Logs
+*.log

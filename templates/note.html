@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body>
+<div id="progress-bar"></div>
+{{> nav}}
+
+<div class="note-view-wrap">
+  <div class="note-view-box">
+    <div class="note-view-date">{{dateLabel}}</div>
+    <div class="note-view-body">{{{bodyHtml}}}</div>
+    {{#if tags}}
+    <div class="post-tags" style="margin-top:20px;padding-top:16px;border-top:0.5px solid var(--border2);">
+      {{#each tags}}
+      <span class="notion-tag tag-{{colour}}">{{name}}</span>
+      {{/each}}
+    </div>
+    {{/if}}
+  </div>
+
+  <div class="share-row">
+    <span class="share-label">Share</span>
+    <a class="share-btn" href="{{shareX}}" target="_blank" rel="noopener" aria-label="Share on X"><i class="ti ti-brand-x"></i></a>
+    <a class="share-btn" href="{{shareReddit}}" target="_blank" rel="noopener" aria-label="Share on Reddit"><i class="ti ti-brand-reddit"></i></a>
+  </div>
+
+  <div class="comments-block" style="max-width:100%;margin:0;padding:0;">
+    <div class="comments-label">Comments</div>
+    <div id="giscus-container"></div>
+  </div>
+</div>
+
+{{> footer}}
+{{> scripts}}
+<script>window.__GISCUS__ = {{{giscusJson}}};</script>
+<script src="/assets/js/giscus.js" defer></script>
+</body>
+</html>

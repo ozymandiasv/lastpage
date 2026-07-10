@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Last Page — Admin</title>
+<link rel="stylesheet" href="/admin.css">
+<link rel="icon" href="data:,">
+</head>
+<body>
+
+<div id="loginScreen" class="login-screen">
+  <form id="loginForm" class="login-box">
+    <div class="login-title">Last Page</div>
+    <div class="login-sub">Admin — local access only</div>
+    <input type="password" id="loginPassword" placeholder="Password" autofocus>
+    <button type="submit">Sign in</button>
+    <div id="loginError" class="login-error"></div>
+  </form>
+</div>
+
+<div id="app" class="app hidden">
+  <aside class="sidebar">
+    <div class="sidebar-logo">Last Page<span>Admin</span></div>
+    <nav class="sidebar-nav">
+      <a href="#/dashboard" data-route="dashboard">Dashboard</a>
+      <a href="#/posts" data-route="posts">Posts</a>
+      <a href="#/pages" data-route="pages">Pages</a>
+      <a href="#/media" data-route="media">Media</a>
+      <a href="#/git" data-route="git">Git &amp; Publish</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="/preview/" target="_blank" class="preview-link">View site ↗</a>
+      <button id="logoutBtn">Sign out</button>
+    </div>
+  </aside>
+
+  <main class="main" id="main"></main>
+</div>
+
+<script src="/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">O IV · {{siteName}}</div>
+    <div class="footer-cats">
+      {{#each categories}}
+      <a href="/category/{{slug}}/" class="footer-cat">{{name}}</a>
+      {{/each}}
+    </div>
+    <div class="footer-bottom">
+      <span>© {{year}} {{authorFullName}} · {{siteName}}</span>
+      <div style="display:flex;gap:16px;">
+        <a href="{{socialX}}" target="_blank" rel="noopener" style="color:var(--text3);font-size:15px;text-decoration:none;"><i class="ti ti-brand-x"></i></a>
+        <a href="{{socialReddit}}" target="_blank" rel="noopener" style="color:var(--text3);font-size:15px;text-decoration:none;"><i class="ti ti-brand-reddit"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>

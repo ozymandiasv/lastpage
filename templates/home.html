@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body>
+<div id="progress-bar"></div>
+{{> nav}}
+
+<!-- HERO: Top 5 featured across Essays + Blogs -->
+<div class="hero-section">
+  <div class="hero-side left">
+    {{#each heroSideL}}
+    <a href="{{url}}" class="hero-side-post">
+      {{#if cover}}<img class="hero-side-img" src="{{cover}}" alt="{{title}}" loading="eager">{{/if}}
+      <div class="hero-side-title">{{title}}</div>
+      <div class="hero-side-meta">{{dateLabel}} · {{author}}</div>
+    </a>
+    {{/each}}
+  </div>
+
+  <a href="{{heroMain.url}}" class="hero-main">
+    {{#if heroMain.cover}}<img class="hero-main-img" src="{{heroMain.cover}}" alt="{{heroMain.title}}" loading="eager">{{/if}}
+    <div class="hero-main-title">{{heroMain.title}}</div>
+    {{#if heroMain.subtitle}}<div class="hero-main-sub">{{heroMain.subtitle}}</div>{{/if}}
+    <div class="hero-main-meta">{{heroMain.dateLabel}} · {{author}}</div>
+  </a>
+
+  <div class="hero-side right">
+    {{#each heroSideR}}
+    <a href="{{url}}" class="hero-side-post">
+      {{#if cover}}<img class="hero-side-img" src="{{cover}}" alt="{{title}}" loading="eager">{{/if}}
+      <div class="hero-side-title">{{title}}</div>
+      <div class="hero-side-meta">{{dateLabel}} · {{author}}</div>
+    </a>
+    {{/each}}
+  </div>
+</div>
+
+<!-- ESSAYS -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-title">Essays</div>
+    <a href="/type/essay/" class="view-all">View all →</a>
+  </div>
+  <div class="card-row">
+    {{#each essayRow}}
+    <a href="{{url}}" class="essay-card">
+      {{#if cover}}<img class="essay-card-img" src="{{cover}}" alt="{{title}}" loading="lazy">{{/if}}
+      <div class="essay-card-title">{{title}}</div>
+      <div class="essay-card-meta">{{dateLabel}} · {{author}}</div>
+    </a>
+    {{/each}}
+  </div>
+</div>
+
+<!-- BLOGS -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-title">Blogs</div>
+    <a href="/type/blog/" class="view-all">View all →</a>
+  </div>
+  <div class="card-row">
+    {{#each blogRow}}
+    <a href="{{url}}" class="blog-card">
+      {{#if cover}}<img class="blog-card-img" src="{{cover}}" alt="{{title}}" loading="lazy">{{/if}}
+      <div class="blog-card-title">{{title}}</div>
+      <div class="blog-card-meta">{{dateLabel}} · {{author}}</div>
+    </a>
+    {{/each}}
+  </div>
+</div>
+
+<!-- BOTTOM 3-COL -->
+<div class="bottom-section">
+
+  <div class="bottom-col">
+    <div class="bottom-col-title">
+      <span>Notes</span>
+      <a href="/notes/" class="view-all" style="font-size:11px;">View all →</a>
+    </div>
+    {{#each notes}}
+    <a href="{{url}}" class="note-card">
+      <div class="note-card-text">{{textShort}}</div>
+      <div class="note-card-date">{{dateLabel}}</div>
+    </a>
+    {{/each}}
+    <a href="/notes/" class="view-more">View more →</a>
+
+    <div class="home-calendar" id="homeCalendar" data-dates="{{postDatesCsv}}">
+      <div class="cal-nav">
+        <button class="cal-nav-btn" id="calPrev">‹</button>
+        <span class="cal-month-label" id="calMonthLabel"></span>
+        <button class="cal-nav-btn" id="calNext">›</button>
+      </div>
+      <div class="cal-grid" id="calGrid"></div>
+    </div>
+  </div>
+
+  <div class="bottom-col middle">
+    <div class="bottom-col-title"><span>Recent Posts</span></div>
+    <div id="recentPostsList">
+      {{#each recentPosts}}
+      <a href="{{url}}" class="recent-post" data-page="{{page}}">
+        <div class="recent-post-body">
+          <div class="recent-post-type">{{type}}</div>
+          <div class="recent-post-title">{{title}}</div>
+          {{#if subtitle}}<div class="recent-post-sub">{{subtitle}}</div>{{/if}}
+          <div class="recent-post-meta">{{dateLabel}} · {{author}}</div>
+        </div>
+        {{#if cover}}<img class="recent-post-img" src="{{cover}}" alt="{{title}}" loading="lazy">{{/if}}
+      </a>
+      {{/each}}
+    </div>
+
+    {{#if showPagination}}
+    <div class="recent-pagination" id="recentPagination">
+      <button class="pag-btn" id="pagPrev" disabled>← Prev</button>
+      <span class="pag-info" id="pagInfo">Page 1 of {{totalPages}}</span>
+      <button class="pag-btn" id="pagNext">Next →</button>
+    </div>
+    {{/if}}
+  </div>
+
+  <div class="bottom-col right">
+    <div class="bottom-col-title">
+      <span>Verse</span>
+      <a href="/type/verse/" class="view-all" style="font-size:11px;">View all →</a>
+    </div>
+    {{#each verses}}
+    <a href="{{url}}" class="verse-card">
+      <div class="verse-card-title">{{title}}</div>
+      <div class="verse-card-preview">{{preview}}</div>
+      <div class="verse-card-date">{{dateLabel}}</div>
+    </a>
+    {{/each}}
+    <a href="/type/verse/" class="view-more">View more →</a>
+
+    <div class="home-about-box">
+      <div class="home-about-text">
+        I write. Not because someone asked me to, not because there is a career in it,
+        but because I look around and I cannot stay quiet. I watch, I read, I think,
+        and then something in me refuses to let it pass without record.
+      </div>
+      <a href="/about/" class="home-about-link">About →</a>
+    </div>
+  </div>
+
+</div>
+
+{{> footer}}
+{{> scripts}}
+<script src="/assets/js/calendar.js" defer></script>
+<script src="/assets/js/pagination.js" defer></script>
+</body>
+</html>

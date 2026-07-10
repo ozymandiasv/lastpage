@@ -1,0 +1,41 @@
+---
+title: "The Boys Was Never About Superheroes"
+type: "Blog"
+category: "Media"
+date: "2026-05-30"
+published: true
+subtitle: "A brilliant satire of power, celebrity, and corruption that stumbled at the finish line but never lost sight of what made it special"
+cover: "https://geeksandgamers.com/wp-content/uploads/2026/05/Butcher-vs-Homelander.jpg"
+tags:
+  - The Boys
+  - Homelander
+  - Billy Butcher
+  - Hughie Campbell
+  - Annie January
+  - Vought International
+  - DC Comics
+  - Marvel Studios
+  - Iron Man
+  - Avengers Endgame
+  - William Golding
+  - Lord of the Flies
+  - Jack Merridew
+  - Television
+  - Satire
+  - Superheroes
+  - Pop Culture
+  - Media Criticism
+  - Power
+---
+
+I am not a fan of modern television’s obsession with making audiences wait two years between seasons. By the time the next season arrives, I have forgotten half the plot, most of the side characters, and whatever emotional investment I was expected to carry over from the previous finale. Streaming platforms seem convinced that viewers are willing to spend an entire weekend rewatching old episodes before beginning the new season. I have never understood that commitment. A twenty-minute YouTube recap usually does the job. That was exactly my approach with The Boys. I had started the series after Season Three and then spent years waiting for the story to reach its conclusion. Yet despite my usual frustration with modern television, there was always something about this show that kept me interested. Perhaps it was because it never felt like another superhero series. I grew up on DC Comics and still think no universe has matched the sense of heroism, darkness, and mythology that DC is capable of producing. Marvel Studios achieved something extraordinary with Iron Man and the interconnected universe that followed, but after Avengers Endgame, the genre began to feel exhausted. The Boys arrived at exactly the right moment and refused to play by the rules that had made superheroes popular in the first place.
+## The Lie Behind the Smile
+What made The Boys special was not the violence, the profanity, or the constant shock value, although the show certainly enjoyed all three. What made it compelling was how effectively it dismantled the mythology surrounding power and celebrity. Vought International was not merely a corporation inside the story. It was every corporation that carefully manufactures an image while hiding something entirely different behind closed doors. The superheroes themselves felt less like heroes and more like celebrities, politicians, influencers, and brands. Every public appearance was calculated. Every smile felt rehearsed. Every act of heroism carried the weight of a marketing campaign. Beneath all the absurdity, laser eyes, and exploding bodies was a surprisingly sharp commentary on the systems we willingly trust. The show understood that modern society rarely worships virtue. It worships image. We do not admire people because they are good. We admire them because they are famous, powerful, and successful. The Boys simply took that reality and exaggerated it until it became impossible to ignore.
+## Gods Are Easier to Love Than Men
+Homelander may be one of the most fascinating television villains of the last decade because he embodies a contradiction people rarely acknowledge. He is terrifying, pathetic, charismatic, insecure, powerful, and emotionally fragile all at once. The character works because the show never allows him to become a simple villain. Beneath the god complex is a desperate child seeking validation from people he simultaneously despises. What fascinated me throughout the series was watching how audiences responded to him. Much like Walter White in Breaking Bad, Homelander accumulated admirers despite the fact that the story repeatedly demonstrates why nobody should admire him. Yet this seems to happen with almost every compelling villain. Audiences are drawn to confidence, power, and certainty, even when those qualities are attached to monstrous individuals. The Boys understood this dynamic better than most modern television shows. It recognized that people often find evil more entertaining than goodness because evil tends to be active, ambitious, and unpredictable. Heroism is difficult. Villainy is exciting.
+## Jack on the Beach
+This is why I never had a problem with Homelander’s downfall. In fact, it was one of my favorite parts of the finale. Many viewers wanted a grander ending, a more dominant final stand, or a death that preserved some degree of dignity. I wanted the exact opposite. His final humiliation reminded me of Jack Merridew from William Golding’s Lord of the Flies. At the end of that novel, Jack is prepared to burn down an entire island in pursuit of power. Then a naval officer appears, and the tribal leader suddenly becomes a frightened child again. The illusion disappears. The performance ends. Homelander experiences a similar collapse. Once his power is stripped away, the god vanishes and the insecurity beneath becomes impossible to hide. Watching him beg for mercy, watching him abandon every trace of the superiority that defined him for five seasons, felt deeply satisfying. Tyrants are frightening because they appear invincible. Their downfall becomes meaningful when that illusion is exposed as a lie. Homelander did not deserve a glorious ending. He deserved a pathetic one, and that is exactly what he received.
+## Chaos Demands a Better Ending
+My criticism of the finale has less to do with where the story ended and more to do with how it arrived there. The Boys built its reputation on unpredictability. Every season thrived on the feeling that anything could happen and nobody was safe. Yet the final episode felt surprisingly conventional. Characters arrived exactly where they needed to arrive. Conflicts resolved themselves a little too neatly. The entire episode seemed preoccupied with tying loose ends together rather than maintaining the tension that made the series exciting. Even Butcher’s final arc felt slightly overdesigned. Part of me believes there was a stronger ending hidden somewhere inside the idea of Butcher and Homelander destroying each other together, two men consumed by obsession finally dragging one another into oblivion. Instead, the finale occasionally felt like a checklist of resolutions. It was not terrible by any means, but for a show that thrived on chaos, the ending felt strangely organized.
+## More Than a Superhero Story
+Despite those criticisms, I still think the finale was good. Not exceptional, not perfect, but good. More importantly, it belonged to a series that was consistently brilliant. A disappointing ending can damage a story, but it cannot erase years of intelligent writing, compelling characters, and sharp social commentary. What The Boys understood better than most superhero media is that superheroes were never the interesting part. Power was. The series used capes, costumes, and superpowers as a vehicle to talk about celebrity culture, corporations, politics, public image, and the strange tendency of societies to worship people who should never be trusted. Long after the action scenes are forgotten, that is what I will remember. Not the powers. Not the fights. Not even the superheroes. I will remember a show that looked at modern power structures and realized the most frightening thing about them was how familiar they already felt.

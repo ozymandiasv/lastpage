@@ -71,10 +71,10 @@
   </div>
 </div>
 
-<!-- BOTTOM 3-COL -->
+<!-- BOTTOM SECTION: notes, calendar, recent posts, verse — order controlled by CSS grid-template-areas -->
 <div class="bottom-section">
 
-  <div class="bottom-col">
+  <div class="notes-block">
     <div class="bottom-col-title">
       <span>Notes</span>
       <a href="/notes/" class="view-all" style="font-size:11px;">View all →</a>
@@ -86,7 +86,9 @@
     </a>
     {{/each}}
     <a href="/notes/" class="view-more">View more →</a>
+  </div>
 
+  <div class="calendar-block">
     <div class="home-calendar" id="homeCalendar" data-dates="{{postDatesCsv}}">
       <div class="cal-nav">
         <button class="cal-nav-btn" id="calPrev">‹</button>
@@ -97,7 +99,7 @@
     </div>
   </div>
 
-  <div class="bottom-col middle">
+  <div class="recent-block">
     <div class="bottom-col-title"><span>Recent Posts</span></div>
     <div id="recentPostsList">
       {{#each recentPosts}}
@@ -122,7 +124,7 @@
     {{/if}}
   </div>
 
-  <div class="bottom-col right">
+  <div class="verse-block">
     <div class="bottom-col-title">
       <span>Verse</span>
       <a href="/type/verse/" class="view-all" style="font-size:11px;">View all →</a>
@@ -147,6 +149,7 @@
   </div>
 
 </div>
+
 
 {{> footer}}
 {{> scripts}}

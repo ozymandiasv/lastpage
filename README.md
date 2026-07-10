@@ -104,6 +104,14 @@ node scripts/serve.js 8080
 # → http://localhost:8080
 ```
 
+**If you use VS Code's Live Server extension instead:** Live Server serves relative to your
+*workspace root*, not the file you clicked. Since this project's workspace root is the repo
+folder (`lastpage/`) but the site itself lives in `lastpage/site/`, you need to either open
+`site/` as its own VS Code workspace, or point Live Server at it explicitly — already done for
+you in `.vscode/settings.json` (`"liveServer.settings.root": "/site"`). Without that, links
+like `/about/` resolve to `lastpage/about/` (which doesn't exist) instead of
+`lastpage/site/about/`, and you'll see "Cannot GET /about/".
+
 ## The homepage's featured logic
 
 The top-5 "hero" section always shows the five most recent posts across Essays and Blogs
@@ -133,10 +141,31 @@ It gives you:
   same Markdown engine the real build uses, so what you see is what you get.
 - **Pages** — unlimited custom static pages.
 - **Media** — drag-and-drop image uploads, stored in `assets/uploads/` and served at
-  `/assets/uploads/...`.
+  `/assets/uploads/...`. Uploads are automatically converted to WebP (see below) so cover
+  images live in your repo instead of pointing at external URLs.
 - **Git & Publish** — see working-tree status, Pull, Push, Commit, and a one-click
   **Publish** button that runs the build, commits everything, and pushes to GitHub in one
   step.
+
+### Uploading photos (WebP, saved into the repo)
+
+Every content type with a cover image has an **Upload photo…** button right next to the
+cover URL field in the editor — pick a file and it's uploaded, converted to WebP, saved into
+`assets/uploads/`, and the cover field is filled in with the resulting `/assets/uploads/...`
+path automatically. The same conversion happens for anything uploaded from the **Media** tab.
+
+WebP encoding requires an actual image library, so this one feature uses
+[`sharp`](https://sharp.pixelplumbing.com/) as an **optional** dependency — everything else
+in this project still needs zero `npm install`. If `sharp` isn't installed, uploads still
+work (saved in their original format) and the admin shows a warning telling you to install
+it:
+
+```
+npm install sharp
+```
+
+Restart the admin server afterward. Once installed, all new uploads convert to `.webp`
+automatically.
 
 ## Git workflow
 

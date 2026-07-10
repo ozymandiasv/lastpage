@@ -1,0 +1,32 @@
+---
+title: "Subjugation is Heredity"
+type: "Essay"
+category: "Culture"
+date: "2026-05-15"
+published: true
+subtitle: "The Leash We Call Loyalty: On How Obedience Was Never Forced Upon Us, Only Fed to Us Slowly, and the Quiet Architecture Built to Keep It That Way"
+cover: "https://images.unsplash.com/photo-1574788175339-a53dcba9a9bd?q=80&w=3526&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+tags:
+  - Freedom
+---
+
+After finishing 1984, I could not put down a thought that had no intention of leaving. Orwell does not warn you about power. He warns you about what power does to the people who never held it, how it shapes them, trains them, makes them grateful for their own diminishment. The book is not about a dystopia that might happen. It is about a psychology that already has.
+That psychology has a history. Long, patient, almost elegant. And the more I traced it backward, through centuries and systems and the different masks it wore, the more it looked less like a series of political failures and more like something passed down. Something inherited. Not in blood, but in belief. In the stories we are handed before we are old enough to question them. In the loyalties we are taught to feel before we understand what loyalty costs.
+This is what alarms me. Not the existence of power. What unsettles me is how it never changed, because we kept falling for the same promises of slavery. 
+## The Code That Came Before the Law
+Go back far enough and you find the Comitatus. Anglo-Saxon warriors bound to their lord by obligation that predated written law. Avenge your lord or die in the attempt. Their lives were not their own. Their deaths were not their own. And they were taught, carefully and consistently, to call this honor. That is the part worth sitting with. Not that they were controlled, but that they were made to find beauty in it.
+Feudalism repeated the pattern. The Bushido code of the samurai did the same. Every civilization, in its own language and ceremony, arrived at the same transaction. You will be protected, they said. You will belong. What was never said is that the belonging on offer is conditional. Conditional on silence. Conditional on service. Conditional on never pulling too hard at what you have been given to believe.
+The warmth of the group is real. That is what makes it work. The cost of that warmth is everything.
+## The Feeling the System Produces
+Leadership has long been confused with governance, and governance with reigning. This confusion is not accidental. It is load bearing. Because if people understood that being ruled and being led are not the same thing, the entire arrangement would become difficult to maintain. So the confusion is cultivated across generations until subjecthood begins to feel natural. And once that feeling is established, you do not need chains. You have something far more durable. Quiet, inherited, largely unexamined consent.
+Today we call it nationalism. There is something genuinely human in loving the place that made you. That love is real. But watch what happens when someone who needs that love picks it up and puts it to work. Watch how critique becomes betrayal. How a citizen slowly becomes a subject again, not through force but through feeling. Through the convincing that the system and the self are the same thing, so that any threat to one registers as a threat to the other.
+We do this in corporations, in political parties, in communities built on shared suspicion of the outside. The content changes. The structure never does. Belonging has always been the leash. And the leash works precisely because it does not feel like one.
+## The Trap Is Not the System
+The cruelest part is not the exploitation. It is the invisibility of it. People do not feel exploited. They feel purposeful. And that feeling, that sense of mattering within something larger than yourself, is so deeply human that it becomes almost impossible to question without feeling like you are dismantling yourself in the process.
+Questioning feels like betrayal. It is designed to feel that way. The system has had centuries to understand what threatens it, and nothing threatens it more than a person who stops taking their inherited loyalties on faith. So doubt is reframed as weakness, and the person who starts pulling at the edges of what they were given to believe finds themselves suddenly very alone.
+I think that loneliness might be the beginning of something honest.
+## What We Call Freedom
+We use the word constantly and examine it almost never. But I heard something once that I have not been able to shake. That freedom is not merely buying your favorite toothpaste. When I first heard it I almost laughed. Then I felt it settle. Because that is precisely what we have been handed and told to celebrate. The freedom of preference. Choosing between options on a shelf we did not stock, in a store we did not build, inside an economy whose terms were set before we were born.
+If that is freedom, then we have been living in a very convincing room and calling it the open air.
+I do not have a clean answer to what real freedom looks like. But I think it begins the moment you become genuinely unwilling to let someone else's need for power define the limits of your own thinking.
+That is where manipulation ends. That is where something true might, with effort and discomfort and no guarantee of arrival, finally begin.

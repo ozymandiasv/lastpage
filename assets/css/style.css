@@ -151,7 +151,7 @@ button { font-family: inherit; }
 @media (max-width: 900px) {
   .hero-section { grid-template-columns: 1fr; gap: 0; padding: 0; margin-top: 0; }
   .hero-main { order: 1; }
-  .hero-main-img { border-radius: 0; aspect-ratio: 4/3; margin-bottom: 18px; }
+  .hero-main-img { border-radius: var(--radius-sm); aspect-ratio: 4/3; margin: 0 5vw 18px; width: calc(100% - 10vw); }
   .hero-main-title { padding: 0 5vw; font-size: 22px; }
   .hero-main-sub { padding: 0 5vw; }
   .hero-main-meta { padding: 0 5vw; margin-bottom: 24px; }
@@ -186,15 +186,26 @@ button { font-family: inherit; }
 @media (max-width: 900px) {
   .card-row {
     grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 62vw;
-    overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; margin: 0 -5vw; padding: 0 5vw 8px;
+    overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; margin: 0 -5vw;
+    padding-left: 5vw; padding-right: 0; padding-bottom: 8px;
     scrollbar-width: none;
   }
   .card-row::-webkit-scrollbar { display: none; }
   .card-row > a { scroll-snap-align: start; }
 }
 
-/* ---------- Bottom 3-column section ---------- */
-.bottom-section { max-width: var(--maxw); margin: 44px auto 0; padding: 0 5vw 64px; display: grid; grid-template-columns: 260px 1fr 260px; gap: 32px; }
+/* ---------- Bottom section: notes, calendar, recent posts, verse ---------- */
+.bottom-section {
+  max-width: var(--maxw); margin: 44px auto 0; padding: 0 5vw 64px;
+  display: grid; column-gap: 32px; row-gap: 0;
+  grid-template-columns: 260px 1fr 260px;
+  grid-template-areas: "notes recent verse" "calendar recent verse";
+  align-items: start;
+}
+.notes-block { grid-area: notes; }
+.calendar-block { grid-area: calendar; }
+.recent-block { grid-area: recent; }
+.verse-block { grid-area: verse; }
 .bottom-col-title { font-family: var(--serif); font-size: 16px; font-weight: 600; display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 0.5px solid var(--border2); }
 
 .note-card { display: block; text-decoration: none; color: inherit; padding: 12px 0; border-bottom: 0.5px solid var(--border2); }
@@ -221,8 +232,12 @@ button { font-family: inherit; }
 .pag-info { font-size: 11px; color: var(--text3); }
 
 @media (max-width: 980px) {
-  .bottom-section { grid-template-columns: 1fr; }
-  .bottom-col.right { order: 3; }
+  .bottom-section {
+    grid-template-columns: 1fr;
+    grid-template-areas: "verse" "recent" "notes" "calendar";
+    row-gap: 40px;
+  }
+  .calendar-block { margin-top: -12px; }
 }
 
 /* ---------- Calendar ---------- */

@@ -329,12 +329,47 @@ route('GET', '/api/media', async (req, res) => {
   }).sort((a, b) => new Date(b.mtime) - new Date(a.mtime));
   sendJson(res, 200, files);
 });
+const IMAGE_EXTS = new Set(['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff', '.avif']);
+
+async function toWebp(buffer) {
+  // Lazy require: sharp is an OPTIONAL dependency. If it isn't installed,
+  // we fall back to storing the original file untouched.
+  let sharp;
+  try { sharp = require('sharp'); } catch (e) { return { ok: false }; }
+  try {
+    const out = await sharp(buffer).webp({ quality: 82 }).toBuffer();
+    return { ok: true, buffer: out };
+  } catch (e) {
+    return { ok: false, error: e.message };
+  }
+}
+
 route('POST', '/api/media', async (req, res, params, body) => {
   if (!body.name || !body.data) return sendJson(res, 400, { error: 'Missing file data' });
-  const safeName = Date.now() + '-' + body.name.replace(/[^\w.\-]/g, '_');
   const base64 = body.data.split(',').pop();
-  fs.writeFileSync(path.join(UPLOADS_DIR, safeName), Buffer.from(base64, 'base64'));
-  sendJson(res, 200, { ok: true, url: `/assets/uploads/${safeName}` });
+  const inputBuffer = Buffer.from(base64, 'base64');
+  const origExt = path.extname(body.name).toLowerCase();
+  const baseName = path.basename(body.name, origExt).replace(/[^\w.\-]/g, '_');
+
+  let outBuffer = inputBuffer;
+  let outExt = origExt || '.bin';
+  let converted = false;
+  let warning = null;
+
+  if (IMAGE_EXTS.has(origExt)) {
+    const result = await toWebp(inputBuffer);
+    if (result.ok) {
+      outBuffer = result.buffer;
+      outExt = '.webp';
+      converted = true;
+    } else {
+      warning = 'Saved the original file as-is — install "sharp" on the server (npm install sharp) to enable automatic WebP conversion.';
+    }
+  }
+
+  const safeName = `${Date.now()}-${baseName}${outExt}`;
+  fs.writeFileSync(path.join(UPLOADS_DIR, safeName), outBuffer);
+  sendJson(res, 200, { ok: true, url: `/assets/uploads/${safeName}`, converted, warning });
 });
 route('DELETE', '/api/media/:name', async (req, res, params) => {
   const fp = path.join(UPLOADS_DIR, params.name);

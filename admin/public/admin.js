@@ -273,8 +273,13 @@
               ${cfg.categories.map(c => `<option value="${c}" ${post.data.category === c ? 'selected' : ''}>${c}</option>`).join('')}
             </select>
             <div style="margin-top:12px;">
-              <label>Cover image URL</label>
-              <input type="text" id="eCover" placeholder="https://…" value="${esc(post.data.cover || '')}" style="width:100%;">
+              <label>Cover image</label>
+              <input type="text" id="eCover" placeholder="https://… or upload a photo below" value="${esc(post.data.cover || '')}" style="width:100%;">
+              <div style="display:flex;gap:8px;margin-top:8px;">
+                <button type="button" class="btn btn-sm" id="eCoverUploadBtn">Upload photo…</button>
+                <span id="eCoverUploadStatus" class="small-note"></span>
+              </div>
+              <input type="file" id="eCoverFile" accept="image/*" class="hidden">
               <img id="coverPreview" class="cover-preview ${post.data.cover ? '' : 'hidden'}" src="${esc(post.data.cover || '')}">
             </div>
           </div>`}
@@ -337,6 +342,41 @@
         const img = document.getElementById('coverPreview');
         img.src = coverInput.value;
         img.classList.toggle('hidden', !coverInput.value);
+      });
+    }
+
+    // Cover photo upload — converts to WebP server-side and saves into the repo
+    const coverUploadBtn = document.getElementById('eCoverUploadBtn');
+    const coverFileInput = document.getElementById('eCoverFile');
+    if (coverUploadBtn) {
+      coverUploadBtn.addEventListener('click', () => coverFileInput.click());
+      coverFileInput.addEventListener('change', async () => {
+        const file = coverFileInput.files[0];
+        if (!file) return;
+        const statusEl = document.getElementById('eCoverUploadStatus');
+        statusEl.textContent = 'Uploading…';
+        try {
+          const dataUrl = await new Promise((res, rej) => {
+            const r = new FileReader();
+            r.onload = () => res(r.result);
+            r.onerror = rej;
+            r.readAsDataURL(file);
+          });
+          const r = await api('/api/media', { method: 'POST', body: { name: file.name, data: dataUrl } });
+          coverInput.value = r.url;
+          coverInput.dispatchEvent(new Event('input'));
+          if (r.converted) {
+            statusEl.textContent = 'Saved as WebP ✓';
+            toast('Photo converted to WebP and saved to the repo', 'success');
+          } else {
+            statusEl.textContent = r.warning || 'Uploaded (original format)';
+            toast(r.warning || 'Uploaded, but not converted to WebP', 'error');
+          }
+        } catch (e) {
+          statusEl.textContent = '';
+          toast(e.message, 'error');
+        }
+        coverFileInput.value = '';
       });
     }
 
@@ -558,11 +598,13 @@
     fileInput.addEventListener('change', e => uploadFiles(e.target.files));
 
     async function uploadFiles(fileList) {
+      let anyUnconverted = false;
       for (const file of fileList) {
         const dataUrl = await new Promise(res => { const r = new FileReader(); r.onload = () => res(r.result); r.readAsDataURL(file); });
-        await api('/api/media', { method: 'POST', body: { name: file.name, data: dataUrl } });
+        const r = await api('/api/media', { method: 'POST', body: { name: file.name, data: dataUrl } });
+        if (!r.converted) anyUnconverted = true;
       }
-      toast('Uploaded', 'success');
+      toast(anyUnconverted ? 'Uploaded — install "sharp" on the server to enable WebP conversion' : 'Uploaded and converted to WebP', anyUnconverted ? 'error' : 'success');
       load();
     }
     load();

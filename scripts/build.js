@@ -197,9 +197,10 @@ console.log('Building homepage…');
   // Hero + Top Featured pool: newest posts across all three published types.
   const combined = [...essays, ...blogs, ...reviews].sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  // 1) Newest overall post -> Hero. 2) Next five newest overall -> Top Featured row.
+  // 1) Newest overall post -> Hero. 2) Next four newest overall -> the two side
+  // columns (2 each), matching the existing 5-slot design (1 hero + 4 side cards).
   const heroMain = combined[0];
-  const topFeatured = combined.slice(1, 6);
+  const topFeatured = combined.slice(1, 5);
   const heroAndFeatured = heroMain ? [heroMain, ...topFeatured] : topFeatured;
 
   // Once used in Hero/Top Featured, a post is "used" — the Blog/Essay sections below
@@ -213,10 +214,10 @@ console.log('Building homepage…');
   const essayRow = essays.slice(featuredEssayCount, featuredEssayCount + 6);
   const blogRow = blogs.slice(featuredBlogCount, featuredBlogCount + 6);
 
-  // Split the 5 Top Featured posts across the two hero side columns (same cards/markup
-  // as before — just fed from the corrected, type-inclusive selection above).
-  const heroSideL = topFeatured.slice(0, 3);
-  const heroSideR = topFeatured.slice(3, 5);
+  // Left column gets ranks 2 & 3 (top/bottom), right column gets ranks 4 & 5 (top/bottom) —
+  // same card markup/positions as before, just fed from the corrected selection above.
+  const heroSideL = topFeatured.slice(0, 2);
+  const heroSideR = topFeatured.slice(2, 4);
 
   const homeNotes = notes.slice(0, 6).map(n => ({
     url: n.url,

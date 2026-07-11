@@ -194,17 +194,29 @@ copyDir(ASSETS_DIR, path.join(OUT_DIR, 'assets'));
 
 console.log('Building homepage…');
 {
-  const combined = [...essays, ...blogs].sort((a, b) => new Date(b.date) - new Date(a.date));
-  const featured = combined.slice(0, 5);
-  const featuredEssayCount = featured.filter(p => p.type === 'Essay').length;
-  const featuredBlogCount = featured.filter(p => p.type === 'Blog').length;
+  // Hero + Top Featured pool: newest posts across all three published types.
+  const combined = [...essays, ...blogs, ...reviews].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  // 1) Newest overall post -> Hero. 2) Next five newest overall -> Top Featured row.
+  const heroMain = combined[0];
+  const topFeatured = combined.slice(1, 6);
+  const heroAndFeatured = heroMain ? [heroMain, ...topFeatured] : topFeatured;
+
+  // Once used in Hero/Top Featured, a post is "used" — the Blog/Essay sections below
+  // must skip past however many of their own posts were consumed here. Since
+  // heroAndFeatured is a prefix of the globally newest posts, the posts of any one
+  // type inside it are necessarily that type's own newest posts too, so counting
+  // them is enough to know how many to skip in each type's own (already date-sorted) list.
+  const featuredEssayCount = heroAndFeatured.filter(p => p.type === 'Essay').length;
+  const featuredBlogCount = heroAndFeatured.filter(p => p.type === 'Blog').length;
 
   const essayRow = essays.slice(featuredEssayCount, featuredEssayCount + 6);
   const blogRow = blogs.slice(featuredBlogCount, featuredBlogCount + 6);
 
-  const heroSideL = featured.slice(0, 2);
-  const heroMain = featured[2] || featured[0];
-  const heroSideR = featured.slice(3, 5);
+  // Split the 5 Top Featured posts across the two hero side columns (same cards/markup
+  // as before — just fed from the corrected, type-inclusive selection above).
+  const heroSideL = topFeatured.slice(0, 3);
+  const heroSideR = topFeatured.slice(3, 5);
 
   const homeNotes = notes.slice(0, 6).map(n => ({
     url: n.url,
@@ -218,7 +230,12 @@ console.log('Building homepage…');
     dateLabel: formatDate(v.date),
   }));
 
-  const recentSource = articleTypes.slice(); // essay+blog+review, already sorted desc
+  // Recent Posts: newest remaining Essay/Blog/Review posts, excluding anything already
+  // shown in Hero, Top Featured, the Essay row, or the Blog row above.
+  const usedKeys = new Set(
+    [...heroAndFeatured, ...essayRow, ...blogRow].map(p => `${p.type}:${p.slug}`)
+  );
+  const recentSource = combined.filter(p => !usedKeys.has(`${p.type}:${p.slug}`));
   const PER_PAGE = 8;
   const recentPosts = recentSource.map((p, idx) => ({
     url: p.url,

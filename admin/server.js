@@ -24,6 +24,7 @@ const CONTENT_DIR = path.join(ROOT, 'content');
 const UPLOADS_DIR = path.join(ROOT, 'assets', 'uploads');
 const CONFIG_PATH = path.join(ROOT, 'data', 'config.json');
 const ADMIN_CONFIG_PATH = path.join(ROOT, 'data', 'admin-config.json');
+const TAGS_PATH = path.join(ROOT, 'data', 'tags.json');
 
 const PORT = Number(process.argv[2]) || 4321;
 const HOST = process.env.ADMIN_HOST || '127.0.0.1';
@@ -39,6 +40,9 @@ function saveJson(p, data) {
 
 if (!fs.existsSync(ADMIN_CONFIG_PATH)) {
   saveJson(ADMIN_CONFIG_PATH, { password: 'changeme', _note: 'Change this password. This file is gitignored on purpose.' });
+}
+if (!fs.existsSync(TAGS_PATH)) {
+  saveJson(TAGS_PATH, { tags: [] });
 }
 
 const CONFIG = loadJson(CONFIG_PATH, {});
@@ -149,6 +153,47 @@ function uniqueSlug(typeId, base, ignoreSlug) {
 }
 
 // ---------------------------------------------------------------------------
+// Tag persistence (data/tags.json — committed to the repo, no DB)
+// ---------------------------------------------------------------------------
+
+function loadStoredTags() {
+  const data = loadJson(TAGS_PATH, { tags: [] });
+  return Array.isArray(data.tags) ? data.tags : [];
+}
+// Adds any new tag names to data/tags.json. Case-insensitive de-dupe against
+// what's already stored; existing tags are never removed or renamed here.
+function addTagsToStore(names) {
+  const existing = loadStoredTags();
+  const seen = new Set(existing.map(t => t.toLowerCase()));
+  let changed = false;
+  (names || []).forEach(raw => {
+    const name = String(raw || '').trim();
+    if (!name) return;
+    const key = name.toLowerCase();
+    if (seen.has(key)) return;
+    seen.add(key);
+    existing.push(name);
+    changed = true;
+  });
+  if (changed) saveJson(TAGS_PATH, { tags: existing });
+  return existing;
+}
+// Merges the persisted tag list with tags actually in use on posts, and
+// counts current usage. Persisted tags with zero current usage still show
+// up (count 0) so they remain available for autocomplete.
+function tagsWithCounts() {
+  const counts = {};
+  allPostsRaw().forEach(p => (p.data.tags || []).forEach(t => { counts[t] = (counts[t] || 0) + 1; }));
+  const stored = loadStoredTags();
+  const byKey = new Map(); // lower-case -> display name
+  stored.forEach(t => byKey.set(t.toLowerCase(), t));
+  Object.keys(counts).forEach(t => { if (!byKey.has(t.toLowerCase())) byKey.set(t.toLowerCase(), t); });
+  return Array.from(byKey.values())
+    .map(name => ({ name, count: counts[name] || 0 }))
+    .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+}
+
+// ---------------------------------------------------------------------------
 // Route handlers
 // ---------------------------------------------------------------------------
 
@@ -203,15 +248,22 @@ route('GET', '/api/dashboard', async (req, res) => {
 
 // ---- Config (dropdown data) ----
 route('GET', '/api/config', async (req, res) => {
-  const posts = allPostsRaw();
-  const tagCounts = {};
-  posts.forEach(p => (p.data.tags || []).forEach(t => { tagCounts[t] = (tagCounts[t] || 0) + 1; }));
   sendJson(res, 200, {
     contentTypes: CONFIG.contentTypes,
     categories: CONFIG.categories,
     reviewTypes: CONFIG.reviewTypes,
-    tags: Object.entries(tagCounts).sort((a, b) => b[1] - a[1]).map(([name, count]) => ({ name, count })),
+    tags: tagsWithCounts(),
   });
+});
+
+// ---- Tags (persisted to data/tags.json, no DB) ----
+route('GET', '/api/tags', async (req, res) => {
+  sendJson(res, 200, { tags: tagsWithCounts() });
+});
+route('POST', '/api/tags', async (req, res, params, body) => {
+  const names = Array.isArray(body.names) ? body.names : [body.name];
+  addTagsToStore(names);
+  sendJson(res, 200, { ok: true, tags: tagsWithCounts() });
 });
 
 // ---- Posts CRUD ----
@@ -246,6 +298,7 @@ route('POST', '/api/posts/:type', async (req, res, params, body) => {
   const slug = uniqueSlug(typeId, baseSlug);
   const data = Object.assign({ type: TYPE_LABEL[typeId], published: true, date: new Date().toISOString().slice(0, 10) }, body.data);
   fs.writeFileSync(postFilePath(typeId, slug), stringifyFrontmatter(data, body.body || ''));
+  if (data.tags && data.tags.length) addTagsToStore(data.tags);
   sendJson(res, 200, { ok: true, slug });
 });
 
@@ -260,6 +313,7 @@ route('PUT', '/api/posts/:type/:slug', async (req, res, params, body) => {
   }
   const data = Object.assign({ type: TYPE_LABEL[typeId] }, body.data);
   fs.writeFileSync(postFilePath(typeId, slug), stringifyFrontmatter(data, body.body || ''));
+  if (data.tags && data.tags.length) addTagsToStore(data.tags);
   sendJson(res, 200, { ok: true, slug });
 });
 

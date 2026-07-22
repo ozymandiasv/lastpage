@@ -1,14 +1,16 @@
 ---
-type: "Blog"
+type: "Review"
 published: true
 date: "2026-07-01"
 tags:
-  - The Boys
   - Walter Pater
+  - The Boys
 title: "What If Walter Pater Was Right?"
 subtitle: "Art does not owe us morality, but society has a habit of stealing morality from art anyway"
 category: "Media"
 cover: "/assets/uploads/1784697785758-theboys.jpg"
+reviewType: "TV Series"
+rating: 7.5
 ---
 
 After finishing The Boys, I found myself thinking about Walter Pater, which is perhaps the strangest intellectual route a television show about exploding superheroes can force someone down. Yet the thought refused to leave. Most discussions around The Boys eventually collapse into morality. Was Homelander evil? Was Butcher justified? Was the ending a statement about power, corruption, or human nature? The more I watched people argue over these questions, the more I felt they were looking for something the show was never trying to provide. The Boys is not interested in producing better human beings. It is not trying to inspire virtue. If anything, it spends most of its runtime dismantling the comforting assumption that people are naturally good. That was when Pater came to mind. More than a century ago, he argued that art did not need to justify itself through social usefulness. Art existed for its own sake. Looking at The Boys, I began wondering whether that idea is not only correct, but perhaps necessary.

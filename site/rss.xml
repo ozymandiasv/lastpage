@@ -115,4 +115,11 @@
     <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
     <description>Just a club whose defeats seem to bring me an unreasonable amount of joy.</description>
   </item>
+  <item>
+    <title>Surviving Today</title>
+    <link>https://lastpage.example.com/verse/surviving-today/</link>
+    <guid>https://lastpage.example.com/verse/surviving-today/</guid>
+    <pubDate>Thu, 05 Mar 2026 00:00:00 GMT</pubDate>
+    <description>With the drifting of days, the climb becomes steeper.</description>
+  </item>
 </channel></rss>

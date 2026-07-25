@@ -27,7 +27,7 @@ const ADMIN_CONFIG_PATH = path.join(ROOT, 'data', 'admin-config.json');
 const TAGS_PATH = path.join(ROOT, 'data', 'tags.json');
 
 const PORT = Number(process.argv[2]) || 4321;
-const HOST = process.env.ADMIN_HOST || '127.0.0.1';
+const HOST = process.env.ADMIN_HOST || '0.0.0.0';
 
 fs.mkdirSync(UPLOADS_DIR, { recursive: true });
 

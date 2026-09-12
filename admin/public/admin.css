@@ -187,10 +187,13 @@ body { background: var(--bg); color: var(--text); }
 .editor-tab { padding-left:0; margin-right:18px; }
 .editor-sidebar { top:28px; }
 #aiPanel { border-top:2px solid var(--text); }
-.ai-actions { display:grid; gap:6px; }
-.ai-action { width:100%; text-align:left; background:transparent; border:1px solid var(--border); color:var(--text); padding:9px 10px; border-radius:4px; cursor:pointer; }
-.ai-action:hover { background:var(--panel2); }
-.ai-action small { display:block; color:var(--text3); margin-top:2px; }
+.ai-actions { display:grid; gap:7px; }
+.ai-option { display:flex; align-items:flex-start; gap:10px; padding:10px; border:1px solid var(--border); border-radius:4px; cursor:pointer; background:transparent; }
+.ai-option:hover { background:var(--panel2); }
+.ai-option input { margin-top:3px; flex:0 0 auto; }
+.ai-option b { display:block; font-weight:600; }
+.ai-option small { display:block; color:var(--text3); margin-top:3px; line-height:1.4; }
+.ai-run-selected { margin-top:9px; width:100%; }
 .ai-result { margin-top:10px; max-height:360px; overflow:auto; font-size:12px; line-height:1.55; }
 .ai-result h4 { margin:12px 0 5px; font-size:12px; }
 .ai-result .claim { padding:8px 0; border-bottom:1px solid var(--border); }

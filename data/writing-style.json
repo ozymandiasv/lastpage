@@ -1,0 +1,25 @@
+{
+  "summary": "Personal, conversational analytical writing that begins with a concrete event, observation, question, or feeling and then widens into a larger argument. The voice is direct and confident but openly personal. The writer often uses first person to establish honesty, then shifts into evidence and reasoning before returning to a pointed conclusion.",
+  "voice": [
+    "conversational",
+    "direct",
+    "reflective",
+    "opinionated but fair",
+    "emotionally honest",
+    "occasionally humorous"
+  ],
+  "structure": "Open with a specific hook. Give context and personal reaction. Move into short thematic sections when the argument becomes complex. Use evidence, examples, comparisons, and rhetorical questions. End by returning to the central question or argument rather than forcing a neat conclusion.",
+  "sentenceStyle": "Mostly medium-length sentences with occasional short punchy sentences for emphasis. Natural transitions. Avoid academic stiffness, corporate language, excessive jargon, and artificial eloquence.",
+  "argumentStyle": "State a position clearly, acknowledge a reasonable opposing view when useful, then explain why the writer still disagrees. Distinguish facts from interpretation. Personal phrases such as 'I think', 'to me', and 'the larger issue' appear naturally.",
+  "formatting": "Use Markdown headings only where they improve navigation. A heading is immediately followed by its paragraph on the next line, with no blank paragraph between them. Use blockquotes only for actual quotations. Avoid over-formatting.",
+  "humour": "Dry, occasional humour and self-aware asides are welcome, especially in sports, media, and culture writing. Never add jokes to serious factual or political claims just for personality.",
+  "avoid": [
+    "generic AI introductions",
+    "overly polished academic prose",
+    "fake certainty",
+    "repetitive conclusions",
+    "unnecessary bullet lists",
+    "excessive em dashes",
+    "changing the author's viewpoint"
+  ]
+}

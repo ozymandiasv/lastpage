@@ -1,6 +1,21 @@
 (function () {
   'use strict';
 
+  // Theme: light by default, remembered locally.
+  const savedTheme = localStorage.getItem('lastpage-admin-theme') || 'light';
+  document.documentElement.dataset.theme = savedTheme;
+  const themeBtn = document.getElementById('themeToggle');
+  if (themeBtn) {
+    themeBtn.querySelector('span').textContent = savedTheme === 'light' ? 'Dark mode' : 'Light mode';
+    themeBtn.addEventListener('click', () => {
+      const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = next;
+      localStorage.setItem('lastpage-admin-theme', next);
+      themeBtn.querySelector('span').textContent = next === 'light' ? 'Dark mode' : 'Light mode';
+    });
+  }
+
+
   // ------------------------------------------------------------------
   // API helper
   // ------------------------------------------------------------------
@@ -134,12 +149,12 @@
             <div class="git-log-meta">${esc(l.author)} · ${esc(l.when)}</div>
           </div>`).join('') : '<div class="small-note">No git history found.</div>'}
       </div>
-      <div style="display:flex;gap:10px;">
-        <a href="#/editor/new/essay" class="btn btn-primary">+ New Essay</a>
-        <a href="#/editor/new/blog" class="btn">+ New Blog</a>
-        <a href="#/editor/new/review" class="btn">+ New Review</a>
-        <a href="#/editor/new/note" class="btn">+ New Note</a>
-        <a href="#/editor/new/verse" class="btn">+ New Verse</a>
+      <div class="dashboard-actions">
+        <a href="#/editor/new/essay">New Essay →</a>
+        <a href="#/editor/new/blog">New Post →</a>
+        <a href="#/editor/new/review">New Review →</a>
+        <a href="#/editor/new/note">New Note →</a>
+        <a href="#/editor/new/verse">New Verse →</a>
       </div>
     `;
   }
@@ -296,6 +311,18 @@
             </div>
           </div>` : ''}
 
+          <div class="panel" id="aiPanel">
+            <div class="panel-title">Gemini editor</div>
+            <div class="small-note" style="margin-bottom:10px;">Use AI as an editor, not an author. Nothing is changed until you apply it.</div>
+            <div class="ai-actions">
+              <button type="button" class="ai-action" data-ai="factcheck">Fact check + rewrite<small>Report claims, sources, and a safer rewrite.</small></button>
+              <button type="button" class="ai-action" data-ai="grammar">Grammar + rewrite<small>Get a clean version without changing your meaning.</small></button>
+              <button type="button" class="ai-action" data-ai="expand">Expand in my style<small>Develop thin sections using your Last Page voice.</small></button>
+              <button type="button" class="ai-action" data-ai="format">Format for Last Page<small>Add useful headings and quotations without over-formatting.</small></button>
+            </div>
+            <div id="aiResult" class="ai-result hidden"></div>
+          </div>
+
           <div class="panel">
             <label>Tags</label>
             <input type="text" id="eTagInput" placeholder="Type a tag and press Enter">
@@ -379,6 +406,69 @@
         coverFileInput.value = '';
       });
     }
+
+    // Gemini editorial tools
+    const aiResult = document.getElementById('aiResult');
+    let lastAI = null;
+
+    function renderAIResult(action, result) {
+      lastAI = result;
+      let html = '';
+      if (action === 'factcheck' && result.report) {
+        const report = result.report;
+        html += `<strong>${esc(report.overall || 'Fact-check complete')}</strong>`;
+        for (const [key, label] of [['verified','Verified'],['questionable','Questionable'],['unsupported','Unsupported']]) {
+          const items = report[key] || [];
+          if (!items.length) continue;
+          html += `<h4>${label}</h4>` + items.map(x =>
+            `<div class="claim"><b>${esc(x.claim || '')}</b><br>${esc(x.reason || x.issue || '')}${x.source ? `<br><span class="small-note">Source: ${esc(x.source)}</span>` : ''}${x.suggested_change ? `<br><span class="small-note">Suggested: ${esc(x.suggested_change)}</span>` : ''}</div>`
+          ).join('');
+        }
+      } else {
+        html = `<strong>Gemini suggestion ready</strong><p>${esc(result.notes || '')}</p>`;
+      }
+      if (result.rewritten) {
+        html += `<button type="button" class="btn btn-primary ai-apply" id="aiApply">Apply rewritten version</button>`;
+        html += `<div class="small-note">Your current draft stays untouched until you click Apply.</div>`;
+      }
+      aiResult.innerHTML = html;
+      aiResult.classList.remove('hidden');
+      const apply = document.getElementById('aiApply');
+      if (apply) apply.addEventListener('click', () => {
+        document.getElementById('eBody').value = result.rewritten || '';
+        toast('AI version applied — review it before saving', 'success');
+      });
+    }
+
+    document.querySelectorAll('[data-ai]').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const action = btn.dataset.ai;
+        const text = document.getElementById('eBody').value.trim();
+        if (!text) return toast('Write something first', 'error');
+        aiResult.classList.remove('hidden');
+        aiResult.innerHTML = '<div class="ai-loading">Gemini is reading the draft…</div>';
+        document.querySelectorAll('[data-ai]').forEach(b => b.disabled = true);
+        try {
+          const r = await api('/api/ai', {
+            method: 'POST',
+            body: {
+              action,
+              body: text,
+              meta: {
+                title: document.getElementById('eTitle')?.value || post.data.title || '',
+                type: TYPE_LABELS[type],
+                category: document.getElementById('eCategory')?.value || post.data.category || ''
+              }
+            }
+          });
+          renderAIResult(action, r.result);
+        } catch (e) {
+          aiResult.innerHTML = `<span style="color:var(--danger);">${esc(e.message)}</span>`;
+        } finally {
+          document.querySelectorAll('[data-ai]').forEach(b => b.disabled = false);
+        }
+      });
+    });
 
     // Tabs
     document.querySelectorAll('.editor-tab').forEach(tabEl => {

@@ -13,6 +13,19 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+
+// Tiny .env loader so the admin can run without dotenv or another dependency.
+(function loadDotEnv() {
+  const envPath = require('path').join(__dirname, '..', '.env');
+  if (!fs.existsSync(envPath)) return;
+  try {
+    fs.readFileSync(envPath, 'utf8').split(/\r?\n/).forEach(line => {
+      const m = line.match(/^\s*([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(.*?)\s*$/);
+      if (!m || m[1].startsWith('#') || process.env[m[1]]) return;
+      process.env[m[1]] = m[2].replace(/^['"]|['"]$/g, '');
+    });
+  } catch (_) {}
+})();
 const { execFile } = require('child_process');
 const { URL } = require('url');
 
@@ -193,6 +206,113 @@ function tagsWithCounts() {
     .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
 }
 
+
+// ---------------------------------------------------------------------------
+// Gemini AI helpers
+// ---------------------------------------------------------------------------
+
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY || '';
+const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
+
+function writingStyleReport() {
+  const p = path.join(ROOT, 'data', 'writing-style.json');
+  const saved = loadJson(p, null);
+  if (saved && saved.summary) return saved;
+  return {
+    summary: "Personal, conversational analytical writing that begins with a concrete event, observation, question, or feeling and then widens into a larger argument. The voice is direct and confident but openly personal. The writer often uses first person to establish honesty, then shifts into evidence and reasoning before returning to a pointed conclusion.",
+    voice: ["conversational", "direct", "reflective", "opinionated but fair", "occasionally humorous", "emotionally honest"],
+    structure: "Open with a specific hook. Give context and personal reaction. Move into short thematic sections when the argument becomes complex. Use evidence, examples, comparisons, and rhetorical questions. End by returning to the central question or argument rather than forcing a neat conclusion.",
+    sentenceStyle: "Mostly medium-length sentences with occasional short punchy sentences for emphasis. Natural transitions. Avoid academic stiffness, corporate language, excessive jargon, and artificial eloquence.",
+    argumentStyle: "State a position clearly, acknowledge the strongest opposing view when useful, then explain why the writer still disagrees. Distinguish facts from interpretation and use phrases such as 'I think', 'to me', and 'the larger issue' naturally.",
+    formatting: "Use Markdown headings only where they improve navigation. Headings should be followed immediately by the paragraph text, with no empty paragraph between them. Use blockquotes only for an actual quotation. Avoid over-formatting.",
+    humour: "Dry, occasional humour and self-aware asides are welcome, especially in sports, media, and culture writing. Never add jokes to serious factual or political claims just for personality.",
+    avoid: ["generic AI introductions", "overly polished academic prose", "fake certainty", "repetitive conclusions", "unnecessary bullet lists", "excessive em dashes", "changing the author's viewpoint"]
+  };
+}
+
+function collectStyleSamples() {
+  const wanted = ['blogs', 'essays'];
+  const samples = [];
+  for (const dirName of wanted) {
+    const dir = path.join(CONTENT_DIR, dirName);
+    if (!fs.existsSync(dir)) continue;
+    fs.readdirSync(dir).filter(f => f.endsWith('.md')).slice(0, 20).forEach(f => {
+      try {
+        const { data, body } = parseFrontmatter(fs.readFileSync(path.join(dir, f), 'utf8'));
+        samples.push({ title: data.title || f, body: body.slice(0, 7000) });
+      } catch (_) {}
+    });
+  }
+  return samples;
+}
+
+function geminiPromptFor(action, body, meta) {
+  const style = JSON.stringify(writingStyleReport(), null, 2);
+  const context = JSON.stringify({
+    title: meta.title || '',
+    type: meta.type || '',
+    category: meta.category || '',
+    style,
+  });
+  const base = `You are the private editorial assistant for Last Page, a personal writing site.
+Never invent facts, sources, quotations, statistics, events, or citations. Never silently change the author's opinion or political position.
+Preserve the author's personality. The writing should sound human and personal, not like generic AI prose.
+Return valid JSON only. No Markdown fences around the JSON.
+EDITOR CONTEXT:
+${context}
+CURRENT DRAFT:
+${body}`;
+
+  if (action === 'grammar') return `${base}
+TASK: Correct grammar, spelling, punctuation, awkward phrasing, and obvious clarity problems while preserving meaning, tone, structure, and opinions.
+Return: {"rewritten":"...","changes":["short description of important changes"],"notes":"..."}
+Do not add new facts or arguments.`;
+
+  if (action === 'expand') return `${base}
+TASK: Expand this draft only where an idea is underdeveloped. Continue in the same writing voice and reasoning pattern described in the style report. Add context, explanation, examples, or transitions only when they naturally follow from the existing argument. Do not invent factual claims. Keep the author's viewpoint unchanged.
+Return: {"rewritten":"...","added":["what was expanded"],"notes":"..."}
+If expansion is unnecessary, make only light improvements and say so.`;
+
+  if (action === 'format') return `${base}
+TASK: Improve the Markdown structure without changing the substantive writing. Infer useful section headings from the actual content. Add headings, subheadings, and blockquotes only where genuinely useful. A heading MUST be immediately followed by its paragraph on the next line: "## Heading\\nParagraph text", NOT "## Heading\\n\\nParagraph text". Do not turn normal prose into bullet points. Do not add decorative formatting.
+Return: {"rewritten":"...","changes":["formatting changes"],"notes":"..."} `;
+
+  if (action === 'factcheck') return `${base}
+TASK: Fact-check the factual claims in this draft. Be especially careful with dates, names, statistics, legal claims, quotations, historical claims, and claims about current events. Separate verified, questionable, and unsupported claims. If web grounding is available, use it. Never treat the author's opinion as a factual claim.
+Then produce a fact-checked rewrite that changes ONLY claims that are unsupported or materially inaccurate. Preserve the author's argument and voice.
+Return:
+{"report":{"overall":"...","verified":[{"claim":"...","reason":"...","source":"..."}],"questionable":[{"claim":"...","issue":"...","suggested_change":"...","source":"..."}],"unsupported":[{"claim":"...","issue":"...","suggested_change":"..."}]},"rewritten":"...","notes":"..."} `;
+
+  return `${base}\nReturn {"rewritten":"${body.replace(/"/g,'\\"')}","notes":"No action"} `;
+}
+
+async function callGemini(action, body, meta) {
+  if (!GEMINI_API_KEY) throw new Error('Gemini is not configured. Set GEMINI_API_KEY in the server environment.');
+  const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(GEMINI_MODEL)}:generateContent?key=${encodeURIComponent(GEMINI_API_KEY)}`;
+  const payload = {
+    contents: [{ role: 'user', parts: [{ text: geminiPromptFor(action, body, meta) }] }],
+    generationConfig: { temperature: action === 'factcheck' ? 0.15 : 0.35, responseMimeType: 'application/json' }
+  };
+  if (action === 'factcheck') {
+    payload.tools = [{ google_search: {} }];
+  }
+  const r = await fetch(endpoint, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+  const raw = await r.text();
+  let data;
+  try { data = JSON.parse(raw); } catch (_) { throw new Error(`Gemini returned invalid JSON (${r.status}).`); }
+  if (!r.ok) throw new Error(data.error?.message || `Gemini request failed (${r.status}).`);
+  const text = data.candidates?.[0]?.content?.parts?.map(p => p.text || '').join('') || '';
+  if (!text) throw new Error('Gemini returned an empty response.');
+  try { return JSON.parse(text); } catch (_) {
+    const cleaned = text.replace(/^```json\s*/i, '').replace(/\s*```$/i, '').trim();
+    try { return JSON.parse(cleaned); } catch (e) { throw new Error('Gemini returned malformed JSON.'); }
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Route handlers
 // ---------------------------------------------------------------------------
@@ -323,6 +443,23 @@ route('DELETE', '/api/posts/:type/:slug', async (req, res, params) => {
   sendJson(res, 200, { ok: true });
 });
 
+
+// ---- Gemini editorial tools ----
+route('GET', '/api/ai/status', async (req, res) => {
+  sendJson(res, 200, { configured: !!GEMINI_API_KEY, model: GEMINI_MODEL, style: writingStyleReport() });
+});
+route('POST', '/api/ai', async (req, res, params, body) => {
+  const allowed = new Set(['factcheck', 'grammar', 'expand', 'format']);
+  if (!allowed.has(body.action)) return sendJson(res, 400, { error: 'Unknown AI action' });
+  const text = String(body.body || '').trim();
+  if (!text) return sendJson(res, 400, { error: 'Write something first.' });
+  try {
+    const result = await callGemini(body.action, text, body.meta || {});
+    sendJson(res, 200, { ok: true, action: body.action, result });
+  } catch (e) {
+    sendJson(res, 502, { error: e.message });
+  }
+});
 // ---- Markdown preview ----
 route('POST', '/api/render', async (req, res, params, body) => {
   const html = body.mode === 'verse' ? verseToHtml(body.body || '') : mdToHtml(body.body || '');

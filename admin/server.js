@@ -116,7 +116,7 @@ function readBody(req) {
 const MIME = {
   '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'application/javascript',
   '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg',
-  '.jpeg': 'image/jpeg', '.gif': 'image/gif', '.webp': 'image/webp', '.ico': 'image/x-icon',
+  '.jpeg': 'image/jpeg', '.gif': 'image/gif', '.webp': 'image/webp', '.avif': 'image/avif', '.ico': 'image/x-icon',
 };
 function serveStatic(res, filePath) {
   fs.readFile(filePath, (err, data) => {
@@ -390,8 +390,9 @@ route('POST', '/api/tags', async (req, res, params, body) => {
 route('GET', '/api/posts', async (req, res, params, body, query) => {
   let posts = allPostsRaw();
   if (query.type) posts = posts.filter(p => p.typeId === query.type);
-  if (query.status === 'draft') posts = posts.filter(p => p.data.published === false);
-  if (query.status === 'published') posts = posts.filter(p => p.data.published !== false);
+  if (query.status === 'draft') posts = posts.filter(p => p.data.published === false && p.data.publishStatus !== 'scheduled');
+  if (query.status === 'scheduled') posts = posts.filter(p => p.data.publishStatus === 'scheduled');
+  if (query.status === 'published') posts = posts.filter(p => p.data.published !== false && p.data.publishStatus !== 'scheduled');
   if (query.q) {
     const q = query.q.toLowerCase();
     posts = posts.filter(p => (p.data.title || '').toLowerCase().includes(q) || p.slug.includes(q));
@@ -399,7 +400,10 @@ route('GET', '/api/posts', async (req, res, params, body, query) => {
   posts.sort((a, b) => new Date(b.data.date || 0) - new Date(a.data.date || 0));
   sendJson(res, 200, posts.map(p => ({
     typeId: p.typeId, slug: p.slug, title: p.data.title || p.slug, date: p.data.date || '',
-    published: p.data.published !== false, category: p.data.category || '', wordCount: p.wordCount,
+    published: p.data.published !== false && p.data.publishStatus !== 'scheduled',
+    scheduled: p.data.publishStatus === 'scheduled',
+    scheduledDate: p.data.scheduledDate || '',
+    category: p.data.category || '', wordCount: p.wordCount,
   })));
 });
 
@@ -520,20 +524,7 @@ route('GET', '/api/media', async (req, res) => {
   }).sort((a, b) => new Date(b.mtime) - new Date(a.mtime));
   sendJson(res, 200, files);
 });
-const IMAGE_EXTS = new Set(['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff', '.avif']);
-
-async function toWebp(buffer) {
-  // Lazy require: sharp is an OPTIONAL dependency. If it isn't installed,
-  // we fall back to storing the original file untouched.
-  let sharp;
-  try { sharp = require('sharp'); } catch (e) { return { ok: false }; }
-  try {
-    const out = await sharp(buffer).webp({ quality: 82 }).toBuffer();
-    return { ok: true, buffer: out };
-  } catch (e) {
-    return { ok: false, error: e.message };
-  }
-}
+const IMAGE_EXTS = new Set(['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff', '.webp', '.avif']);
 
 route('POST', '/api/media', async (req, res, params, body) => {
   if (!body.name || !body.data) return sendJson(res, 400, { error: 'Missing file data' });
@@ -541,26 +532,10 @@ route('POST', '/api/media', async (req, res, params, body) => {
   const inputBuffer = Buffer.from(base64, 'base64');
   const origExt = path.extname(body.name).toLowerCase();
   const baseName = path.basename(body.name, origExt).replace(/[^\w.\-]/g, '_');
-
-  let outBuffer = inputBuffer;
-  let outExt = origExt || '.bin';
-  let converted = false;
-  let warning = null;
-
-  if (IMAGE_EXTS.has(origExt)) {
-    const result = await toWebp(inputBuffer);
-    if (result.ok) {
-      outBuffer = result.buffer;
-      outExt = '.webp';
-      converted = true;
-    } else {
-      warning = 'Saved the original file as-is — install "sharp" on the server (npm install sharp) to enable automatic WebP conversion.';
-    }
-  }
-
+  const outExt = IMAGE_EXTS.has(origExt) ? origExt : (origExt || '.bin');
   const safeName = `${Date.now()}-${baseName}${outExt}`;
-  fs.writeFileSync(path.join(UPLOADS_DIR, safeName), outBuffer);
-  sendJson(res, 200, { ok: true, url: `/assets/uploads/${safeName}`, converted, warning });
+  fs.writeFileSync(path.join(UPLOADS_DIR, safeName), inputBuffer);
+  sendJson(res, 200, { ok: true, url: `/assets/uploads/${safeName}`, converted: false });
 });
 route('DELETE', '/api/media/:name', async (req, res, params) => {
   const fp = path.join(UPLOADS_DIR, params.name);
@@ -595,46 +570,79 @@ route('POST', '/api/git/commit', async (req, res, params, body) => {
   const result = await run('git', ['commit', '-m', body.message || 'Update content']);
   sendJson(res, result.ok ? 200 : 500, result);
 });
-route('POST', '/api/publish', async (req, res, params, body) => {
+async function publishSite(message) {
   const log = [];
-
   const build = await run('node', ['scripts/build.js']);
   log.push({ step: 'build', ...build });
-  if (!build.ok) {
-    return sendJson(res, 500, { ok: false, log });
-  }
+  if (!build.ok) return { ok: false, log };
 
   const add = await run('git', ['add', '-A']);
   log.push({ step: 'add', ...add });
-  if (!add.ok) {
-    return sendJson(res, 500, { ok: false, log });
+  if (!add.ok) return { ok: false, log };
+
+  const commit = await run('git', ['commit', '-m', message || 'Publish site update']);
+  log.push({ step: 'commit', ...commit });
+  if (!commit.ok && !commit.stdout.includes('nothing to commit') && !commit.stderr.includes('nothing to commit')) {
+    return { ok: false, log };
   }
 
-  const commit = await run('git', [
-    'commit',
-    '-m',
-    body.message || 'Publish site update'
-  ]);
-  log.push({ step: 'commit', ...commit });
-
-  // Nothing changed isn't an error.
-if (
-  !commit.ok &&
-  !commit.stdout.includes('nothing to commit') &&
-  !commit.stderr.includes('nothing to commit')
-) {
-  return sendJson(res, 500, { ok: false, log });
+  const push = await run('git', ['push']);
+  log.push({ step: 'push', ...push });
+  return { ok: push.ok, log };
 }
 
-const push = await run('git', ['push']);
-log.push({ step: 'push', ...push });
-
-if (!push.ok) {
-  return sendJson(res, 500, { ok: false, log });
+function indiaDateString(date = new Date()) {
+  return new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Kolkata', year: 'numeric', month: '2-digit', day: '2-digit' }).format(date);
 }
 
-return sendJson(res, 200, { ok: true, log });
+function msUntilNext10AMIST() {
+  const now = new Date();
+  const parts = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Kolkata', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(now);
+  const get = k => Number(parts.find(p => p.type === k).value);
+  let target = Date.UTC(get('year'), get('month') - 1, get('day'), 4, 30, 0, 0);
+  if (target <= now.getTime()) target += 24 * 60 * 60 * 1000;
+  return target - now.getTime();
+}
+
+let schedulerRunning = false;
+async function publishScheduledPosts() {
+  if (schedulerRunning) return;
+  schedulerRunning = true;
+  try {
+    const today = indiaDateString();
+    const due = allPostsRaw().filter(p => p.data.publishStatus === 'scheduled' && p.data.published === false && p.data.scheduledDate && p.data.scheduledDate <= today);
+    if (!due.length) return;
+
+    for (const post of due) {
+      const fp = postFilePath(post.typeId, post.slug);
+      const raw = fs.readFileSync(fp, 'utf8');
+      const parsed = parseFrontmatter(raw);
+      const data = Object.assign({}, parsed.data, { published: true, publishStatus: 'published' });
+      delete data.scheduledDate;
+      fs.writeFileSync(fp, stringifyFrontmatter(data, parsed.body));
+    }
+
+    await publishSite(`Scheduled publish: ${due.length} post${due.length === 1 ? '' : 's'}`);
+  } finally {
+    schedulerRunning = false;
+  }
+}
+
+function startScheduler() {
+  const wait = msUntilNext10AMIST();
+  setTimeout(async function tick() {
+    await publishScheduledPosts();
+    setTimeout(tick, 24 * 60 * 60 * 1000);
+  }, wait);
+  console.log(`Scheduled publishing enabled — next check at 10:00 AM IST.`);
+}
+
+route('POST', '/api/publish', async (req, res, params, body) => {
+  const result = await publishSite(body.message || 'Publish site update');
+  sendJson(res, result.ok ? 200 : 500, result);
 });
+startScheduler();
+
 // ---------------------------------------------------------------------------
 // Server
 // ---------------------------------------------------------------------------

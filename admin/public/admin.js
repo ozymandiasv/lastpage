@@ -179,7 +179,7 @@
           <td><a class="row-title" href="#/editor/edit/${p.typeId}/${p.slug}">${esc(p.title)}</a></td>
           <td>${esc(p.category) || '—'}</td>
           <td>${esc(p.date) || '—'}</td>
-          <td><span class="pill ${p.published ? 'pill-published' : 'pill-draft'}">${p.published ? 'Published' : 'Draft'}</span></td>
+          <td><span class="pill ${p.scheduled ? 'pill-scheduled' : (p.published ? 'pill-published' : 'pill-draft')}">${p.scheduled ? 'Scheduled' : (p.published ? 'Published' : 'Draft')}</span></td>
           <td class="row-actions">
             <a class="btn btn-sm" href="#/editor/edit/${p.typeId}/${p.slug}">Edit</a>
             <button class="btn btn-sm btn-danger" data-del="${p.typeId}/${p.slug}">Delete</button>
@@ -209,6 +209,7 @@
         <select id="fStatus">
           <option value="">All statuses</option>
           <option value="published">Published</option>
+          <option value="scheduled">Scheduled</option>
           <option value="draft">Draft</option>
         </select>
         <input type="text" id="fSearch" placeholder="Search title…">
@@ -240,7 +241,7 @@
     const isNew = mode === 'new';
     const cfg = await api('/api/config');
 
-    let post = { data: { type: TYPE_LABELS[type], published: true, date: new Date().toISOString().slice(0, 10), tags: [] }, body: '' };
+    let post = { data: { type: TYPE_LABELS[type], published: true, publishStatus: 'published', date: new Date().toISOString().slice(0, 10), tags: [] }, body: '' };
     if (!isNew) post = await api(`/api/posts/${type}/${slug}`);
 
     const isVerse = type === 'verse';
@@ -270,13 +271,16 @@
 
         <div class="editor-sidebar">
           <div class="panel">
-            <div class="toggle-row">
-              <label style="margin:0;">Published</label>
-              <input type="checkbox" id="ePublished" ${post.data.published !== false ? 'checked' : ''}>
-            </div>
+            <label>Status</label>
+            <select id="ePublishStatus" style="width:100%;">
+              <option value="draft" ${post.data.publishStatus === 'draft' || (post.data.published === false && post.data.publishStatus !== 'scheduled') ? 'selected' : ''}>Draft</option>
+              <option value="published" ${post.data.publishStatus === 'published' || (!post.data.publishStatus && post.data.published !== false) ? 'selected' : ''}>Publish now</option>
+              <option value="scheduled" ${post.data.publishStatus === 'scheduled' ? 'selected' : ''}>Schedule</option>
+            </select>
             <div style="margin-top:12px;">
-              <label>Date</label>
-              <input type="date" id="eDate" value="${esc(post.data.date || new Date().toISOString().slice(0,10))}" style="width:100%;">
+              <label id="eDateLabel">Date</label>
+              <input type="date" id="eDate" value="${esc(post.data.scheduledDate || post.data.date || new Date().toISOString().slice(0,10))}" style="width:100%;">
+              <div id="eScheduleNote" class="small-note" style="margin-top:6px;">Scheduled posts publish automatically at 10:00 AM IST on the selected date.</div>
             </div>
           </div>
 
@@ -374,41 +378,7 @@
       });
     }
 
-    // Cover photo upload — converts to WebP server-side and saves into the repo
-    const coverUploadBtn = document.getElementById('eCoverUploadBtn');
-    const coverFileInput = document.getElementById('eCoverFile');
-    if (coverUploadBtn) {
-      coverUploadBtn.addEventListener('click', () => coverFileInput.click());
-      coverFileInput.addEventListener('change', async () => {
-        const file = coverFileInput.files[0];
-        if (!file) return;
-        const statusEl = document.getElementById('eCoverUploadStatus');
-        statusEl.textContent = 'Uploading…';
-        try {
-          const dataUrl = await new Promise((res, rej) => {
-            const r = new FileReader();
-            r.onload = () => res(r.result);
-            r.onerror = rej;
-            r.readAsDataURL(file);
-          });
-          const r = await api('/api/media', { method: 'POST', body: { name: file.name, data: dataUrl } });
-          coverInput.value = r.url;
-          coverInput.dispatchEvent(new Event('input'));
-          if (r.converted) {
-            statusEl.textContent = 'Saved as WebP ✓';
-            toast('Photo converted to WebP and saved to the repo', 'success');
-          } else {
-            statusEl.textContent = r.warning || 'Uploaded (original format)';
-            toast(r.warning || 'Uploaded, but not converted to WebP', 'error');
-          }
-        } catch (e) {
-          statusEl.textContent = '';
-          toast(e.message, 'error');
-        }
-        coverFileInput.value = '';
-      });
-    }
-
+    // Cover uploads are stored in their original format; use AVIF externally when desired.
     // Gemini editorial tools
     const aiResult = document.getElementById('aiResult');
     const aiRunSelected = document.getElementById('aiRunSelected');
@@ -483,13 +453,33 @@
         aiChecks.forEach(c => c.disabled = false);
       }
     });
+    const publishStatusEl = document.getElementById('ePublishStatus');
+    const dateLabelEl = document.getElementById('eDateLabel');
+    const scheduleNoteEl = document.getElementById('eScheduleNote');
+    function updatePublishStatusUI() {
+      const scheduled = publishStatusEl.value === 'scheduled';
+      dateLabelEl.textContent = scheduled ? 'Publish date' : 'Date';
+      scheduleNoteEl.classList.toggle('hidden', !scheduled);
+    }
+    publishStatusEl.addEventListener('change', updatePublishStatusUI);
+    updatePublishStatusUI();
+
     document.getElementById('eSave').addEventListener('click', async () => {
+      const publishStatus = publishStatusEl.value;
+      const selectedDate = document.getElementById('eDate').value;
       const data = Object.assign({}, post.data, {
         type: TYPE_LABELS[type],
-        published: document.getElementById('ePublished').checked,
-        date: document.getElementById('eDate').value,
+        published: publishStatus === 'published',
+        publishStatus,
+        date: selectedDate,
         tags: tagState,
       });
+      if (publishStatus === 'scheduled') {
+        if (!selectedDate) return toast('Choose a publish date', 'error');
+        data.scheduledDate = selectedDate;
+      } else {
+        delete data.scheduledDate;
+      }
       if (!isNote) {
         data.title = document.getElementById('eTitle').value.trim();
         data.subtitle = document.getElementById('eSubtitle').value.trim();
@@ -684,13 +674,11 @@
     fileInput.addEventListener('change', e => uploadFiles(e.target.files));
 
     async function uploadFiles(fileList) {
-      let anyUnconverted = false;
       for (const file of fileList) {
         const dataUrl = await new Promise(res => { const r = new FileReader(); r.onload = () => res(r.result); r.readAsDataURL(file); });
         const r = await api('/api/media', { method: 'POST', body: { name: file.name, data: dataUrl } });
-        if (!r.converted) anyUnconverted = true;
       }
-      toast(anyUnconverted ? 'Uploaded — install "sharp" on the server to enable WebP conversion' : 'Uploaded and converted to WebP', anyUnconverted ? 'error' : 'success');
+      toast('Uploaded', 'success');
       load();
     }
     load();

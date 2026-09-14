@@ -5,7 +5,7 @@ date: "2026-09-13"
 title: "AI, Extinction and the Question of Control"
 subtitle: "Humanity has always imagined its own extinction; but Artificial Intelligence is an unusual version of fear, a version of ourselves."
 category: "Technology"
-cover: "/assets/uploads/1789294902732-image.avif"
+cover: "/assets/uploads/1789395441838-image.avif"
 ---
 
 Potential existential threats have always shaken the world. Whether it has been the supposed end of the Mayan Calendar in 2012, the panic around the transition to Y2K, nuclear annihilation accidents, pandemics, asteroid impacts, or maybe countless other scenarios in which human beings imagined themselves coming to an abrupt end. Even every religion claims a catastrophic apocalypse and a possible judgement. But if you notice, most of these fears have a common element: a force we can't control, or an outside influence. Sometimes the threat was natural, and other times it was something out of our control, but most of the time it was our misunderstanding of how the world worked.

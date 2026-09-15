@@ -8,7 +8,7 @@ subtitle: "How Bethlehem Kudumba Unit turned Nivin Pauly from a fading star back
 category: "Media"
 reviewType: "Movie"
 rating: 7
-cover: "http://192.168.1.36:4321/assets/uploads/1789398066649-image.avif"
+cover: "/assets/uploads/1789453290109-1789398066649-image.avif"
 ---
 
 This is probably the right time to talk about Bethlehem Kudumba Unit. I watched the movie soon after it came out, and I genuinely enjoyed it. More than anything, the movie gave Nivin Pauly the kind of comeback he had been waiting for. And boy, he didn’t waste the opportunity. He didn’t just make a comeback; he completely took over the market.

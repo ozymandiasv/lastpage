@@ -295,10 +295,10 @@
               <label>Cover image</label>
               <input type="text" id="eCover" placeholder="https://… or upload a photo below" value="${esc(post.data.cover || '')}" style="width:100%;">
               <div style="display:flex;gap:8px;margin-top:8px;">
-                <label for="eCoverFile" class="btn btn-sm" id="eCoverUploadBtn">Upload photo…</label>
+                <button type="button" class="btn btn-sm" id="eCoverUploadBtn">Upload photo…</button>
                 <span id="eCoverUploadStatus" class="small-note"></span>
               </div>
-              <input type="file" id="eCoverFile" accept="image/*" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;">
+              <input type="file" id="eCoverFile" accept="image/*" class="hidden">
               <img id="coverPreview" class="cover-preview ${post.data.cover ? '' : 'hidden'}" src="${esc(post.data.cover || '')}">
             </div>
           </div>`}
@@ -379,46 +379,6 @@
     }
 
     // Cover uploads are stored in their original format; use AVIF externally when desired.
-    const coverFileInput = document.getElementById('eCoverFile');
-    if (coverFileInput) {
-      coverFileInput.addEventListener('change', async () => {
-        const file = coverFileInput.files && coverFileInput.files[0];
-        if (!file) return;
-
-        const status = document.getElementById('eCoverUploadStatus');
-        const coverField = document.getElementById('eCover');
-        const preview = document.getElementById('coverPreview');
-
-        try {
-          if (status) status.textContent = 'Uploading…';
-
-          const dataUrl = await new Promise((resolve, reject) => {
-            const reader = new FileReader();
-            reader.onload = () => resolve(reader.result);
-            reader.onerror = () => reject(new Error('Could not read image'));
-            reader.readAsDataURL(file);
-          });
-
-          const result = await api('/api/media', {
-            method: 'POST',
-            body: { name: file.name, data: dataUrl }
-          });
-
-          if (coverField) coverField.value = result.url || '';
-          if (preview && result.url) {
-            preview.src = result.url;
-            preview.classList.remove('hidden');
-          }
-          if (status) status.textContent = 'Uploaded';
-          toast('Cover uploaded', 'success');
-        } catch (err) {
-          if (status) status.textContent = 'Upload failed';
-          toast(err.message || 'Cover upload failed', 'error');
-        } finally {
-          coverFileInput.value = '';
-        }
-      });
-    }
     // Gemini editorial tools
     const aiResult = document.getElementById('aiResult');
     const aiRunSelected = document.getElementById('aiRunSelected');

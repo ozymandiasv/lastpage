@@ -26,14 +26,12 @@ function readTime(wordCount) {
 }
 
 function starRating(rating10) {
-  // Rating is out of 10, so display a 10-star scale. Half-point ratings get one half-star.
-  const numeric = Number(rating10);
-  if (!Number.isFinite(numeric)) return { full: 0, half: 0, empty: 10, value: 0 };
-  const rating = Math.max(0, Math.min(10, Math.round(numeric * 2) / 2));
-  const full = Math.floor(rating);
-  const half = rating - full >= 0.5 ? 1 : 0;
-  const empty = 10 - full - half;
-  return { full, half, empty, value: rating };
+  // rating out of 10 -> 5 star scale, returns { full, half, empty }
+  const stars = Math.round((rating10 / 10) * 5 * 2) / 2; // nearest 0.5
+  const full = Math.floor(stars);
+  const half = stars - full >= 0.5 ? 1 : 0;
+  const empty = 5 - full - half;
+  return { full, half, empty, value: stars };
 }
 
 module.exports = { tagColour, formatDate, formatMonthYear, slugifyPath, readTime, starRating, TAG_COLOURS };

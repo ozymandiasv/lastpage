@@ -1,9 +1,8 @@
 ---
 type: "Review"
-published: false
+published: true
 date: "2026-09-15"
-publishStatus: "scheduled"
-scheduledDate: "2026-09-15"
+publishStatus: "published"
 title: "Nivin Pauly Is Back"
 subtitle: "How Bethlehem Kudumba Unit turned Nivin Pauly from a fading star back into the biggest name in Malayalam cinema."
 category: "Media"

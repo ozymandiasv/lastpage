@@ -1,9 +1,8 @@
 ---
 type: "Essay"
-published: false
+published: true
 date: "2026-09-16"
-publishStatus: "scheduled"
-scheduledDate: "2026-09-16"
+publishStatus: "published"
 title: "India's Fusion Story Didn't Start This Week"
 subtitle: "On ADITYA, SST-1, and the decades of quiet groundwork behind a headline about artificial suns."
 category: "Technology"

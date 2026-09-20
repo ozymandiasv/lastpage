@@ -1,0 +1,24 @@
+---
+type: "Essay"
+published: false
+date: "2026-09-21"
+publishStatus: "scheduled"
+scheduledDate: "2026-09-21"
+title: "The Overestimation of Education"
+subtitle: "Education gives you knowledge about specific things, not judgment about everything else."
+category: "Philosophy"
+cover: "/assets/uploads/1789880545100-image.avif"
+---
+
+Yesterday I wrote an answer on Reddit about a rather stupid dramatic performance by a minor who has apparently proclaimed himself as God, or a messenger of God, I don’t really know. He was crying before the Ganpati visarjan, asking Ganpati not to go. The whole thing raised a lot of questions for me, especially about what his parents are doing with his sudden popularity and whether this child is slowly being made to believe that he actually is something divine. But what caught my attention were the comments. A lot of people were saying that he is fooling uneducated people and that educated people would see through the act. I understand where that argument comes from, but it also made me wonder if we give education far too much credit.
+## Education Doesn’t Make You Rational
+We have this strange habit of assuming that education, intelligence and rationality are basically the same thing. Someone has a degree, so we call them educated. Because they are educated, we assume they are intelligent. And because they are intelligent, we assume they will obviously be able to recognise nonsense when they see it. But it doesn’t really work that way. A person can have a PhD and still believe something without much evidence. An engineer can understand complicated mathematics and still believe in astrology. A doctor can be extremely knowledgeable about medicine and have completely irrational opinions about something outside their field. Education gives you knowledge about particular things. It doesn’t automatically give you good judgement about everything else.
+## We Are Not Rational All The Time
+The bigger problem is that people don’t believe things simply because they don’t have enough education. We believe things because of our families, our communities, our experiences and sometimes because we simply want them to be true. If someone grows up in a family where a particular person is considered divine, that belief isn’t necessarily going to disappear because the person later gets a university degree. They might even become better at explaining why they believe it.
+This is where intelligence also gets confused with rationality. An intelligent person can be very good at defending something they already believe. They can find explanations for contradictions and reasons to dismiss evidence that doesn’t fit what they want to believe. Sometimes intelligence doesn’t help us question our beliefs. It just helps us defend them better.
+## The Problem With the Word “Educated”
+Maybe the word itself has become too broad. When we call someone educated, what are we actually saying? That they have qualifications? That they know a lot? That they can think critically? That they are capable of changing their mind? Those things aren’t necessarily connected. Someone with very little formal education can still be curious, sceptical and capable of recognising when something doesn’t make sense. At the same time, someone with several degrees can be completely convinced that their own beliefs are beyond question.
+Perhaps what matters more than education is the willingness to admit that you could be wrong. That sounds simple, but it is probably one of the hardest things for people to do. Knowing a lot and knowing the limits of what you know are two very different things.
+## So What About This Child?
+I don’t actually know what is happening with this particular child. Maybe he believes what he is saying. Maybe his parents are encouraging the whole thing. Maybe it is simply a performance that has become much bigger than it was supposed to be. A short video on Reddit isn’t enough for me to decide any of that. But I do find the reaction interesting. One group sees the child as some kind of divine figure, while another group assumes that only uneducated people could possibly believe him. I’m not sure either reaction tells us much about education.
+There will probably be educated people among his followers. There are educated people who believe in all kinds of things that other educated people consider ridiculous. Having a degree doesn’t suddenly remove our emotions, biases, cultural beliefs or desire to belong. Education is useful. Obviously it is. But perhaps we have started treating it as something more than it actually is. Being educated means that you have learned something. It doesn’t necessarily mean that you have learned how to question what you believe.

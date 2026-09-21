@@ -1,9 +1,8 @@
 ---
 type: "Essay"
-published: false
+published: true
 date: "2026-09-21"
-publishStatus: "scheduled"
-scheduledDate: "2026-09-21"
+publishStatus: "published"
 title: "The Overestimation of Education"
 subtitle: "Education gives you knowledge about specific things, not judgment about everything else."
 category: "Philosophy"

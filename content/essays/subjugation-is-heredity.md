@@ -1,9 +1,8 @@
 ---
 type: "Essay"
-published: false
+published: true
 date: "2026-09-25"
-publishStatus: "scheduled"
-scheduledDate: "2026-09-25"
+publishStatus: "published"
 title: "Subjugation is Heredity"
 subtitle: "What 1984 taught me about the difference between being ruled and being led, and how belonging became the leash."
 category: "Philosophy"

@@ -257,6 +257,18 @@
           ${isNote ? '' : `<input type="text" id="eTitle" class="editor-title-input" placeholder="Title" value="${esc(post.data.title || '')}">`}
           ${isNote ? '' : `<input type="text" id="eSubtitle" placeholder="Subtitle (optional)" value="${esc(post.data.subtitle || '')}">`}
 
+          ${isVerse ? `
+          <div class="panel" style="margin:14px 0;">
+            <label>Verse format</label>
+            <select id="eVerseFormat" style="width:100%;">
+              <option value="poetry" ${(post.data.format || 'poetry') === 'poetry' ? 'selected' : ''}>Poetry</option>
+              <option value="story" ${post.data.format === 'story' ? 'selected' : ''}>Story</option>
+            </select>
+            <div class="small-note" style="margin-top:7px;">
+              Poetry preserves line breaks and centres the text. Story uses normal left-aligned prose.
+            </div>
+          </div>` : ''}
+
           <div class="editor-tabs">
             <div class="editor-tab active" data-tab="write">Write</div>
             <div class="editor-tab" data-tab="preview">Preview</div>
@@ -533,6 +545,11 @@
         data.reviewType = document.getElementById('eReviewType').value;
         data.rating = Number(document.getElementById('eRating').value || 0);
       }
+
+      if (isVerse) {
+        data.format = document.getElementById('eVerseFormat').value;
+      }
+
       const body = document.getElementById('eBody').value;
       try {
         if (isNew) {

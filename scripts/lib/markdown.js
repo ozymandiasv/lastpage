@@ -184,6 +184,11 @@ function verseToHtml(md) {
     .join('\n');
 }
 
+/** Story rendering: normal Markdown prose inside the Verse section. */
+function verseStoryToHtml(md) {
+  return mdToHtml(md || '');
+}
+
 function excerpt(html, len = 160) {
   const text = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
   if (text.length <= len) return text;
@@ -195,4 +200,4 @@ function wordCount(html) {
   return text ? text.split(/\s+/).length : 0;
 }
 
-module.exports = { mdToHtml, verseToHtml, extractToc, excerpt, wordCount, slugify, escapeHtml };
+module.exports = { mdToHtml, verseToHtml, verseStoryToHtml, extractToc, excerpt, wordCount, slugify, escapeHtml };

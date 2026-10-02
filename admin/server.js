@@ -30,7 +30,7 @@ const { execFile } = require('child_process');
 const { URL } = require('url');
 
 const { parseFrontmatter, stringifyFrontmatter } = require('../scripts/lib/frontmatter');
-const { mdToHtml, verseToHtml, slugify, excerpt, wordCount } = require('../scripts/lib/markdown');
+const { mdToHtml, verseToHtml, verseStoryToHtml, slugify, excerpt, wordCount } = require('../scripts/lib/markdown');
 
 const ROOT = path.join(__dirname, '..');
 const CONTENT_DIR = path.join(ROOT, 'content');
@@ -466,7 +466,14 @@ route('POST', '/api/ai', async (req, res, params, body) => {
 });
 // ---- Markdown preview ----
 route('POST', '/api/render', async (req, res, params, body) => {
-  const html = body.mode === 'verse' ? verseToHtml(body.body || '') : mdToHtml(body.body || '');
+  let html;
+  if (body.mode === 'verse-story') {
+    html = verseStoryToHtml(body.body || '');
+  } else if (body.mode === 'verse') {
+    html = verseToHtml(body.body || '');
+  } else {
+    html = mdToHtml(body.body || '');
+  }
   sendJson(res, 200, { html, excerpt: excerpt(html, 160), wordCount: wordCount(html) });
 });
 

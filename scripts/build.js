@@ -13,7 +13,7 @@ const fs = require('fs');
 const path = require('path');
 
 const { parseFrontmatter } = require('./lib/frontmatter');
-const { mdToHtml, verseToHtml, extractToc, excerpt, wordCount, escapeHtml } = require('./lib/markdown');
+const { mdToHtml, verseToHtml, verseStoryToHtml, extractToc, excerpt, wordCount, escapeHtml } = require('./lib/markdown');
 const tpl = require('./lib/template');
 const {
   tagColour, formatDate, formatMonthYear, slugifyPath, readTime, starRating,
@@ -115,13 +115,17 @@ function loadCollection(dir, typeLabel) {
     const slug = f.replace(/\.md$/, '');
     const type = data.type || typeLabel;
     const isVerse = type === 'Verse';
-    const bodyHtml = isVerse ? verseToHtml(body) : mdToHtml(body);
+    const verseFormat = isVerse && data.format === 'story' ? 'story' : 'poetry';
+    const bodyHtml = isVerse
+      ? (verseFormat === 'story' ? verseStoryToHtml(body) : verseToHtml(body))
+      : mdToHtml(body);
     const wc = wordCount(bodyHtml);
 
     items.push({
       slug,
       type,
       typeLC: type.toLowerCase(),
+      verseFormat,
       title: data.title || slug,
       subtitle: data.subtitle || '',
       category: data.category || '',
@@ -302,6 +306,7 @@ for (const post of articleTypes) {
     postTitle: post.title,
     subtitle: post.subtitle,
     bodyHtml: post.bodyHtml,
+    verseFormat: post.verseFormat || 'poetry',
     tags: tagObjs(post.tags),
     isReview,
     reviewType: post.reviewType,
@@ -330,6 +335,7 @@ for (const post of verses) {
     postTitle: post.title,
     dateLabel: formatDate(post.date),
     bodyHtml: post.bodyHtml,
+    verseFormat: post.verseFormat || 'poetry',
     tags: tagObjs(post.tags),
     ...shareLinks(post.url, post.title),
   }));
@@ -351,6 +357,7 @@ for (const post of notes) {
     aboutActive: false,
     dateLabel: formatDate(post.date),
     bodyHtml: post.bodyHtml,
+    verseFormat: post.verseFormat || 'poetry',
     tags: tagObjs(post.tags),
     ...shareLinks(post.url, `Note — ${formatDate(post.date)}`),
   }));

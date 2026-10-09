@@ -4,16 +4,20 @@
   // Theme: light by default, remembered locally.
   const savedTheme = localStorage.getItem('lastpage-admin-theme') || 'light';
   document.documentElement.dataset.theme = savedTheme;
-  const themeBtn = document.getElementById('themeToggle');
-  if (themeBtn) {
-    themeBtn.querySelector('span').textContent = savedTheme === 'light' ? 'Dark mode' : 'Light mode';
-    themeBtn.addEventListener('click', () => {
-      const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
-      document.documentElement.dataset.theme = next;
-      localStorage.setItem('lastpage-admin-theme', next);
-      themeBtn.querySelector('span').textContent = next === 'light' ? 'Dark mode' : 'Light mode';
+  const themeBtns = Array.from(document.querySelectorAll('.theme-toggle'));
+  function syncThemeLabels(theme) {
+    themeBtns.forEach(b => {
+      const label = b.querySelector('span');
+      if (label) label.textContent = theme === 'light' ? 'Dark mode' : 'Light mode';
     });
   }
+  syncThemeLabels(savedTheme);
+  themeBtns.forEach(b => b.addEventListener('click', () => {
+    const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+    document.documentElement.dataset.theme = next;
+    localStorage.setItem('lastpage-admin-theme', next);
+    syncThemeLabels(next);
+  }));
 
 
   // ------------------------------------------------------------------
@@ -71,10 +75,10 @@
     }
   });
 
-  document.getElementById('logoutBtn').addEventListener('click', async () => {
+  document.querySelectorAll('.logout-btn').forEach(btn => btn.addEventListener('click', async () => {
     await api('/api/logout', { method: 'POST' });
     location.reload();
-  });
+  }));
 
   async function checkAuth() {
     const s = await api('/api/session');
@@ -105,6 +109,7 @@
   };
 
   function router() {
+    window.scrollTo(0, 0);
     const hash = location.hash.replace(/^#\//, '');
     const parts = hash.split('/').filter(Boolean);
     let name = parts[0] || 'dashboard';
@@ -176,7 +181,7 @@
       document.getElementById('postsTableBody').innerHTML = posts.length ? posts.map(p => `
         <tr>
           <td><span class="type-chip">${TYPE_LABELS[p.typeId]}</span></td>
-          <td><a class="row-title" href="#/editor/edit/${p.typeId}/${p.slug}">${esc(p.title)}</a></td>
+          <td class="c-title"><a class="row-title" href="#/editor/edit/${p.typeId}/${p.slug}">${esc(p.title)}</a></td>
           <td>${esc(p.category) || '—'}</td>
           <td>${esc(p.date) || '—'}</td>
           <td><span class="pill ${p.scheduled ? 'pill-scheduled' : (p.published ? 'pill-published' : 'pill-draft')}">${p.scheduled ? 'Scheduled' : (p.published ? 'Published' : 'Draft')}</span></td>
@@ -360,6 +365,24 @@
         </div>
       </div>
     `;
+
+    // Write / Preview tabs
+    document.querySelectorAll('.editor-tab').forEach(tabEl => {
+      tabEl.addEventListener('click', async () => {
+        document.querySelectorAll('.editor-tab').forEach(t => t.classList.remove('active'));
+        tabEl.classList.add('active');
+        const isPreview = tabEl.dataset.tab === 'preview';
+        document.getElementById('tabWrite').classList.toggle('hidden', isPreview);
+        document.getElementById('tabPreview').classList.toggle('hidden', !isPreview);
+        if (isPreview) {
+          const mode = isVerse ? ((document.getElementById('eVerseFormat') || {}).value === 'story' ? 'verse-story' : 'verse') : undefined;
+          try {
+            const r = await api('/api/render', { method: 'POST', body: { body: document.getElementById('eBody').value, mode } });
+            document.getElementById('mdPreview').innerHTML = r.html;
+          } catch (e) { toast(e.message, 'error'); }
+        }
+      });
+    });
 
     // Tags
     let tagState = tags.slice();
@@ -589,7 +612,7 @@
         <tbody>
           ${list.map(p => `
             <tr>
-              <td><a class="row-title" href="#/page-editor/${p.slug}">${esc(p.title)}</a></td>
+              <td class="c-title"><a class="row-title" href="#/page-editor/${p.slug}">${esc(p.title)}</a></td>
               <td class="small-note">/${p.slug === 'about' ? 'about' : p.slug}/</td>
               <td class="row-actions">
                 <a class="btn btn-sm" href="#/page-editor/${p.slug}">Edit</a>

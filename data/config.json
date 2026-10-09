@@ -10,10 +10,10 @@
     "reddit": "https://www.reddit.com/user/spellriddle/"
   },
   "giscus": {
-    "repo": "ozymandiasv/last-page",
-    "repoId": "YOUR_REPO_ID",
-    "category": "Announcements",
-    "categoryId": "YOUR_CATEGORY_ID"
+    "repo": "ozymandiasv/lastpage",
+    "repoId": "R_kgDOTT4aAg",
+    "category": "Comments",
+    "categoryId": "DIC_kwDOTT4aAs4DHYRg"
   },
   "contentTypes": [
     { "id": "essay",  "label": "Essay",  "plural": "Essays",  "path": "essay" },

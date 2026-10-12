@@ -8,7 +8,7 @@ subtitle: "An unsettling concept, brilliant suspense, and a conclusion that left
 category: "Media"
 cover: "/assets/uploads/1791787338009-image.avif"
 reviewType: "Movie"
-rating: 6
+rating: 7
 ---
 
 I went into Backrooms expecting a psychological mystery, and initially, I thought the entire experience might be happening inside someone’s subconscious. Perhaps it was a manifestation of their fears, memories or unresolved trauma. But as the story progressed, I began to realise that the Backrooms were real within the film’s universe, only to find myself confused again about what they actually were and how they came into existence. Even towards the end, the film leaves us wondering about the origins of this strange place. Is it supposed to represent the emotional baggage we carry, the things we suppress, or the consequences of our attempts to escape reality? The concept is fascinating, and I cannot deny that I was intrigued by what the creators were trying to explore. However, I struggled to understand what they ultimately wanted to convey.

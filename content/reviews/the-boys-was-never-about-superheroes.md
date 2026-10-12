@@ -7,7 +7,7 @@ title: "The Boys Was Never About Superheroes"
 subtitle: "A brilliant satire of power, celebrity, and corruption that stumbled at the finish line but never lost sight of what made it special"
 category: "Media"
 cover: "/assets/uploads/1791515772613-image.avif"
-reviewType: "Movie"
+reviewType: "TV Series"
 rating: 7.5
 ---
 

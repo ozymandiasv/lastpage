@@ -1,7 +1,7 @@
 ---
 type: "Blog"
 published: true
-date: "2026-10-12"
+date: "2026-10-13"
 publishStatus: "published"
 title: "Electoral Manipulation Is Not a Machine That Wins Every Election"
 subtitle: "Why BJP losing in Kerala or Tamil Nadu does not automatically disprove allegations of strategic electoral manipulation."

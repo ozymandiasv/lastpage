@@ -1,8 +1,8 @@
 ---
 type: "Blog"
-published: true
+published: false
 date: "2026-10-14"
-publishStatus: "published"
+publishStatus: "draft"
 title: "When Dissent Lands in Jail, Political Differences Must Take a Back Seat"
 subtitle: "The detention of CJP leaders Saurav Das and Ashutosh Ranka raises questions about the right to protest, the limits of state power and the need for opposition unity."
 category: "Politics"

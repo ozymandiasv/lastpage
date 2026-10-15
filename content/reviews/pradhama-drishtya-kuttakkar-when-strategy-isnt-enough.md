@@ -1,8 +1,8 @@
 ---
 type: "Review"
-published: false
+published: true
 date: "2026-10-15"
-publishStatus: "draft"
+publishStatus: "published"
 title: "Pradhama Drishtya Kuttakkar: When Strategy Isn’t Enough"
 subtitle: "An engaging Malayalam crime thriller that tries to outsmart its audience but occasionally forgets to outsmart its own plot holes."
 category: "Media"

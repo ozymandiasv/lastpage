@@ -4,6 +4,13 @@
   <link>https://lastpage.example.com</link>
   <description>Essays, blogs, reviews, notes and verse by O IV.</description>
   <item>
+    <title>Beautiful Ugly: A Brilliant Premise Buried Under a Terrible Ending</title>
+    <link>https://lastpage.example.com/review/beautiful-ugly-a-brilliant-premise-buried-under-a-terrible-ending/</link>
+    <guid>https://lastpage.example.com/review/beautiful-ugly-a-brilliant-premise-buried-under-a-terrible-ending/</guid>
+    <pubDate>Fri, 16 Oct 2026 00:00:00 GMT</pubDate>
+    <description>An atmospheric mystery that kept me turning pages, only to leave me wondering what the author was doing with her own story.</description>
+  </item>
+  <item>
     <title>Pradhama Drishtya Kuttakkar: When Strategy Isn’t Enough</title>
     <link>https://lastpage.example.com/review/pradhama-drishtya-kuttakkar-when-strategy-isnt-enough/</link>
     <guid>https://lastpage.example.com/review/pradhama-drishtya-kuttakkar-when-strategy-isnt-enough/</guid>
@@ -275,12 +282,5 @@
     <guid>https://lastpage.example.com/essay/the-overestimation-of-education/</guid>
     <pubDate>Mon, 21 Sep 2026 00:00:00 GMT</pubDate>
     <description>Education gives you knowledge about specific things, not judgment about everything else.</description>
-  </item>
-  <item>
-    <title>Free Market Means Something Different on Each Side of the Border</title>
-    <link>https://lastpage.example.com/blog/free-market-means-something-different-on-each-side-of-the-border/</link>
-    <guid>https://lastpage.example.com/blog/free-market-means-something-different-on-each-side-of-the-border/</guid>
-    <pubDate>Sun, 20 Sep 2026 00:00:00 GMT</pubDate>
-    <description>How Congress just handed Trump a tariff weapon that exposes America's own double standard on Russia.</description>
   </item>
 </channel></rss>

@@ -1,8 +1,8 @@
 ---
 type: "Review"
-published: false
-date: "2026-10-09"
-publishStatus: "draft"
+published: true
+date: "2026-10-17"
+publishStatus: "published"
 title: "The Boys Was Never About Superheroes"
 subtitle: "A brilliant satire of power, celebrity, and corruption that stumbled at the finish line but never lost sight of what made it special"
 category: "Media"

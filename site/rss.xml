@@ -4,6 +4,13 @@
   <link>https://lastpage.example.com</link>
   <description>Essays, blogs, reviews, notes and verse by O IV.</description>
   <item>
+    <title>The First Stone</title>
+    <link>https://lastpage.example.com/essay/the-first-stone/</link>
+    <guid>https://lastpage.example.com/essay/the-first-stone/</guid>
+    <pubDate>Wed, 21 Oct 2026 00:00:00 GMT</pubDate>
+    <description>I no longer know what I believe about God, but the words of Jesus still make me stop and think.</description>
+  </item>
+  <item>
     <title>A Democracy That Fears Protest Has Forgotten Its Purpose</title>
     <link>https://lastpage.example.com/essay/a-democracy-that-fears-protest-has-forgotten-its-purpose/</link>
     <guid>https://lastpage.example.com/essay/a-democracy-that-fears-protest-has-forgotten-its-purpose/</guid>
@@ -275,12 +282,5 @@
     <guid>https://lastpage.example.com/essay/subjugation-is-heredity/</guid>
     <pubDate>Fri, 25 Sep 2026 00:00:00 GMT</pubDate>
     <description>What 1984 taught me about the difference between being ruled and being led, and how belonging became the leash.</description>
-  </item>
-  <item>
-    <title>The Vote Is More Than a Number</title>
-    <link>https://lastpage.example.com/blog/the-vote-is-more-than-a-number/</link>
-    <guid>https://lastpage.example.com/blog/the-vote-is-more-than-a-number/</guid>
-    <pubDate>Thu, 24 Sep 2026 00:00:00 GMT</pubDate>
-    <description>When questions about electoral rolls become questions about democracy itself.</description>
   </item>
 </channel></rss>

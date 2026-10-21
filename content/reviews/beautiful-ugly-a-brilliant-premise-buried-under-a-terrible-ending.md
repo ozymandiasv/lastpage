@@ -5,7 +5,7 @@ date: "2026-10-16"
 publishStatus: "published"
 title: "Beautiful Ugly: A Brilliant Premise Buried Under a Terrible Ending"
 subtitle: "An atmospheric mystery that kept me turning pages, only to leave me wondering what the author was doing with her own story."
-category: "Media"
+category: "Literature"
 cover: "/assets/uploads/1792141487715-image.avif"
 reviewType: "Book"
 rating: 6.5

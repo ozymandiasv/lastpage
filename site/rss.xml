@@ -4,6 +4,20 @@
   <link>https://lastpage.example.com</link>
   <description>Essays, blogs, reviews, notes and verse by O IV.</description>
   <item>
+    <title>The Prison of Hope</title>
+    <link>https://lastpage.example.com/essay/the-prison-of-hope/</link>
+    <guid>https://lastpage.example.com/essay/the-prison-of-hope/</guid>
+    <pubDate>Sat, 24 Oct 2026 00:00:00 GMT</pubDate>
+    <description>The most dangerous prisons are not the ones that lock us in, but the ones that convince us our life begins somewhere else.</description>
+  </item>
+  <item>
+    <title>The Greatest Heist in History: How the weak seized the Thorne</title>
+    <link>https://lastpage.example.com/essay/the-greatest-heist-in-history-how-the-weak-seized-the-thorne/</link>
+    <guid>https://lastpage.example.com/essay/the-greatest-heist-in-history-how-the-weak-seized-the-thorne/</guid>
+    <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
+    <description>Has Any Conqueror in History Done More Damage Than the One Who Never Raised a Weapon?</description>
+  </item>
+  <item>
     <title>What Does It Mean to Be a Developing Nation When Our Children Are Hungry?</title>
     <link>https://lastpage.example.com/blog/what-does-it-mean-to-be-a-developing-nation-when-our-children-are-hungry/</link>
     <guid>https://lastpage.example.com/blog/what-does-it-mean-to-be-a-developing-nation-when-our-children-are-hungry/</guid>
@@ -268,19 +282,5 @@
     <guid>https://lastpage.example.com/note/untitled-5/</guid>
     <pubDate>Mon, 28 Sep 2026 00:00:00 GMT</pubDate>
     <description>High inflation? Global triggers. Market dips? Global triggers. Foreign investors pulling out capital? Global triggers. Higher capital gains tax and endless surcharges? 100% home-grown policy.…</description>
-  </item>
-  <item>
-    <title>Running Man</title>
-    <link>https://lastpage.example.com/verse/running-man/</link>
-    <guid>https://lastpage.example.com/verse/running-man/</guid>
-    <pubDate>Mon, 28 Sep 2026 00:00:00 GMT</pubDate>
-    <description>His alarm rings at five while the streetlights are still buzzing, breaking his back all day just to hand the check to the bank, borrowing from Peter today so Paul stays off the porch tomorrow. A…</description>
-  </item>
-  <item>
-    <title>Reservation Was Never About Poverty</title>
-    <link>https://lastpage.example.com/essay/reservation-was-never-about-poverty/</link>
-    <guid>https://lastpage.example.com/essay/reservation-was-never-about-poverty/</guid>
-    <pubDate>Sun, 27 Sep 2026 00:00:00 GMT</pubDate>
-    <description>Why caste still shapes opportunity, representation and the debate over reservation in modern India.</description>
   </item>
 </channel></rss>

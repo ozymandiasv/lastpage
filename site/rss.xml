@@ -4,6 +4,13 @@
   <link>https://lastpage.example.com</link>
   <description>Essays, blogs, reviews, notes and verse by O IV.</description>
   <item>
+    <title>The Internet Is Showing Its Cracks, and Quantum Computing Is Waiting</title>
+    <link>https://lastpage.example.com/essay/the-internet-is-showing-its-cracks-and-quantum-computing-is-waiting/</link>
+    <guid>https://lastpage.example.com/essay/the-internet-is-showing-its-cracks-and-quantum-computing-is-waiting/</guid>
+    <pubDate>Sun, 25 Oct 2026 00:00:00 GMT</pubDate>
+    <description>A critical flaw in PHP has exposed how fragile our digital world can be. As AI accelerates cyberattacks and quantum computing threatens the foundations of encryption, the internet we know may be approaching its biggest transformation yet.</description>
+  </item>
+  <item>
     <title>The Prison of Hope</title>
     <link>https://lastpage.example.com/essay/the-prison-of-hope/</link>
     <guid>https://lastpage.example.com/essay/the-prison-of-hope/</guid>
@@ -275,12 +282,5 @@
     <guid>https://lastpage.example.com/blog/when-students-refuse-to-stay-silent/</guid>
     <pubDate>Mon, 28 Sep 2026 00:00:00 GMT</pubDate>
     <description>Why a student movement for safety deserves answers, and why outsiders shouldn't become the convenient explanation.</description>
-  </item>
-  <item>
-    <title>untitled-5</title>
-    <link>https://lastpage.example.com/note/untitled-5/</link>
-    <guid>https://lastpage.example.com/note/untitled-5/</guid>
-    <pubDate>Mon, 28 Sep 2026 00:00:00 GMT</pubDate>
-    <description>High inflation? Global triggers. Market dips? Global triggers. Foreign investors pulling out capital? Global triggers. Higher capital gains tax and endless surcharges? 100% home-grown policy.…</description>
   </item>
 </channel></rss>

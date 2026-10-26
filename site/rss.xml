@@ -4,6 +4,13 @@
   <link>https://lastpage.example.com</link>
   <description>Essays, blogs, reviews, notes and verse by O IV.</description>
   <item>
+    <title>Lula's Victory Is Bigger Than Brazil</title>
+    <link>https://lastpage.example.com/blog/lulas-victory-is-bigger-than-brazil/</link>
+    <guid>https://lastpage.example.com/blog/lulas-victory-is-bigger-than-brazil/</guid>
+    <pubDate>Mon, 26 Oct 2026 00:00:00 GMT</pubDate>
+    <description>A victory for the Brazilian left, a setback for Trump's political ambitions, and a little more hope for the Amazon and the planet.</description>
+  </item>
+  <item>
     <title>The Internet Is Showing Its Cracks, and Quantum Computing Is Waiting</title>
     <link>https://lastpage.example.com/essay/the-internet-is-showing-its-cracks-and-quantum-computing-is-waiting/</link>
     <guid>https://lastpage.example.com/essay/the-internet-is-showing-its-cracks-and-quantum-computing-is-waiting/</guid>
@@ -275,12 +282,5 @@
     <guid>https://lastpage.example.com/note/untitled-6/</guid>
     <pubDate>Tue, 29 Sep 2026 00:00:00 GMT</pubDate>
     <description>The Supreme Court suggested recovering traffic violation penalties by linking them to electricity bills, seemingly assuming everyone has a home and a dedicated electricity bill. Such an efficient…</description>
-  </item>
-  <item>
-    <title>When Students Refuse to Stay Silent</title>
-    <link>https://lastpage.example.com/blog/when-students-refuse-to-stay-silent/</link>
-    <guid>https://lastpage.example.com/blog/when-students-refuse-to-stay-silent/</guid>
-    <pubDate>Mon, 28 Sep 2026 00:00:00 GMT</pubDate>
-    <description>Why a student movement for safety deserves answers, and why outsiders shouldn't become the convenient explanation.</description>
   </item>
 </channel></rss>

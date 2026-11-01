@@ -4,6 +4,13 @@
   <link>https://lastpage.example.com</link>
   <description>Essays, blogs, reviews, notes and verse by O IV.</description>
   <item>
+    <title>Apple Is Selling Us Things We Don’t Need</title>
+    <link>https://lastpage.example.com/blog/apple-is-selling-us-things-we-dont-need/</link>
+    <guid>https://lastpage.example.com/blog/apple-is-selling-us-things-we-dont-need/</guid>
+    <pubDate>Sat, 31 Oct 2026 00:00:00 GMT</pubDate>
+    <description>From touchscreen MacBooks to glowing logos, the company that once told us not to chase gimmicks seems increasingly interested in selling them. Perhaps the problem is not what technology can do, but what capitalism wants us to buy.</description>
+  </item>
+  <item>
     <title>The Midterms Have a New Battle: Claude vs ChatGPT</title>
     <link>https://lastpage.example.com/blog/the-midterms-have-a-new-battle-claude-vs-chatgpt/</link>
     <guid>https://lastpage.example.com/blog/the-midterms-have-a-new-battle-claude-vs-chatgpt/</guid>
@@ -275,12 +282,5 @@
     <guid>https://lastpage.example.com/review/drishyam-3-when-the-thrill-starts-repeating-itself/</guid>
     <pubDate>Sat, 03 Oct 2026 00:00:00 GMT</pubDate>
     <description>Unpredictability made Drishyam special, but repeating the same trick can only work for so long.</description>
-  </item>
-  <item>
-    <title>Gandhi: A Man India Needed</title>
-    <link>https://lastpage.example.com/essay/gandhi-a-man-india-needed/</link>
-    <guid>https://lastpage.example.com/essay/gandhi-a-man-india-needed/</guid>
-    <pubDate>Fri, 02 Oct 2026 00:00:00 GMT</pubDate>
-    <description>To understand a historical figure is to see both what he gave us and where he was wrong.</description>
   </item>
 </channel></rss>

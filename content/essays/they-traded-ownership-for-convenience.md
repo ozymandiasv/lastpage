@@ -6,7 +6,7 @@ publishStatus: "published"
 title: "They Traded Ownership for Convenience"
 subtitle: "The internet didn’t just change how we consume media. Somewhere along the way, it convinced us to stop owning it."
 category: "Culture"
-cover: "http://192.168.1.36:4321/assets/uploads/1793691784402-wqw.avif"
+cover: "assets/uploads/1793691784402-wqw.avif"
 ---
 
 Recently, I had a small party with a few friends in a remote location where there was absolutely no internet. It didn’t matter at first. We were talking, cooking, laughing and simply enjoying being away from our phones for a while. But later that night, just as we were about to pour ourselves some drinks, somebody asked the most obvious question in the world. “How do we play music?” Almost instinctively every one of us reached for our phones. Spotify. YouTube Music. Nothing. No internet meant no music. It was such a simple moment, yet it made me realise something I had never really thought about before. We weren’t missing music because nobody had brought speakers or because we forgot to download songs. We were missing music because none of us actually owned the music we listened to. We had spent years paying for access to millions of songs, yet the moment somebody else’s servers became unreachable, those millions of songs simply ceased to exist for us. The same thing would happen with films, television series, podcasts, newspapers and almost every other form of digital entertainment. Somewhere along the way we stopped owning things and became comfortable renting every part of our digital lives.

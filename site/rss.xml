@@ -4,6 +4,20 @@
   <link>https://lastpage.example.com</link>
   <description>Essays, blogs, reviews, notes and verse by O IV.</description>
   <item>
+    <title>Just Another Day</title>
+    <link>https://lastpage.example.com/essay/just-another-day/</link>
+    <guid>https://lastpage.example.com/essay/just-another-day/</guid>
+    <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
+    <description>Somewhere along the way, birthdays stopped feeling special.</description>
+  </item>
+  <item>
+    <title>Culture Was Never Meant to Stay Pure</title>
+    <link>https://lastpage.example.com/essay/culture-was-never-meant-to-stay-pure/</link>
+    <guid>https://lastpage.example.com/essay/culture-was-never-meant-to-stay-pure/</guid>
+    <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+    <description>On Halloween, cultural identity, and our rather selective understanding of tradition.</description>
+  </item>
+  <item>
     <title>Well, Well, Well. America Has Made a Choice</title>
     <link>https://lastpage.example.com/blog/well-well-well-america-has-made-a-choice/</link>
     <guid>https://lastpage.example.com/blog/well-well-well-america-has-made-a-choice/</guid>
@@ -268,19 +282,5 @@
     <guid>https://lastpage.example.com/note/untitled-9/</guid>
     <pubDate>Wed, 07 Oct 2026 00:00:00 GMT</pubDate>
     <description>Who said the Delhi Police is incapable of filing FIRs? They’re actually lightning-fast at filing FIRs against the opposition, students, protesters, and other reformers. But if it were a criminal, the…</description>
-  </item>
-  <item>
-    <title>The Election Cannot Belong to the Election Commission</title>
-    <link>https://lastpage.example.com/blog/the-election-cannot-belong-to-the-election-commission/</link>
-    <guid>https://lastpage.example.com/blog/the-election-cannot-belong-to-the-election-commission/</guid>
-    <pubDate>Tue, 06 Oct 2026 00:00:00 GMT</pubDate>
-    <description>When the people’s right to vote becomes dependent on an institution that refuses to explain its own decisions, democracy itself begins to lose its meaning.</description>
-  </item>
-  <item>
-    <title>untitled-7</title>
-    <link>https://lastpage.example.com/note/untitled-7/</link>
-    <guid>https://lastpage.example.com/note/untitled-7/</guid>
-    <pubDate>Tue, 06 Oct 2026 00:00:00 GMT</pubDate>
-    <description>Congress Prime Minister Manmohan Singh was once greeted with black flags at JNU, but Manmohan Singh upheld the student's right to protest and asked not to take any action on their democratic rights.…</description>
   </item>
 </channel></rss>

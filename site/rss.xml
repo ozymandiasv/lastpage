@@ -4,6 +4,13 @@
   <link>https://lastpage.example.com</link>
   <description>Essays, blogs, reviews, notes and verse by O IV.</description>
   <item>
+    <title>Kumbalangi Nights: A Happiness I Cannot Quite Explain</title>
+    <link>https://lastpage.example.com/review/kumbalangi-nights-a-happiness-i-cannot-quite-explain/</link>
+    <guid>https://lastpage.example.com/review/kumbalangi-nights-a-happiness-i-cannot-quite-explain/</guid>
+    <pubDate>Fri, 13 Nov 2026 00:00:00 GMT</pubDate>
+    <description>Some films entertain you. Some stay with you. And then there are films that leave you smiling long after the credits roll.</description>
+  </item>
+  <item>
     <title>Are We Watching Marx's Gravediggers Arrive?</title>
     <link>https://lastpage.example.com/essay/are-we-watching-marxs-gravediggers-arrive/</link>
     <guid>https://lastpage.example.com/essay/are-we-watching-marxs-gravediggers-arrive/</guid>
@@ -275,12 +282,5 @@
     <guid>https://lastpage.example.com/blog/when-democracy-begins-to-look-like-an-emergency/</guid>
     <pubDate>Sat, 10 Oct 2026 00:00:00 GMT</pubDate>
     <description>You do not need to declare an Emergency to make people feel that their democratic freedoms are under threat.</description>
-  </item>
-  <item>
-    <title>Lost: The Mystery Was Never Just the Island</title>
-    <link>https://lastpage.example.com/review/lost-the-mystery-was-never-just-the-island/</link>
-    <guid>https://lastpage.example.com/review/lost-the-mystery-was-never-just-the-island/</guid>
-    <pubDate>Sat, 10 Oct 2026 00:00:00 GMT</pubDate>
-    <description>From a plane crash and a fight for survival to one of television’s most ambitious explorations of fate, faith, and human nature.</description>
   </item>
 </channel></rss>

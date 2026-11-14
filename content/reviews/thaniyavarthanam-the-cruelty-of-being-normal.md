@@ -1,7 +1,7 @@
 ---
 type: "Review"
 published: true
-date: "2026-11-13"
+date: "2026-11-14"
 publishStatus: "published"
 title: "Thaniyavarthanam: The Cruelty of Being Normal"
 subtitle: "Perhaps the greatest Malayalam film ever made, and a story about how society can destroy a perfectly ordinary man."

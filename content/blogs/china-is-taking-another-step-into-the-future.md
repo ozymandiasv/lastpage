@@ -1,7 +1,7 @@
 ---
 type: "Blog"
 published: true
-date: "2026-11-18"
+date: "2026-11-17"
 publishStatus: "published"
 title: "China Is Taking Another Step Into the Future"
 subtitle: "The CE-25A, electric aviation and a country that seems determined to surprise the world."

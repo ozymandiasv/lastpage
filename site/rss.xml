@@ -4,6 +4,13 @@
   <link>https://lastpage.example.com</link>
   <description>Essays, blogs, reviews, notes and verse by O IV.</description>
   <item>
+    <title>Even This Happened Before GTA VI</title>
+    <link>https://lastpage.example.com/blog/even-this-happened-before-gta-vi/</link>
+    <guid>https://lastpage.example.com/blog/even-this-happened-before-gta-vi/</guid>
+    <pubDate>Thu, 19 Nov 2026 00:00:00 GMT</pubDate>
+    <description>After thirteen years, Rockstar has finally given us something to talk about. Now, can we please move on to RDR3?</description>
+  </item>
+  <item>
     <title>One Light-Day Away</title>
     <link>https://lastpage.example.com/blog/one-light-day-away/</link>
     <guid>https://lastpage.example.com/blog/one-light-day-away/</guid>
@@ -275,12 +282,5 @@
     <guid>https://lastpage.example.com/review/pradhama-drishtya-kuttakkar-when-strategy-isnt-enough/</guid>
     <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
     <description>An engaging Malayalam crime thriller that tries to outsmart its audience but occasionally forgets to outsmart its own plot holes.</description>
-  </item>
-  <item>
-    <title>When Dissent Lands in Jail, Political Differences Must Take a Back Seat</title>
-    <link>https://lastpage.example.com/blog/cjp-the-india-bloc-and-the-question-of-opposition-unity/</link>
-    <guid>https://lastpage.example.com/blog/cjp-the-india-bloc-and-the-question-of-opposition-unity/</guid>
-    <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
-    <description>The detention of CJP leaders Saurav Das and Ashutosh Ranka raises questions about the right to protest, the limits of state power and the need for opposition unity.</description>
   </item>
 </channel></rss>

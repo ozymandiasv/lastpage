@@ -192,6 +192,13 @@ rmrf(OUT_DIR);
 fs.mkdirSync(OUT_DIR, { recursive: true });
 copyDir(ASSETS_DIR, path.join(OUT_DIR, 'assets'));
 
+// Copy root icons to site root
+const rootIcons = ['favicon.ico', 'favicon-32x32.png', 'favicon-16x16.png', 'apple-touch-icon.png'];
+rootIcons.forEach(f => {
+  const p = path.join(ASSETS_DIR, 'icons', f);
+  if (fs.existsSync(p)) fs.copyFileSync(p, path.join(OUT_DIR, f));
+});
+
 // ---------------------------------------------------------------------------
 // Homepage
 // ---------------------------------------------------------------------------

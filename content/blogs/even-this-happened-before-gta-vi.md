@@ -6,7 +6,7 @@ publishStatus: "published"
 title: "Even This Happened Before GTA VI"
 subtitle: "After thirteen years, Rockstar has finally given us something to talk about. Now, can we please move on to RDR3?"
 category: "Media"
-cover: "/assets/uploads/1795107097049-Miami_Sunset__Grand_Theft_Auto_VI.avif"
+cover: "/assets/uploads/1795264568374-an-extended-look.0ijbsha5fo1te.avif"
 ---
 
 GTA VI is finally here. Well, well, well, the memes can finally rest. We can stop saying "Even this happened before GTA VI" and perhaps move on to "Even this happened before RDR3" or GTA VII. Anyway, I am certainly not buying a game this expensive, let alone purchasing a PlayStation just to play it. I'll probably wait for a sale when it eventually arrives on PC. There have been reports suggesting a PC release in the first quarter of 2027, although Rockstar hasn't officially confirmed that. Never mind, the game looks brilliant. Like most enthusiasts who don't have access to the game yet, I've spent quite some time watching gameplay footage, comparisons and videos, and I think we have finally reached a point where water physics in games are almost, almost perfect. I always thought RDR2 had the best water physics, and for years it was my benchmark. But watching the side-by-side comparisons, I think GTA VI has finally dethroned it. A base RDR2 can finally be challenged by a base GTA VI, and that's quite an achievement considering how difficult RDR2 is to compete with even in 2026.

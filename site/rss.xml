@@ -4,6 +4,13 @@
   <link>https://lastpage.example.com</link>
   <description>Essays, blogs, reviews, notes and verse by O IV.</description>
   <item>
+    <title>Prometheus: A Rebel, a Trickster and the Gift of Fire</title>
+    <link>https://lastpage.example.com/essay/prometheus-a-rebel-a-trickster-and-the-gift-of-fire/</link>
+    <guid>https://lastpage.example.com/essay/prometheus-a-rebel-a-trickster-and-the-gift-of-fire/</guid>
+    <pubDate>Sat, 21 Nov 2026 00:00:00 GMT</pubDate>
+    <description>How a character I discovered through Frankenstein became a symbol of everything I admire about curiosity, knowledge and defiance.</description>
+  </item>
+  <item>
     <title>Even This Happened Before GTA VI</title>
     <link>https://lastpage.example.com/blog/even-this-happened-before-gta-vi/</link>
     <guid>https://lastpage.example.com/blog/even-this-happened-before-gta-vi/</guid>
@@ -275,12 +282,5 @@
     <guid>https://lastpage.example.com/note/untitled-13/</guid>
     <pubDate>Fri, 16 Oct 2026 00:00:00 GMT</pubDate>
     <description>Religion is not the only way humans destroy earth; it is simply a prominent way. The true culprit is the inherent human tendency to acquire power, and religion happens to be one of the easiest tools…</description>
-  </item>
-  <item>
-    <title>Pradhama Drishtya Kuttakkar: When Strategy Isn’t Enough</title>
-    <link>https://lastpage.example.com/review/pradhama-drishtya-kuttakkar-when-strategy-isnt-enough/</link>
-    <guid>https://lastpage.example.com/review/pradhama-drishtya-kuttakkar-when-strategy-isnt-enough/</guid>
-    <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
-    <description>An engaging Malayalam crime thriller that tries to outsmart its audience but occasionally forgets to outsmart its own plot holes.</description>
   </item>
 </channel></rss>

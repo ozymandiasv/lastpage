@@ -7,6 +7,13 @@ title: "The Greatest Heist in History: How the weak seized the Thorne"
 subtitle: "Has Any Conqueror in History Done More Damage Than the One Who Never Raised a Weapon?"
 category: "Philosophy"
 cover: "/assets/uploads/1792805232601-image.avif"
+tags:
+  - Philosophy
+  - Nietzsche
+  - Max Weber
+  - Power
+  - Religion
+preview: "An exploration of how the weak subverted traditional power through moral inversion, inventing cosmic authority to reshape human history."
 ---
 
 There is a story we would rather not tell ourselves. Not because it is complicated but because it is uncomfortable in a very specific way, the kind that does not just challenge what you believe but challenges why you believe anything at all. I have been sitting with it for a while now and the longer I do the harder it becomes to look at certain things the same way. It starts, as most uncomfortable things do, further back than we would like to go.

@@ -7,6 +7,13 @@ title: "The Man Who Made Football Look Natural"
 subtitle: "Some players mastered football. Messi somehow made it look as though football was simply meant for him."
 category: "Sports"
 cover: "/assets/uploads/1791356056594-image.avif"
+tags:
+  - Lionel Messi
+  - Football
+  - Argentina
+  - Cristiano Ronaldo
+  - Sports
+preview: "Reflecting on Lionel Messi's final match for Argentina, his effortless mastery of football, and the bittersweet end of an unprecedented era."
 ---
 
 I have never seen a sportsperson or footballer, who feels as natural as Messi. You can have Ronaldo Nazário, who could score goals in ways that looked impossible, or Maradona, who could control a game and create things nobody else could see. But to be both at the same time, to be the goalscorer and the playmaker, the dribbler and the creator, the person who can decide a game by finishing it or by creating it, that is where Messi has always felt different. Watching him never felt like watching someone execute a skill. It felt almost accidental. He would receive the ball, take a few touches, move through two or three players and suddenly the entire shape of the game had changed. You knew what he was going to do and still somehow could not stop him.

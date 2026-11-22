@@ -7,6 +7,13 @@ title: "Well, Well, Well. America Has Made a Choice"
 subtitle: "The 2026 midterms, a Democratic comeback, and a reminder that even the most powerful presidents need voters."
 category: "Politics"
 cover: "/assets/uploads/1793810161888-ww.avif"
+tags:
+  - US Politics
+  - 2026 Midterms
+  - Donald Trump
+  - Democratic Party
+  - Congress
+preview: "America makes its choice in the 2026 midterms, handing Democrats control of both the House and Senate in a sharp rebuke to Donald Trump."
 ---
 
 Well, well, well. Look who has decided to vote smartly! America has made a rather interesting choice this time. The Democrats have taken control of both the House of Representatives and the Senate in the 2026 midterm elections, delivering a significant blow to Donald Trump and his administration. Now, I wouldn't call this the end of Trump, nor would I pretend that America has suddenly become a completely different country overnight. But it is certainly a message, and quite a loud one. Two years ago, Trump returned to the White House with a mandate from voters who believed he could fix the economy, control immigration and restore America's standing. Now, halfway through his term, those same voters have handed his opposition control of Congress. Democracy has a funny way of reminding politicians that the people who put them in power can also take away their political comfort.

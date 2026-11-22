@@ -7,6 +7,14 @@ title: "The Midterms Have a New Battle: Claude vs ChatGPT"
 subtitle: "Behind America’s political campaigns, two AI philosophies are fighting for influence. One wants stronger safeguards, the other fears that regulation could slow the future. And ordinary people are caught between them."
 category: "Technology"
 cover: "/assets/uploads/1793338442214-imaged.avif"
+tags:
+  - Artificial Intelligence
+  - AI Regulation
+  - US Midterms
+  - Anthropic
+  - OpenAI
+  - Tech Policy
+preview: "The US midterms have become a new battleground for AI policy as competing philosophies from Anthropic and OpenAI clash over regulation and safety."
 ---
 
 A couple of days ago, I wrote about the American midterm elections and why the results could become a serious problem for Donald Trump. But there is another battle unfolding alongside the usual political contest, and it involves two names most of us probably associate with chatbots rather than American politics: Claude and ChatGPT. The AI industry has entered the election campaign with enormous amounts of money, using political action committees to support candidates who favour their preferred approach to regulating artificial intelligence. Reports suggest that AI-linked political groups have raised around $100 million and spent nearly $60 million on election-related campaigns. What makes this particularly interesting is that the disagreement is not simply between two competing companies trying to sell better products. It is a disagreement about how much freedom we should give a technology that could fundamentally change society. Anthropic, the company behind Claude, generally favours stronger safeguards and regulation, while the OpenAI-aligned political network has pushed for a lighter regulatory environment and faster development. These are not literally Claude and ChatGPT contesting congressional seats, but their competing philosophies have found their way into American electoral politics. And suddenly, the midterms have become another battleground in the future of AI.

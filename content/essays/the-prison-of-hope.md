@@ -7,6 +7,13 @@ title: "The Prison of Hope"
 subtitle: "The most dangerous prisons are not the ones that lock us in, but the ones that convince us our life begins somewhere else."
 category: "Philosophy"
 cover: "/assets/uploads/1792805467524-image.avif"
+tags:
+  - The Dark Knight Rises
+  - The Shawshank Redemption
+  - Hope
+  - Freedom
+  - Philosophy
+preview: "An essay on how the cruelty of false hope can paralyze us, and the difference between simply escaping a prison and breaking it down."
 ---
 
 I have been thinking about a prison. Not the kind with guards and chains and iron doors, but the one Christopher Nolan imagined in The Dark Knight Rises. A pit. No locks, no wardens, no walls closing in on you. Just silence, and somewhere far above, a circle of light. The cruelest detail is that you can see the way out. You can see it every day. And that visibility, that single shaft of light falling into the dark, is precisely what keeps everyone inside. It took me back to a line from The Shawshank Redemption. That hope is a dangerous thing. Red says it like a warning, like something learned the hard way. And the more I sit with both images together, the more I think he was right in a way the film itself does not fully reckon with.

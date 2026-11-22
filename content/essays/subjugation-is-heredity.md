@@ -7,6 +7,13 @@ title: "Subjugation is Heredity"
 subtitle: "What 1984 taught me about the difference between being ruled and being led, and how belonging became the leash."
 category: "Philosophy"
 cover: "/assets/uploads/1789906671081-image.avif"
+tags:
+  - George Orwell
+  - Power
+  - Psychology
+  - History
+  - Nationalism
+preview: "An exploration of how subjugation is passed down through generations, transforming control into inherited consent, honor, and nationalism."
 ---
 
 After finishing 1984, I could not put down a thought that had no intention of leaving. Orwell does not warn you about power. He warns you about what power does to the people who never held it, how it shapes them, trains them, makes them grateful for their own diminishment. The book is not about a dystopia that might happen. It is about a psychology that already has. That psychology has a history. Long, patient, almost elegant. And the more I traced it backward, through centuries and systems and the different masks it wore, the more it looked less like a series of political failures and more like something passed down. Something inherited. Not in blood, but in belief. In the stories we are handed before we are old enough to question them. In the loyalties we are taught to feel before we understand what loyalty costs. This is what alarms me. Not the existence of power. What unsettles me is how it never changed, because we kept falling for the same promises of slavery.

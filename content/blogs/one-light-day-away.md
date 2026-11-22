@@ -7,6 +7,13 @@ title: "One Light-Day Away"
 subtitle: "Voyager 1, humanity's most distant traveller, and the extraordinary distance between us and the universe."
 category: "Science"
 cover: "/assets/uploads/1794983417503-Voyager_Probe_Beneath_the_Milky_Way.avif"
+tags:
+  - Voyager 1
+  - Space Exploration
+  - Astronomy
+  - Interstellar Space
+  - Carl Sagan
+preview: "Voyager 1 is about to reach a monumental milestone: becoming the first human-made object to travel one light-day away from Earth into interstellar space."
 ---
 
 Long before I heard Carl Sagan speak about the Pale Blue Dot, I had heard of Voyager 1. It was one of those fascinating objects roaming through space, almost like an interstellar expedition, carrying humanity's curiosity into places we could barely imagine. But today, Voyager 1 has travelled so far that it is about to reach a milestone no human-made object has ever achieved: one light-day away from Earth. Assuming, of course, that the Egyptians didn't build the pyramids using advanced technology and launch a spacecraft before us, this is probably the first human-made object to reach this distance. (Yes, I am being sarcastic.) Voyager 1 was launched in September 1977, nearly fifty years ago, and it is now travelling at approximately 61,000 kilometres per hour. On November 18, 2026, it will reach a distance of approximately 25.9 billion kilometres from Earth. That is not merely far away. It is a distance so enormous that even light, the fastest thing in the universe, takes an entire day to travel from Earth to the spacecraft.

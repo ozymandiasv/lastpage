@@ -7,6 +7,13 @@ title: "A Democracy That Fears Protest Has Forgotten Its Purpose"
 subtitle: "From the Boat Club lawns to Jantar Mantar, the shrinking space for dissent raises a question I cannot ignore: if citizens cannot challenge those in power, what exactly are their democratic rights worth?"
 category: "Politics"
 cover: "/assets/uploads/1792467946992-image.avif"
+tags:
+  - Democracy
+  - Protest Rights
+  - Jantar Mantar
+  - Civil Disobedience
+  - India
+preview: "When governments restrict protest spaces, dissent risks becoming meaningless. Exploring the vital intersection of legality, justice, and democratic rights."
 ---
 
 I have been following the arguments surrounding the arrests of Saurav Das and Ashutosh Ranka, and what strikes me is how quickly a discussion about the right to protest becomes a discussion about whether the protesters deserve to be arrested. They allegedly breached restrictions at Jantar Mantar, and people are arguing that they should have anticipated the consequences. But I keep coming back to a more fundamental question: when a government restricts the space available for protest, should the act of challenging that restriction itself become a reason to silence those who object to it? I am not arguing that every law should be ignored or that every action taken in the name of protest is automatically justified. I believe laws are necessary, public safety matters, and peaceful protest does not grant anyone the right to assault others or cause indiscriminate harm. But I also believe that legality and justice are not always interchangeable concepts, and that a restriction imposed by the state must remain open to scrutiny. If we respond to every controversial protest by asking why the protesters did not simply obey the authorities, we risk overlooking the very reason democratic protest exists. Protests are often organised precisely because citizens believe that the authorities are wrong. If obedience were the only acceptable response to government decisions, dissent would become meaningless.

@@ -7,6 +7,14 @@ title: "Bilkis Bano: How Many Times Must Justice Be Reopened?"
 subtitle: "When the courts revisit the liberty of the convicted, who remembers the lives that were taken?"
 category: "Politics"
 cover: "/assets/uploads/1794827082482-Supreme_Court_of_India_in_Watercolour.avif"
+tags:
+  - Bilkis Bano
+  - Supreme Court of India
+  - 2002 Gujarat Riots
+  - Indian Judiciary
+  - Human Rights
+  - Justice
+preview: "As Supreme Court bail orders again release Bilkis Bano convicts, O IV reflects on the repeated toll on survivors and the fragility of justice."
 ---
 
 I find it difficult to understand how we have arrived here again. The Supreme Court has now suspended the life sentences of two men convicted in the Bilkis Bano gangrape and murder case, granting them bail after more than seventeen years in prison. The two men, Bipinchand Joshi and Pradip Modhiya, are among the eleven convicts whose premature release in August 2022 was overturned by the Supreme Court in January 2024. The original crime was horrific: Bilkis was pregnant when she was gangraped during the 2002 Gujarat riots, and seven members of her family, including her three-year-old daughter, were murdered. This was not an ordinary criminal case that we can casually reduce to the number of years somebody has spent in prison. It was an attack on an entire family, on a woman who was already fleeing communal violence, and on the very idea that people should be able to live without fear of such brutality. I understand that the latest order concerns pending appeals and that the Court has cited the period of incarceration, the legal questions involved and the severe disability of one of the appellants. Bail is not acquittal, and their convictions have not been overturned. But I cannot help asking why the gravity of this particular crime seems to become a secondary consideration every time the question of their release comes up. What about the people who never came home? What about Bilkis, who has had to live with the consequences of that day for the rest of her life?

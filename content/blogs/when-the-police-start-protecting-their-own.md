@@ -7,6 +7,13 @@ title: "When the Police Start Protecting Their Own"
 subtitle: "What happens when accountability becomes weaker than the uniform?"
 category: "Politics"
 cover: "/assets/uploads/1791179856619-image.avif"
+tags:
+  - Delhi Police
+  - Police Accountability
+  - Jantar Mantar
+  - Human Rights
+  - Journalists
+preview: "Serious allegations against a Delhi Police ACP highlight the dangerous culture of institutional protection and the urgent need for police accountability."
 ---
 
 The allegations against a Delhi Police ACP are serious. Three women who identified themselves as journalists have complained of manhandling and sexual harassment during the detention of protesters at Jantar Mantar. The complaint has reportedly been transferred to the Crime Branch for an inquiry, but questions have already been raised over the police’s response and whether an FIR was initially being avoided. At this point, the allegations must be investigated properly and the facts established. But the larger concern is what this episode says about accountability when the person being accused is himself a senior police officer.

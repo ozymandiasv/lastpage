@@ -7,6 +7,13 @@ title: "The Strongest Uchiha Was Never Madara"
 subtitle: "If Obito Uchiha had kept both his eyes, Naruto might have accidentally created the most broken character in the entire series"
 category: "Media"
 cover: "/assets/uploads/1791512326731-image.avif"
+tags:
+  - Naruto
+  - Obito Uchiha
+  - Madara Uchiha
+  - Anime
+  - Manga
+preview: "While Madara is often called the strongest Uchiha, a closer look at Obito's true potential with Dual Mangekyō Kamui suggests otherwise."
 ---
 
 A lot of Naruto fans assume that Madara Uchiha was the strongest Uchiha to ever exist and that nobody could realistically challenge him until Six Paths Rinnegan Sasuke Uchiha arrived during the Fourth Shinobi World War. To be fair, that opinion is not unreasonable. War Arc Madara was ridiculous. By the time he acquired the Rinnegan, Limbo clones, Six Paths chakra, and enough plot armor to survive an entire alliance throwing everything at him, he had become less of a character and more of a natural disaster. Defeating him stopped feeling like a battle and started feeling like a scheduling issue for Masashi Kishimoto. But if we strip away all the war arc madness and focus only on the abilities that naturally belonged to the Uchiha clan, I think there is another candidate who deserves far more attention than he receives. And that candidate is Obito Uchiha.

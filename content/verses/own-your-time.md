@@ -5,6 +5,13 @@ date: "2026-10-22"
 publishStatus: "published"
 title: "Own your time"
 format: "poetry"
+tags:
+  - productivity
+  - digital addiction
+  - modern life
+  - time management
+  - social media
+preview: "Stop leasing your life to giant companies. Waste your time if you want, but make sure the nothingness belongs to you."
 ---
 
 I ask no one to be productive.

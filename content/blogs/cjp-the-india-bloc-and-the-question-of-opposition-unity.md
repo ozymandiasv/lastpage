@@ -7,6 +7,13 @@ title: "When Dissent Lands in Jail, Political Differences Must Take a Back Seat"
 subtitle: "The detention of CJP leaders Saurav Das and Ashutosh Ranka raises questions about the right to protest, the limits of state power and the need for opposition unity."
 category: "Politics"
 cover: "/assets/uploads/1791957169888-image.avif"
+tags:
+  - Democratic Rights
+  - Political Dissent
+  - Cockroach Janata Party
+  - Rahul Gandhi
+  - Jantar Mantar
+preview: "The detention of CJP leaders highlights the shrinking space for peaceful protest. Defending democratic rights must transcend political differences."
 ---
 
 The detention of Cockroach Janata Party (CJP) leaders Saurav Das and Ashutosh Ranka, followed by their being sent to five days of judicial custody, has brought the question of democratic dissent back into focus. The Delhi Police alleges that the two breached peace bonds signed after their earlier detention and entered Jantar Mantar despite restrictions on protests at the site. CJP, meanwhile, has challenged the action, with its supporters arguing that the protest involved raising slogans and unfurling the national flag. These competing accounts must be examined through the legal process, and the allegations against the activists should not be treated as established guilt. But there is a larger question here: what happens when the space available for peaceful political dissent begins to shrink? Jantar Mantar has long been associated with public demonstrations, giving ordinary citizens and political movements a visible platform to bring their grievances to the national capital. Its recent denotification as an authorised protest site has therefore raised concerns about where citizens can demonstrate and how restrictions are applied. A government can regulate public spaces, but those regulations must not become a means of making dissent practically impossible. The right to protest is not a favour granted to people by those in power. It is an essential part of democratic life, and the circumstances surrounding these arrests deserve transparent scrutiny.

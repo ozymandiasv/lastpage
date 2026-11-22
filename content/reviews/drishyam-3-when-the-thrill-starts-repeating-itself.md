@@ -9,6 +9,13 @@ category: "Media"
 cover: "/assets/uploads/1791019080574-image.avif"
 reviewType: "Movie"
 rating: 6
+tags:
+  - Drishyam 3
+  - Movie Reviews
+  - Thrillers
+  - Jeethu Joseph
+  - Cinema
+preview: "A review of Drishyam 3, exploring why the franchise's thrills are starting to repeat and how the Hindi version unexpectedly outsmarted the original."
 ---
 
 Spoilers ahead. Drishyam 3: The Conclusion was, overall, a good movie. It kept the franchise’s atmosphere intact, had enough tension to keep me watching, and unlike the Malayalam Drishyam 3, I never felt that the film had completely lost its grip on the thriller aspect. But the biggest problem is also the most obvious one: it felt repetitive. And strangely enough, if I had to compare the Hindi and Malayalam versions, I think the Hindi film actually outsmarted the Malayalam one this time. I never thought I would say that about Drishyam, because the Malayalam films are where this entire thing came from, but here we are.

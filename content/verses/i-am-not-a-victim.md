@@ -4,6 +4,13 @@ published: true
 date: "2026-10-02"
 publishStatus: "published"
 title: "I Am Not a Victim"
+tags:
+  - poetry
+  - self-reflection
+  - isolation
+  - writing
+  - identity
+preview: "I am not a victim, just someone who lost his way and still knows how to write. Explore this raw reflection on silence, blame, and solitude."
 ---
 
 I am someone who does not speak for himself,

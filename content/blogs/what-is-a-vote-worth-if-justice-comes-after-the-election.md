@@ -7,6 +7,13 @@ title: "What Is a Vote Worth If Justice Comes After the Election?"
 subtitle: "One line from the Chief Justice, and why it misses what a vote actually means to the person casting it."
 category: "Politics"
 cover: "/assets/uploads/1790747176681-image.avif"
+tags:
+  - Supreme Court of India
+  - Electoral Rolls
+  - Voting Rights
+  - Ashby v White
+  - By-Elections
+preview: "What is a vote worth if justice arrives after the polls close? Examining electoral rights, delayed remedies, and the timeless problem of Ashby v White."
 ---
 
 On September 28, the Supreme Court was asked to advance the hearing of a West Bengal Special Intensive Revision matter involving more than 18,000 pending appeals from voters whose names had been affected by the electoral-roll revision. The reason for the urgency was straightforward: the Rejinagar and Nandigram by-elections are scheduled for October 6, and the lawyers argued that some of these voters had already been prevented from voting once and could potentially be prevented from voting again. The bench headed by Chief Justice Surya Kant declined to advance the hearing and said the matter would be heard on October 5, one day before polling. During the exchange, the CJI remarked, “These are just bye-elections.”  

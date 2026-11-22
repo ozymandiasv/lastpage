@@ -9,6 +9,13 @@ category: "Media"
 cover: "/assets/uploads/1791515772613-image.avif"
 reviewType: "TV Series"
 rating: 7.5
+tags:
+  - The Boys
+  - Television
+  - Superheroes
+  - Media Satire
+  - Homelander
+preview: "A review of The Boys, exploring how the satirical superhero series dismantles celebrity culture, power, and the modern obsession with image."
 ---
 
 I am not a fan of modern television's obsession with making audiences wait two years between seasons. By the time the next season arrives, I have forgotten half the plot, most of the side characters, and whatever emotional investment I was expected to carry over from the previous finale. Streaming platforms seem convinced that viewers are willing to spend an entire weekend rewatching old episodes before beginning the new season. I have never understood that commitment. A twenty-minute YouTube recap usually does the job. That was exactly my approach with The Boys. I had started the series after Season Three and then spent years waiting for the story to reach its conclusion. Yet despite my usual frustration with modern television, there was always something about this show that kept me interested. Perhaps it was because it never felt like another superhero series. I grew up on DC Comics and still think no cinematic universe has matched the sense of heroism, darkness, and mythology that DC is capable of producing. Marvel Studios achieved something extraordinary with Iron Man and the interconnected universe that followed, but after Avengers Endgame, the genre began to feel exhausted. The Boys arrived at exactly the right moment and refused to play by the rules that had made superheroes popular in the first place.

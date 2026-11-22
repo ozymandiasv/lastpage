@@ -9,6 +9,13 @@ category: "Media"
 cover: "/assets/uploads/1791563498287-image.avif"
 reviewType: "TV Series"
 rating: 9
+tags:
+  - Lost
+  - Television
+  - Dark
+  - Sci-Fi
+  - Reviews
+preview: "A retrospective look at Lost, exploring its ambitious narrative structure, genre-defying transformation, and unexpected parallels to modern prestige TV."
 ---
 
 When I started watching Lost, I expected something along the lines of Lord of the Flies, or perhaps a stylised, slightly more mysterious version of The Beach. A group of strangers stranded on an island, trying to survive, slowly turning against one another as civilisation begins to fall apart. That was the impression the early episodes gave me, and honestly, that premise alone was enough to keep me interested. But somewhere along the way, Lost became something much bigger than I had anticipated. The island began revealing secrets, the characters became increasingly difficult to understand, and every answer seemed to open the door to another mystery. What initially looked like a survival drama gradually transformed into a strange, ambitious mixture of science fiction, philosophy, psychological drama, mythology, and human tragedy. By the time I finished it, I realised that I had watched something far more complex than the series I thought I was getting into.

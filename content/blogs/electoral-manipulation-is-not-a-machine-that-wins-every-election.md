@@ -7,6 +7,14 @@ title: "Electoral Manipulation Is Not a Machine That Wins Every Election"
 subtitle: "Why BJP losing in Kerala or Tamil Nadu does not automatically disprove allegations of strategic electoral manipulation."
 category: "Politics"
 cover: "/assets/uploads/1791819283486-image.avif"
+tags:
+  - Indian Politics
+  - Elections
+  - BJP
+  - Electoral Integrity
+  - Democracy
+  - Maharashtra
+preview: "Allegations of electoral manipulation don't imply universal control. Specific irregularities require investigation regardless of overall election results."
 ---
 
 The argument that the BJP could not be stealing votes because it failed to win Kerala or Tamil Nadu is deeply flawed. It assumes that allegations of electoral manipulation mean the party must be capable of controlling every election in every state. Is that really what people are alleging? Nobody needs to believe that the BJP is omnipotent, or that every election result is manipulated, to question whether electoral irregularities might have influenced particular constituencies. Strategic manipulation, if it occurs, would not necessarily mean changing every vote everywhere. It could mean targeting specific constituencies, exploiting weaknesses in voter registration, or benefiting from irregularities where the electoral contest is close. The argument that the BJP lost somewhere, therefore it could not have benefited from manipulation elsewhere, confuses a specific allegation with an absurd claim of universal control.

@@ -7,6 +7,13 @@ title: "Reservation Was Never About Poverty"
 subtitle: "Why caste still shapes opportunity, representation and the debate over reservation in modern India."
 category: "Culture"
 cover: "/assets/uploads/1790597602052-3.avif"
+tags:
+  - Caste
+  - Reservation
+  - Social Justice
+  - Inequality
+  - India
+preview: "Caste-based reservation was never meant to solve poverty. It was created to address centuries of systemic exclusion and lack of representation."
 ---
 
 It is quite evident that not everyone understands what caste is or what caste-based reservation actually exists for. Many still like to believe that India is a country where caste discrimination has completely disappeared because they live in cities. It is a comforting perspective to have, but reality is far more complicated. The easiest way to test whether caste has disappeared is not by looking at social media or corporate offices but by looking at marriage. The India Human Development Survey found in its second round, conducted in 2011-12, that only about 5% of married women aged 15 to 49 said theirs was an inter-caste marriage, unchanged from the previous round in 2004-05. Roughly 30% of rural and 20% of urban households also said they practised untouchability. Families still ask about caste before agreeing to a marriage, and matrimonial advertisements still proudly mention it. Honour killings over inter-caste marriages continue to happen. If caste had truly disappeared, marriage would have been the first institution where we noticed it. It hasn't. Caste continues to shape people's lives, and because it continues to shape people's lives, it continues to shape opportunities.

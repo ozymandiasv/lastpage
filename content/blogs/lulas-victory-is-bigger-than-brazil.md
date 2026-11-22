@@ -7,6 +7,13 @@ title: "Lula's Victory Is Bigger Than Brazil"
 subtitle: "A victory for the Brazilian left, a setback for Trump's political ambitions, and a little more hope for the Amazon and the planet."
 category: "Politics"
 cover: "/assets/uploads/1793011938534-image.avif"
+tags:
+  - Lula
+  - Brazil
+  - Amazon Rainforest
+  - Far-Right Populism
+  - Global Politics
+preview: "Lula’s victory in Brazil is a critical setback for global far-right populism and offers a vital chance to protect the Amazon rainforest."
 ---
 
 Despite all the propaganda from the right wing, Lula has beaten Flávio Bolsonaro in Brazil's presidential election. I know the margin was not enormous, with Lula winning around 51.8 per cent of the vote, but the political significance of this victory goes well beyond the numbers. In a world where far-right leaders are gaining ground, where nationalism is sold as patriotism and where political opponents are routinely portrayed as enemies of the nation, Brazil has chosen a different path. To me, this feels like a rejection of more than one candidate. It is a setback for the political movement surrounding Donald Trump, for the growing international network of right-wing populism, and for the idea that a country must surrender its independent voice to powerful leaders and their allies. The Bolsonaro family had the backing of a political climate that has favoured the far right across much of the world, yet Lula managed to turn the election around after trailing in the first round. That matters. It shows that the rightward movement is not inevitable, that voters can still reject it, and that the political future is not already decided for us. 

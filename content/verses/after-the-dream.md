@@ -5,6 +5,13 @@ date: "2026-09-19"
 publishStatus: "published"
 title: "After the Dream"
 category: "Life"
+tags:
+  - dreams
+  - memory
+  - longing
+  - existentialism
+  - poetry
+preview: "Are our dreams shared, or do we wake alone? A haunting reflection on memory, unnameable ache, and the desire to escape the waking world."
 ---
 
 Is it my dreams that simply wake me,

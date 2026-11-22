@@ -7,6 +7,13 @@ title: "When the Opposition Takes to the Streets"
 subtitle: "The protests over the Election Commission are becoming a much larger question about trust in Indian democracy."
 category: "Politics"
 cover: "/assets/uploads/1791387523977-image.avif"
+tags:
+  - Indian Politics
+  - Election Commission
+  - Democracy
+  - Protests
+  - Opposition
+preview: "O IV examines the opposition's mass protests over electoral credibility and questions the ruling establishment's silent response."
 ---
 
 The opposition’s protests over the last two days have been striking, not simply because of their size, but because of the breadth of political forces coming together around one issue; the credibility of the electoral process. INDIA bloc parties have taken to the streets, MPs have marched towards the Election Commission, several leaders were detained, and protests have continued beyond Delhi. It is difficult to remember a moment in the post-Emergency period when so many opposition parties have come together so visibly around a question as fundamental as the conduct of elections. The allegations surrounding the voter-roll revision and SIR are still allegations and must ultimately be established through evidence and due process, but they have now created a level of political and public anxiety that cannot simply be dismissed as another opposition campaign. The Election Commission has rejected the allegations, yet the controversy continues to grow, and that itself tells us something important about the level of trust that has been lost.

@@ -7,6 +7,13 @@ title: "Did God Create Us, or Did We Create God?"
 subtitle: "The universe is unimaginably vast, yet humanity seems convinced that the entire exercise revolves around us."
 category: "Philosophy"
 cover: "/assets/uploads/1795316387228-Michelangelo_the_creation_of_adam_meaning_f356496b-ef77-4759-bc81-f23e864cf2b4.avif"
+tags:
+  - Religion
+  - God
+  - Politics
+  - Universe
+  - Society
+preview: "Reflecting on the vastness of the universe, religious authority, and how the idea of God is used to divide people for political and economic control."
 ---
 
 I sometimes find myself sitting and wondering why people are so certain about God. Not necessarily whether God exists, but how confidently we seem to know what God wants, why God created us and what we are supposed to do here. I find the whole idea increasingly difficult to comprehend when I think about the universe. Our galaxy alone contains hundreds of billions of stars, and there are hundreds of billions of galaxies in the observable universe. There are planets we will never see, stars that have already died, galaxies moving away from us and entire regions of the universe whose light will never reach Earth. And somewhere on one insignificant planet, around one ordinary star, a species evolved and began arguing about which God created it. If I were God, I would probably have made a Sun and an Earth and called it a day. Why create all of this? What is the purpose? Why create human beings in the first place? To do what exactly? To fight an army of Satan? To spend eternity singing praises? And if the purpose of creation is simply to receive admiration, isn't that a rather narcissistic arrangement? Imagine creating something whose only purpose is to tell you how wonderful you are. That's essentially an automated script running endlessly and printing, "You are the best." I find the idea difficult to reconcile with the image of an all-powerful, all-knowing creator.

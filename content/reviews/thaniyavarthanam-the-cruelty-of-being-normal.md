@@ -9,6 +9,14 @@ category: "Media"
 cover: "/assets/uploads/1794548379007-Nostalgic_Watercolour_Portrait_in_Sunlight.avif"
 reviewType: "Movie"
 rating: 10
+tags:
+  - Thaniyavarthanam
+  - Malayalam Cinema
+  - Lohithadas
+  - Mental Health
+  - Social Conditioning
+  - Film Review
+preview: "A profound look at Thaniyavarthanam (1987), exploring social conditioning, inherited belief, and the cruel power of a community defining sanity."
 ---
 
 While writing about Kumbalangi Nights, I found myself wondering what I would consider the greatest Malayalam film ever made. The first name that came to mind was Thaniyavarthanam (1987). What a film. And no, it didn't leave me smiling the way Kumbalangi Nights did. It left me questioning almost everything: rituals, inherited beliefs, mental health, social conditioning, oppression and the frightening power of a community to decide what is normal and what isn't. To imagine that this was Lohithadas's very first screenplay makes me immensely proud of Malayalam cinema. I personally consider Thaniyavarthanam one of the greatest Malayalam films ever made, and perhaps my favourite. Its brilliance lies in how it takes something as ordinary as a family history and turns it into a devastating examination of society. The story follows Balan, a schoolteacher from a family believed to carry a hereditary curse of mental illness. When circumstances begin to resemble the family's tragic past, the people around him slowly start treating him as though he is destined to lose his sanity. The tragedy isn't simply about mental illness. It is about what happens when society decides that you are ill before it even considers whether you are.

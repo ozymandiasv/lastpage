@@ -7,6 +7,13 @@ title: "Welcome to the Zeptoverse: How Small Can Reality Get?"
 subtitle: "From particles a trillionth of a billionth of a metre across to the mysteries of dark matter and the origins of our universe."
 category: "Science"
 cover: "/assets/uploads/1794199756033-n.avif"
+tags:
+  - Physics
+  - CERN
+  - Zeptoverse
+  - Particle Physics
+  - Science
+preview: "Explore the Zeptoverse, a realm of unimaginably small distances where scientists use particle collisions at CERN to uncover the mysteries of reality."
 ---
 
 We spend much of our lives looking at things that are either enormous or microscopic, but I wonder how often we actually stop to think about the scale of the universe. We can look at galaxies millions of light-years away, examine cells under microscopes and even study individual atoms. But what happens when we go smaller than an atom, smaller than its nucleus, smaller than the particles that make up that nucleus? This is where things get particularly interesting. On 3 November 2026, scientists working at CERN's Large Hadron Collider announced the first experimental evidence of an extraordinarily rare particle decay after more than four decades of searching. The result has brought physicists closer to exploring something they call the **Zeptoverse**, a realm of incredibly small distances where unknown particles and fundamental forces might be hiding. A zeptometre is \(10^{-21}\) metres, or one trillionth of a billionth of a metre. To put that into perspective, an ordinary atom is roughly 100 billion times larger than a zeptometre. Imagine taking something already invisible to the naked eye, shrinking it another hundred billion times, and then trying to investigate what happens there. That is the scale we are talking about. And somehow, we are beginning to explore it.

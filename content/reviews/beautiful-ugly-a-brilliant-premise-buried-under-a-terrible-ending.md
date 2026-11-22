@@ -9,6 +9,13 @@ category: "Literature"
 cover: "/assets/uploads/1792141487715-image.avif"
 reviewType: "Book"
 rating: 6.5
+tags:
+  - Book Reviews
+  - Beautiful Ugly
+  - Thrillers
+  - Unreliable Narrator
+  - Literary Criticism
+preview: "A brilliant premise and gripping suspense are ultimately derailed by a frustrating ending and weak character logic in this review of Beautiful Ugly."
 ---
 
 !!! SPOILERS !!!

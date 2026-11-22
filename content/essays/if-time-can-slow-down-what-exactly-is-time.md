@@ -7,6 +7,13 @@ title: "If Time Can Slow Down, What Exactly Is Time?"
 subtitle: "The more I learn about time, the less certain I become about what it actually is."
 category: "Science"
 cover: "/assets/uploads/1792470040763-image.avif"
+tags:
+  - Astrophysics
+  - Relativity
+  - Time Dilation
+  - Interstellar
+  - Physics
+preview: "Inspired by Interstellar, an arts student explores Einstein's theories of relativity and the perplexing nature of time as relative rather than universal."
 ---
 
 I am an arts student. I was never particularly curious about astrophysics until I watched Interstellar some twelve years ago. I remember being fascinated by the film without fully understanding what was happening. I usually try to learn a little about the science behind a film before watching it, but Einstein’s theories of relativity were not something I could understand overnight. Still, the film sent me down a rabbit hole that eventually led to a question I had never seriously considered: what exactly is time? Until then, time had been seconds, minutes, hours, days and months. We wake up, the clock moves, the day passes, and tomorrow arrives. There seems to be very little to question. But physics has shown that time does not behave quite the way we experience it. It can pass at different rates for different observers, and there is no universal present moment that everyone in the universe must agree on. We have become remarkably good at measuring time. Whether we understand what it actually is remains a different question.

@@ -6,6 +6,13 @@ publishStatus: "published"
 title: "The Internet Is Showing Its Cracks, and Quantum Computing Is Waiting"
 subtitle: "A critical flaw in PHP has exposed how fragile our digital world can be. As AI accelerates cyberattacks and quantum computing threatens the foundations of encryption, the internet we know may be approaching its biggest transformation yet."
 cover: "/assets/uploads/1792890731249-image.avif"
+tags:
+  - Cybersecurity
+  - PHP Vulnerabilities
+  - Artificial Intelligence
+  - Quantum Computing
+  - Internet Infrastructure
+preview: "Explore how fragile internet infrastructure is exposed by PHP flaws, accelerated by AI, and threatened by the looming rise of quantum computing."
 ---
 
 The recent discovery of critical vulnerabilities in PHP has made me think about just how fragile the internet really is. PHP is one of the technologies that quietly powers a huge part of the web, working behind the scenes of websites, applications and services that millions of people use every day. The newly disclosed flaws could allow attackers to execute code remotely on vulnerable servers without even logging in. Security agencies have issued urgent warnings, and organisations have been forced to identify vulnerable systems and apply patches. What unsettles me is not simply that a flaw exists. Software will always have flaws. It is the realisation that a weakness buried deep inside a widely used technology can put systems across the world at risk. We have built an extraordinary amount of modern life on layers of software that most of us will never understand, let alone inspect. We trust them with our money, conversations, photographs, businesses and identities. Yet sometimes, a mistake in a small part of that enormous structure is enough to put everything connected to it in danger. (Google Cloud)

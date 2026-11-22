@@ -7,6 +7,13 @@ title: "What Does It Mean to Be a Developing Nation When Our Children Are Hungry
 subtitle: "Three in every ten Indian children under five suffer from stunted growth. What does that say about the country we are building?"
 category: "Culture"
 cover: "/assets/uploads/1792656239458-image.avif"
+tags:
+  - India
+  - Child Malnutrition
+  - Poverty
+  - Education
+  - Public Policy
+preview: "Reflecting on child stunting and hunger in India, questioning how a rising nation can overlook the basic needs of its most vulnerable children."
 ---
 
 I came across a report on the Global Hunger Index, and what stayed with me was not India's rank, but a number I could hardly believe: nearly three in every ten Indian children under five suffer from stunting, a condition in which chronic undernutrition impairs their growth and development. Thirty per cent. Three children out of every ten. I live in a city, surrounded by schools, restaurants, supermarkets and the ordinary comforts of urban life. Perhaps that has made it easier for me to remain unaware of the scale of deprivation that exists beyond what I see every day. I knew poverty existed. I knew children went hungry. But knowing something in the abstract and confronting its scale are two entirely different things. Somewhere in this country, a child is growing up without the nutrition necessary for their body and brain to develop properly, while the rest of us go about our lives as though this is an unfortunate but distant reality. That child did not choose their circumstances. They did not choose their parents' income, the village they were born in or the opportunities available to them. Yet the consequences will follow them for years, perhaps for the rest of their lives. I cannot wrap my head around the fact that this is happening on such a scale in a country that speaks so confidently about its rise, its ambitions and its future.

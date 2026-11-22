@@ -7,6 +7,13 @@ title: "Are We Watching Marx's Gravediggers Arrive?"
 subtitle: "Automation, monopolies, artificial intelligence and the contradictions Marx believed capitalism could never escape."
 category: "Philosophy"
 cover: "/assets/uploads/1794450151843-Watercolour_Dawn_Over_an_Industrial_City.avif"
+tags:
+  - Marxism
+  - Capitalism
+  - Automation
+  - Technology
+  - Economy
+preview: "Examining Marx's enduring analysis of capitalism, from global markets to modern automation and AI."
 ---
 
 Every time I read Marx, I find myself wondering how much of what he described is still unfolding around us. His predictions have not all come true, and history certainly hasn't followed the neat revolutionary timeline some Marxists once imagined. But his analysis of capitalism, particularly its tendency to expand, concentrate wealth, replace labour with machinery and periodically plunge into crises, remains remarkably relevant. Look around today. We have massive layoffs, automation, growing corporate monopolies, billionaires accumulating extraordinary wealth and governments increasingly comfortable protecting the interests of powerful businesses. What interests me is that Marx wasn't simply predicting that capitalism would produce rich people. He was examining how the system itself would develop. In *The Communist Manifesto*, published in 1848, Marx and Engels described how capitalism would transform societies, dissolve older economic arrangements and expand beyond national boundaries. The bourgeoisie, they argued, would create a world market, connecting distant economies through trade, production and capital. They also recognised the importance of the modern state and the centralisation of political and economic power. Capitalism was never going to remain confined to individual towns or isolated national markets. Its very nature demanded expansion, competition and the constant search for new markets. When I look at today's global supply chains, multinational corporations and financial markets, I find that particular observation difficult to dismiss.

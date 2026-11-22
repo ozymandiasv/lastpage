@@ -7,6 +7,13 @@ title: "When Democracy Begins to Look Like an Emergency"
 subtitle: "You do not need to declare an Emergency to make people feel that their democratic freedoms are under threat."
 category: "Politics"
 cover: "/assets/uploads/1791618327719-image.avif"
+tags:
+  - Democracy
+  - Delhi Protests
+  - Election Commission
+  - Civil Liberties
+  - Indian Politics
+preview: "Examining the alarming crackdown on peaceful protesters, political leaders, and citizens in Delhi ahead of a planned demonstration."
 ---
 
 What is happening in this country? On October 10, Delhi witnessed an extraordinary crackdown ahead of a planned protest against Chief Election Commissioner Gyanesh Kumar over alleged irregularities in the Special Intensive Revision (SIR) of electoral rolls. Four former Chief Ministers were among those detained: Mamata Banerjee, Arvind Kejriwal, Pinarayi Vijayan and Manik Sarkar. Several other prominent political figures and MPs were also detained, including CPI(M) leaders M. A. Baby, M. V. Govindan, A. Vijayaraghavan, John Brittas, K. N. Balagopal, Brinda Karat, K. K. Shailaja and P. K. Sreemathi. Mamata Banerjee was detained alongside Trinamool Congress MPs, including Derek O’Brien and Dola Sen. 

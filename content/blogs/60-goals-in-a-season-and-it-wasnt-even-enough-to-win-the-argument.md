@@ -7,6 +7,13 @@ title: "60 Goals in a Season, and It Wasn't Even Enough to Win the Argument"
 subtitle: "What the Ronaldo-Messi era did to how we measure greatness, as Ronaldo retires from international football."
 category: "Sports"
 cover: "/assets/uploads/1790864627049-image.avif"
+tags:
+  - Cristiano Ronaldo
+  - Lionel Messi
+  - Real Madrid
+  - Football
+  - El Clásico
+preview: "Reflecting on Cristiano Ronaldo's extraordinary career, his Madrid glory days, and sharing the stage with Lionel Messi as an era comes to a close."
 ---
 
 > Madeira, Manchester, Madrid, Turin and Manchester again. Wreathed in red. Restored to this great gallery of the game. A walking work of art. Vintage. Beyond valuation, beyond forgery or imitation. 18 years since that trembling teenager of touch and tease, first tiptoed on this storied stage; Now in his immaculate maturity; CR7 - Reunited.

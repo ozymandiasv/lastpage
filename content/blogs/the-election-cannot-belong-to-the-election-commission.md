@@ -7,6 +7,13 @@ title: "The Election Cannot Belong to the Election Commission"
 subtitle: "When the people’s right to vote becomes dependent on an institution that refuses to explain its own decisions, democracy itself begins to lose its meaning."
 category: "Politics"
 cover: "/assets/uploads/1791258897717-image.avif"
+tags:
+  - Election Commission
+  - Supreme Court
+  - Form 6 & Form 7
+  - Electoral Rolls
+  - Democracy
+preview: "The Election Commission must be held accountable as questions mount over voter roll deletions, Form 7 weaponisation, and transparency."
 ---
 
 The last two days have made the questions around the Election Commission much more serious. The Supreme Court has now made it clear that it did not approve the modification to Form 6, despite the Election Commission previously saying that the declaration attached to Form 6 had been upheld by the Court. The Commission has since offered another explanation, saying that Form 6 itself was not changed and that an additional declaration was attached during SIR. Whatever the legal distinction eventually turns out to be, the public should not have to watch the Supreme Court and the constitutional authority responsible for elections appear to contradict each other over something as fundamental as voter registration. And when an electoral exercise has involved the removal of crores of names from rolls, the burden of explanation becomes enormous. This is no longer something that can be brushed aside with press statements. Gyanesh Kumar has to answer.

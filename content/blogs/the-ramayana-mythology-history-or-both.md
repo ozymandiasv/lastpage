@@ -7,6 +7,13 @@ title: "The Ramayana: Mythology, History or Both?"
 subtitle: "Separating historical evidence from literary tradition, and understanding what an ancient epic can tell us about the people who created it."
 category: "History"
 cover: "/assets/uploads/1794190915958-dfd.avif"
+tags:
+  - Ramayana
+  - History vs Mythology
+  - Archaeology
+  - Ayodhya
+  - O IV
+preview: "Is the Ramayana history or mythology? Examining archaeology, historicity, and the human world behind the epic."
 ---
 
 With the release of the new Ramayana film, there has been another round of arguments about whether the Ramayana is mythology or history. But I think we should begin with a rather simple question: when we discuss history, which parts of the Ramayana are we actually considering historical? People possessing extraordinary powers, flying through the sky, travelling in flying vehicles, transforming themselves or appearing as beings several times larger than ordinary humans? If we are examining these accounts as literal historical events, we run into an obvious problem. There is no credible scientific or archaeological evidence for such things, and several of these descriptions are incompatible with what we understand about the physical world. You are, of course, free to believe whatever you wish, but belief and historical evidence are two different things. That doesn't mean the Ramayana has no historical value. In fact, I think the more interesting discussion begins when we stop trying to prove every extraordinary event and start examining the human world behind the story. There is a distinction between historicity, which concerns whether something actually happened, and historical relevance, which concerns what a text can reveal about the society, geography and people of the period in which it developed.

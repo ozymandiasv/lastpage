@@ -7,6 +7,13 @@ title: "The World Is Burning Red And Are We Witnessing a Global Left Uprising?"
 subtitle: "From France to Albania, Argentina to India, the streets are filling with angry citizens, students and workers. The flags may differ, the demands may not be identical, but something is happening that deserves our attention."
 category: "Politics"
 cover: "/assets/uploads/1792341744290-image.avif"
+tags:
+  - Global Protests
+  - Austerity
+  - Cost of Living
+  - Political Discontent
+  - Social Movements
+preview: "As protests erupt globally from France to Argentina, are we witnessing a broader political moment fueled by austerity and rising living costs?"
 ---
 
 The world is burning, and it is burning red. I woke up to images of a town hall in France engulfed in flames, thousands of people taking to the streets, and communist flags rising above crowds protesting against deteriorating education, government spending cuts and the rising cost of living. The protests that began around education and public services have expanded into something much bigger, with clashes, arrests and attacks on public buildings accompanying demonstrations across the country. And France is not the only place where discontent has spilled onto the streets. Italy has witnessed violent confrontations during cost-of-living protests, while Albania has seen student-led demonstrations over education, corruption and deteriorating living conditions. In Argentina, students and university workers are challenging Javier Milei’s austerity policies and cuts to public education. Spain is experiencing its own struggles over housing and the cost of living. Chile and Brazil, too, have their own histories of mass mobilisation against economic and political grievances. The United States has witnessed another round of No Kings demonstrations, with crowds protesting against what they consider authoritarian tendencies and calling for greater democratic participation. And in India, people are taking to the streets over the controversial revision of electoral rolls and allegations that eligible voters risk being excluded from the democratic process. These are not all the same protests, nor are they necessarily connected to one another. Yet, when so many societies are experiencing significant public mobilisation within such a short period, it becomes difficult not to wonder whether we are witnessing a broader political moment.

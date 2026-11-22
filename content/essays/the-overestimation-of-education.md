@@ -7,6 +7,13 @@ title: "The Overestimation of Education"
 subtitle: "Education gives you knowledge about specific things, not judgment about everything else."
 category: "Philosophy"
 cover: "/assets/uploads/1789880545100-image.avif"
+tags:
+  - Education
+  - Rationality
+  - Critical Thinking
+  - Belief Systems
+  - Society
+preview: "We assume education guarantees rationality, but degrees don't stop people from believing nonsense. Intelligence often just helps us defend existing beliefs."
 ---
 
 Yesterday I wrote an answer on Reddit about a rather stupid dramatic performance by a minor who has apparently proclaimed himself as God, or a messenger of God, I don’t really know. He was crying before the Ganpati visarjan, asking Ganpati not to go. The whole thing raised a lot of questions for me, especially about what his parents are doing with his sudden popularity and whether this child is slowly being made to believe that he actually is something divine. But what caught my attention were the comments. A lot of people were saying that he is fooling uneducated people and that educated people would see through the act. I understand where that argument comes from, but it also made me wonder if we give education far too much credit.

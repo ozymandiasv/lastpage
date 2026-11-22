@@ -9,6 +9,13 @@ category: "Media"
 reviewType: "Movie"
 rating: 7
 cover: "/assets/uploads/1789453290109-1789398066649-image.avif"
+tags:
+  - Nivin Pauly
+  - Bethlehem Kudumba Unit
+  - Malayalam Cinema
+  - Movie Reviews
+  - Gireesh AD
+preview: "Nivin Pauly makes a powerful return in Bethlehem Kudumba Unit. A look at his comeback, stardom, and how the film handles its controversial age gap."
 ---
 
 This is probably the right time to talk about Bethlehem Kudumba Unit. I watched the movie soon after it came out, and I genuinely enjoyed it. More than anything, the movie gave Nivin Pauly the kind of comeback he had been waiting for. And boy, he didn’t waste the opportunity. He didn’t just make a comeback; he completely took over the market.

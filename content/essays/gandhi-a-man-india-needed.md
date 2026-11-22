@@ -7,6 +7,13 @@ title: "Gandhi: A Man India Needed"
 subtitle: "To understand a historical figure is to see both what he gave us and where he was wrong."
 category: "Politics"
 cover: "/assets/uploads/1790917096006-image.avif"
+tags:
+  - Gandhi
+  - India
+  - History
+  - Politics
+  - Essays
+preview: "Examining Mahatma Gandhi as a historical human being rather than a saint or villain, and his role in transforming resistance into a mass movement."
 ---
 
 Another Gandhi Jayanti, and somehow we seem to be losing the ability to speak about Gandhi as a historical human being rather than as either a saint or a villain. I have immense respect for Gandhi, even though I have plenty of reasons to disagree with him and would certainly not call myself his biggest fan. But I cannot look at his flaws and use them to erase what he contributed. What bothers me even more is watching young people confidently blame Gandhi for things they have barely studied, repeating claims about him without really understanding the circumstances in which he lived or the choices he made. Perhaps political movements have played their part in reshaping his reputation, and perhaps there is also something fashionable about blaming a historical figure simply because it feels rebellious or intellectually convenient. But Gandhi was a man, and India needed that man at that particular moment for particular reasons.

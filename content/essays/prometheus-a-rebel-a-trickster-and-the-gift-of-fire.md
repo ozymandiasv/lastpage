@@ -7,6 +7,13 @@ title: "Prometheus: A Rebel, a Trickster and the Gift of Fire"
 subtitle: "How a character I discovered through Frankenstein became a symbol of everything I admire about curiosity, knowledge and defiance."
 category: "Literature"
 cover: "/assets/uploads/1795265498360-Torchbearer_Above_the_Storm.avif"
+tags:
+  - Greek Mythology
+  - Prometheus
+  - Mary Shelley
+  - Frankenstein
+  - Philosophy
+preview: "Exploring the myth of Prometheus, the trickster titan who defied Zeus to gift humanity fire, knowledge, and the courage to question all limits."
 ---
 
 I recently came across Prometheus, and I must admit that Greek mythology has never been something I explored extensively. My familiarity was mostly limited to Homer's *Iliad* and *Odyssey*. It was when I read Mary Shelley's *Frankenstein* that I became fascinated by this particular figure. The subtitle of the novel, *The Modern Prometheus*, made me curious about the original myth, and the more I read, the more I found myself drawn to him. Prometheus was a Titan who defied Zeus, stole fire from the gods and gave it to humanity. For this, he was condemned to eternal punishment, chained to a rock where an eagle would eat his liver every day, only for it to regenerate and the torment to begin again. There is something extraordinary about this story. Here was a figure willing to challenge the highest authority in existence, knowing very well what the consequences would be, simply because he believed humanity deserved something that had been kept away from it. And perhaps that is where my admiration began.

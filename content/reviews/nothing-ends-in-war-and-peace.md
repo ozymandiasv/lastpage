@@ -9,6 +9,13 @@ category: "Literature"
 cover: "/assets/uploads/1791516113303-image.avif"
 reviewType: "Book"
 rating: 10
+tags:
+  - War and Peace
+  - Leo Tolstoy
+  - Book Reviews
+  - Literature
+  - Character Growth
+preview: "Struggling through Tolstoy's masterpiece at first, I eventually discovered why War and Peace is the greatest novel I have ever read."
 ---
 
 I’ve somehow managed to cultivate a reading habit over the last few years. Whenever I find myself struggling through particularly difficult books, I usually switch to the audiobook instead. That’s exactly what happened with War and Peace.

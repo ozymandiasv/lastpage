@@ -5,6 +5,13 @@ date: "2026-09-23"
 publishStatus: "published"
 title: "The Flinch"
 category: "Life"
+tags:
+  - poetry
+  - regret
+  - self-reflection
+  - acceptance
+  - memory
+preview: "A reflective poem about confronting past mistakes, processing lingering regret, and ultimately finding peace in what remains."
 ---
 
 That sudden flinch,

@@ -7,6 +7,13 @@ title: "Perhaps the INDIA Alliance Has Finally Found Its Voice"
 subtitle: "The November 1 rally at Ramlila Maidan was more than a protest against electoral irregularities. It offered a glimpse of what a coordinated opposition could look like when its leaders finally stand together."
 category: "Politics"
 cover: "/assets/uploads/1793691341538-thd.avif"
+tags:
+  - INDIA Alliance
+  - Indian Politics
+  - Rahul Gandhi
+  - Opposition Politics
+  - Election Commission
+preview: "A look at how the INDIA alliance rally showed newfound unity and leadership, signaling a shift in Indian opposition politics."
 ---
 
 I watched the INDIA alliance march on November 1, and the scale of the gathering was something else. The flags, the crowd, the different political parties sharing the same platform, and the energy surrounding Rahul Gandhi's arrival made it feel considerably more organised than the opposition demonstrations we have seen in the past. I remember the CJP protests too. They were intense, spontaneous and important in bringing public attention to the concerns surrounding the Election Commission. But when the INDIA alliance came together, it felt different. There was a sense of collective political organisation that had been missing for a long time. Of course, the exact attendance figures have become another political argument, with different outlets and parties offering conflicting estimates. But even allowing for that, the gathering was substantial. What interested me most was not simply how many people turned up, but how many different political organisations managed to occupy the same space and communicate a common demand. For an alliance that has often struggled to demonstrate unity beyond parliamentary meetings and election arrangements, that was significant.

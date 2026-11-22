@@ -7,6 +7,13 @@ title: "We Should Not Have to Be Brave to Live Here"
 subtitle: "A response to the Jamui incident, and what a functioning state actually owes an ordinary citizen."
 category: "Life"
 cover: "/assets/uploads/1790126797321-image.avif"
+tags:
+  - Safety
+  - Society
+  - Crime Against Women
+  - India
+  - Personal Freedom
+preview: "Ordinary citizens shouldn't need to be heroes just to feel safe. Reflecting on a disturbing incident in Jamui and our culture of victim-blaming."
 ---
 
 It brings me a strange kind of fear rather than anger. Yesterday I saw a video from Bihar in which two Class 10 students were stopped by a group of men while returning from coaching. What happened afterwards is difficult to even describe without feeling uncomfortable. The girl was harassed and dragged by members of the group while the boy was assaulted when he tried to intervene. The incident happened on September 19 in Jamui and the videos later appeared on social media. Police have identified several people and arrested three so far, while an SIT is investigating the case. What frightened me wasn't just the violence. It was the thought that I am an ordinary person. I am not a superhero, and I don't know how I would react if something like this happened in front of me. I don't want to live in a place where ordinary people are expected to be brave enough to protect themselves from groups of men who have decided that they can stop strangers on the road and demand explanations for their existence.

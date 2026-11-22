@@ -7,6 +7,13 @@ title: "The Quiet Way to Silence a Newsroom"
 subtitle: "Access, not censorship, is becoming the tool of choice for governments who dislike scrutiny."
 category: "Politics"
 cover: "/assets/uploads/1789783674237-image.avif"
+tags:
+  - Press Freedom
+  - Donald Trump
+  - Journalism
+  - Media Access
+  - Politics
+preview: "When governments weaponize access to silence critics, press freedom fades quietly. O IV explores the familiar pattern behind White House media bans."
 ---
 
 A few days ago, I wrote about press freedom in India and how accountability can slowly disappear without anyone officially banning the press. It happens not through some dramatic shutdown of newspapers or mass arrests of journalists, but through something much simpler, making sure difficult questions never reach the people who are supposed to answer them. You can read that piece here, [The Silence Strategy](https://lastpage-oiv.vercel.app/blog/the-silence-strategy/?utm_source=chatgpt.com). Today, the same question came back to me from the other side of the world.

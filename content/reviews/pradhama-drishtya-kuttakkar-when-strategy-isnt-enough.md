@@ -9,6 +9,13 @@ category: "Media"
 cover: "/assets/uploads/1791958937189-image.avif"
 reviewType: "Movie"
 rating: 7
+tags:
+  - Pradhama Drishtya Kuttakkar
+  - Malayalam Cinema
+  - Drishyam
+  - Film Reviews
+  - Thrillers
+preview: "A review of Pradhama Drishtya Kuttakkar, exploring how its battle of wits falters against logical gaps and convenient plotting."
 ---
 
 !!!SPOILER!!!!

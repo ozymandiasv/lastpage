@@ -7,6 +7,13 @@ title: "The Vote Is More Than a Number"
 subtitle: "When questions about electoral rolls become questions about democracy itself."
 category: "Politics"
 cover: "/assets/uploads/1790166827871-image.avif"
+tags:
+  - India
+  - Election Commission
+  - Electoral Rolls
+  - Politics
+  - Democracy
+preview: "Examining serious questions about India's electoral rolls, Election Commission dissent, and the integrity of the voting process."
 ---
 
 For a long time, I have had a feeling that something around India's electoral system was becoming increasingly difficult to ignore. It was not one particular incident, one election or one political speech. It was the accumulation of questions around voter lists, deletions, SIR and the way the Election Commission was handling them. I even found myself affected by the process when my own name was at risk during SIR. I was fortunate to get it back, but that is almost beside the point. What matters is what happens when millions of people are reduced to entries on a database and the process determining whether those entries remain begins to raise serious questions. Then came today's Indian Express investigation, and suddenly the questions became much harder to dismiss.

@@ -7,6 +7,13 @@ title: "Well, Well, Well. Even Trump's Praise Comes With a Price?"
 subtitle: "When diplomatic influence starts looking like expensive public relations."
 category: "Politics"
 cover: "/assets/uploads/1794192137270-ddc.avif"
+tags:
+  - Donald Trump
+  - Narendra Modi
+  - India-US Relations
+  - Lobbying
+  - Politics
+preview: "Unpacking the lobbying contracts behind Trump's praise for Modi and why government transparency on public spending matters."
 ---
 
 Well, well, well. Just when you think things cannot get any more embarrassing, another story emerges. According to a report by The Wire, a US lobbying firm called Mercury Public Affairs, which was hired by the Indian government at a monthly retainer of $75,000 (approximately ₹70 lakh), listed Donald Trump's congratulatory social media post about Narendra Modi becoming India's longest-serving head of government among the activities it had undertaken. Let that sink in for a moment. A post that was celebrated across India's political ecosystem as a diplomatic achievement, with people presenting Trump's words as recognition of Modi's global standing, now appears in the activity report of a firm being paid by the Indian Embassy. To be clear, the documents do not establish that Trump personally received money to publish the post, or that the message itself was commissioned by the Indian government. The firm says it disseminated the post. But even that raises an uncomfortable question: why does a country of India's size and diplomatic standing need an expensive lobbying arrangement to amplify a congratulatory message from the American President? Was this really the diplomatic achievement we were told it was, or was the celebration itself part of a carefully managed public relations exercise?

@@ -7,6 +7,13 @@ title: "Diwali Is a Festival of Lights, Not Smoke"
 subtitle: "On tradition, fireworks, and the price we pay for a few moments of celebration."
 category: "Culture"
 cover: "/assets/uploads/1794189251735-df.avif"
+tags:
+  - Diwali
+  - Air Pollution
+  - Traditions
+  - Environment
+  - Festivals
+preview: "Diwali is fundamentally about lights, not smoke. Let's separate ancient traditions from modern pollution and protect our air quality."
 ---
 
 I am not against bursting crackers. I am against bursting crackers when our air quality is already struggling to remain breathable. Last year, the morning after Diwali, I could barely see five metres ahead of me. And this isn’t some minor inconvenience that disappears when the festivities are over. We are talking about the air we breathe, the environment we live in and the health of people who have absolutely no choice but to inhale whatever we collectively decide to release into the atmosphere. I cannot honestly say I don’t enjoy watching fireworks. They look beautiful, and there’s something fascinating about watching the night sky light up. But beauty doesn’t make something harmless. When the air is already polluted, adding tonnes of smoke and particulate matter to it is not exactly an intelligent way to celebrate. Research conducted across Indian cities has repeatedly recorded significant increases in particulate matter and other pollutants during Diwali, with unfavourable weather conditions sometimes trapping that pollution close to the ground. We are not imagining the problem. We are measuring it and then choosing to ignore it.

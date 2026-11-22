@@ -7,6 +7,13 @@ title: "When the Charges Do Not Match the Accusation"
 subtitle: "How a missed statutory deadline in a terror case reveals more about the system than about the accused."
 category: "Politics"
 cover: "/assets/uploads/1790385996483-image.avif"
+tags:
+  - National Investigation Agency
+  - UAPA
+  - Matthew Aaron VanDyke
+  - State Power
+  - Legal Analysis
+preview: "Examining the gap between extraordinary state accusations like terrorism and the actual charges filed in the Matthew Aaron VanDyke case."
 ---
 
 There is something uncomfortable about the way words like terrorist, terror conspiracy and national security are used by the state. These are not ordinary accusations, and I find it difficult to read them as just another part of a criminal investigation. Once such words are attached to someone’s name, the consequences begin long before a court determines guilt. Liberty can be taken away, reputations can be destroyed and years can pass while an investigation continues. That is precisely why I think the more extraordinary the accusation, the more carefully the machinery behind it should be examined. The recent case involving American national Matthew Aaron VanDyke made me stop and look at that machinery. VanDyke and six Ukrainian nationals were arrested by the National Investigation Agency in March over allegations that they had conspired to carry out terrorist activities and provide drone-warfare training to Myanmar-based armed groups. The original case involved the Unlawful Activities (Prevention) Act, or UAPA. But when the 180-day period for completing the investigation expired on September 8, the NIA filed a chargesheet invoking Sections 21 and 23 of the Immigration and Foreigners Act, 2025, while keeping the UAPA investigation open.

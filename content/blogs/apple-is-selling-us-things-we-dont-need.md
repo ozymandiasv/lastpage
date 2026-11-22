@@ -7,6 +7,13 @@ title: "Apple Is Selling Us Things We Don’t Need"
 subtitle: "From touchscreen MacBooks to glowing logos, the company that once told us not to chase gimmicks seems increasingly interested in selling them. Perhaps the problem is not what technology can do, but what capitalism wants us to buy."
 category: "Technology"
 cover: "/assets/uploads/1793513570805-222.avif"
+tags:
+  - Apple
+  - MacBook Pro
+  - Technology
+  - Consumerism
+  - Steve Jobs
+preview: "O IV questions whether Apple's latest touchscreen MacBook Pro represents genuine technological progress or simply another attempt to manufacture desire."
 ---
 
 I still remember using my friend’s Microsoft Surface laptop. It had a touchscreen, a fancy removable display and all sorts of features that seemed exciting at first. It was fun to play around with for a while, but eventually I got bored and wanted my trackpad or a mouse. Honestly, I have never been particularly comfortable using Windows laptop trackpads, so I usually prefer a mouse anyway. But that is beside the point. I hated the touchscreen laptop experience. Steve Jobs had argued years ago that vertical touchscreens were ergonomically awkward and that touchscreen laptops were a poor idea. Apple itself spent years maintaining that position. And now, guess who has made a touchscreen MacBook? Apple. The new MacBook Pro with M5 Pro and M5 Max has a touchscreen, an OLED display and a redesigned interface. The starting price is already ₹3,49,900, but the fully customised M5 Max configuration can reach an astonishing ₹17.2 lakh in India. Yes, a laptop costing more than many cars. At that point, I genuinely wonder who this product is for and whether we have completely lost perspective on what a computer is supposed to do. I understand that technology evolves and companies change their minds, but I cannot help wondering whether we are witnessing innovation or simply another attempt to manufacture desire. If someone genuinely needs a touchscreen for their professional workflow, fine. But why should the rest of us be persuaded that a laptop without one is somehow incomplete?

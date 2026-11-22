@@ -7,6 +7,13 @@ title: "Who Actually Discovered Gravity?"
 subtitle: "From Aristotle to Newton to Einstein, the story of how humanity slowly figured out why things fall."
 category: "Science"
 cover: "/assets/uploads/1793693627977-gravity.avif"
+tags:
+  - Physics
+  - History of Science
+  - Gravity
+  - Aristotle
+  - Galileo Galilei
+preview: "From Aristotle to Galileo and beyond: who actually discovered gravity, and how did our understanding of falling objects evolve?"
 ---
 
 An old clip of Piyush Goyal has started circulating again. In it, he makes a rather interesting remark about Einstein and gravity, suggesting that mathematics didn't help Einstein discover it. The clip resurfaced after another comment of his about a "360-degree change" in India's image, which was stupid because a 360-degree turn brings you right back to where you started. Mathematics became a recurring character in these conversations. But the Einstein remark reminded me of something more interesting. I commented on a comment criticising Goyal's statement that if "technically if Newton discovered gravity, Einstein redefined it." I was surprised by how many people thought I was simply defending Goyal. I wasn't. I don't know what Goyal intended to say, or how would he make any logic in saying math isn't important in calculating GDP (in the original context of Einstein statement). But I do think the history of gravity deserves more than a viral clip and a few arguments in the comments section. So, who actually discovered gravity? Well, let's go back a little.

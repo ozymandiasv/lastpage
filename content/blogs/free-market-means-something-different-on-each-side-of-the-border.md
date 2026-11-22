@@ -7,6 +7,13 @@ title: "Free Market Means Something Different on Each Side of the Border"
 subtitle: "How Congress just handed Trump a tariff weapon that exposes America's own double standard on Russia."
 category: "Politics"
 cover: "/assets/uploads/1789811475224-image.avif"
+tags:
+  - Donald Trump
+  - India-US Trade
+  - Tariffs
+  - Russia
+  - Foreign Policy
+preview: "As Trump threatens tariffs over Russian trade, the contradictions in US-India economic relations and free market standards come into focus."
 ---
 
 Back to back Trump blogs. A new beginning, perhaps. But that man never seems to stop being controversial. Yesterday I was writing about the White House and press freedom. Today it's India, Russia, trade, and a decision that could let Donald Trump impose tariffs of up to 100% on countries that keep buying certain things from Russia. Congress has approved legislation giving the President that authority, though that doesn't mean India or China automatically face a 100% tariff. The final call still rests with Trump. According to several reports, India is among the countries that could be hit. What makes this particularly uncomfortable is that it's all happening while India and the United States are trying to expand their economic relationship at the same time.

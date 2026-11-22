@@ -7,6 +7,13 @@ title: "The AI Bubble: Haven't We Seen This Before?"
 subtitle: "Market crashes, technological revolutions and why the recent sell-off doesn't necessarily mean AI is going anywhere."
 category: "Technology"
 cover: "/assets/uploads/1794415650421-Watercolour_Market_in_Transition.avif"
+tags:
+  - Artificial Intelligence
+  - Market Corrections
+  - Tech Bubbles
+  - Economic History
+  - Semiconductors
+preview: "Stock market corrections don't mean AI has failed. History shows that speculative bubbles are a standard phase of every major technological revolution."
 ---
 
 If you think the AI bubble has burst because of the recent market crashes in China and the United States, I suspect you haven't looked closely enough at how this system has always operated. Every major technological revolution attracts enormous investment, speculation, unrealistic expectations and, eventually, a correction. Investors rush to put their money into whatever they believe will define the future, valuations shoot up, companies compete to build infrastructure and everyone wants a piece of the next big thing. Eventually, reality catches up with expectations. Some companies collapse, some investors lose fortunes and the market corrects itself. We have seen this happen repeatedly, and AI isn't magically exempt from the process. In China, the STAR 50 index, which includes major technology and semiconductor companies, lost around 40% of its value in less than four months, wiping out approximately $480 billion in market capitalisation. In the US, the November sell-off pushed the Nasdaq into correction territory, with semiconductor and AI-related stocks particularly affected. Investors are questioning whether the enormous expenditure on data centres, chips and computing infrastructure will actually generate sufficient returns. These are legitimate concerns, but a correction in the stock market doesn't mean the underlying technology has failed. Sometimes the market is simply correcting the price people are willing to pay for a future that hasn't arrived yet.

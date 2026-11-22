@@ -7,6 +7,13 @@ title: "Netanyahu May Have Lost the Election, But Has He Lost Power?"
 subtitle: "Israel’s election has left Netanyahu struggling to secure a parliamentary majority. But the growing influence of Arab parties and the possibility of an Eisenkot-led government have made the political outcome far more complicated."
 category: "Politics"
 cover: "/assets/uploads/1793338070623-11image.avif"
+tags:
+  - Benjamin Netanyahu
+  - Gadi Eisenkot
+  - Israel
+  - Israeli Elections
+  - Middle East Politics
+preview: "Israel's election leaves Benjamin Netanyahu without a clear majority, placing Arab parties in a decisive role to shape the country's political future."
 ---
 
 A couple of days ago, I wrote about the growing political challenges facing Donald Trump ahead of the American midterm elections. I also mentioned how the political tide seemed to be shifting against the right in different parts of the world. Israel has now added another interesting chapter to that discussion. The election held on 27 October has left Benjamin Netanyahu without a clear path to a parliamentary majority. His political bloc is projected to hold 53 seats, while the opposition bloc led by former military chief Gadi Eisenkot has 48. Neither comes close to the 61 seats required to form a government in the 120-member Knesset. What makes this particularly interesting is that the Arab parties have emerged with approximately 19 seats, giving them a potentially decisive role in determining who governs Israel. Netanyahu has not necessarily been defeated in the sense that his political opponents have already formed a government, but his ability to continue governing is now seriously in question. And just when I thought the broader political picture was becoming easier to read, Israel has made it considerably more complicated.

@@ -7,6 +7,13 @@ title: "India's Fusion Story Didn't Start This Week"
 subtitle: "On ADITYA, SST-1, and the decades of quiet groundwork behind a headline about artificial suns."
 category: "Technology"
 cover: "/assets/uploads/1789476347794-image.avif"
+tags:
+  - India
+  - Nuclear Fusion
+  - SST-1 Tokamak
+  - Plasma Physics
+  - Science & Technology
+preview: "Discover the deep roots of India's nuclear fusion programme, from early plasma research to the recent gyrotron upgrade on the SST-1 tokamak."
 ---
 
 That caught me off guard. I had no idea India was even in this race. What struck me just as much was how strange most of the comments on the tweet were. People were asking why we need "another Sun," or why we're "challenging nature," things like that. A lot of people clearly don't have the background to understand what this actually is.

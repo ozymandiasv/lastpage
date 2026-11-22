@@ -7,6 +7,13 @@ title: "Culture Was Never Meant to Stay Pure"
 subtitle: "On Halloween, cultural identity, and our rather selective understanding of tradition."
 category: "Culture"
 cover: "/assets/uploads/1793965931260-123.avif"
+tags:
+  - Culture
+  - Globalization
+  - Tradition
+  - Identity
+  - Society
+preview: "Culture was never meant to stay pure. Explore why cultural exchange, adaptation, and borrowing are natural parts of how societies evolve."
 ---
 
 I recently came across a post criticising people in India for celebrating Halloween, describing it as a Western cultural influence and suggesting that we have somehow started finding foreign traditions cooler than our own. Now, I personally wouldn’t celebrate Halloween. I find the whole thing a little weird, but that’s just me. What I find even weirder is how difficult it seems for people to accept that others might enjoy something they don’t. Why does somebody dressing up as a vampire or decorating their house with pumpkins suddenly become a threat to Indian culture? How fragile must our cultural identity be if a few Halloween parties can supposedly undermine it? I understand wanting to preserve traditions, languages and cultural identities, but preservation doesn’t have to mean isolation. We wear trousers and shirts, use European-style toilets, shake hands, follow the Gregorian calendar and communicate in English. None of these originated in India, yet they are perfectly ordinary parts of our lives. We have adopted things from other societies for centuries, often without even thinking about where they came from.

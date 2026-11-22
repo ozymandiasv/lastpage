@@ -3,6 +3,12 @@ type: "Note"
 published: true
 date: "2026-09-28"
 publishStatus: "published"
+tags:
+  - economics
+  - taxation
+  - policy
+  - markets
+  - governance
 ---
 
 High inflation? Global triggers.

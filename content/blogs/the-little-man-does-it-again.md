@@ -7,6 +7,13 @@ title: "The Little Man Does It Again"
 subtitle: "Age may have changed the game, but somehow it hasn’t changed Messi’s magic."
 category: "Sports"
 cover: "/assets/uploads/1790679325928-Unknown.avif"
+tags:
+  - Lionel Messi
+  - Football
+  - Inter Miami
+  - MLS
+  - Free Kick
+preview: "Even at 39, Lionel Messi finds ways to surprise us. A stunning free kick for Inter Miami proves his genius remains as bright as ever."
 ---
 
 I honestly don’t know what Messi has left to surprise us with. At 39, when most footballers have already walked away from the game, he is still finding ways to make us sit up and wonder how he continues to do this. Yesterday’s free kick was one of those moments. From an angle where most players would probably look for a cross, Messi saw the goal, took the risk and curled the ball beautifully into the far corner. It was the kind of free kick that looks almost casual when he does it, which somehow makes it even more ridiculous.

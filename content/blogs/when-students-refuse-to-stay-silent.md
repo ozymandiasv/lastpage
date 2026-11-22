@@ -7,6 +7,13 @@ title: "When Students Refuse to Stay Silent"
 subtitle: "Why a student movement for safety deserves answers, and why outsiders shouldn't become the convenient explanation."
 category: "Politics"
 cover: "/assets/uploads/1790594821480-2.avif"
+tags:
+  - Student Protests
+  - Lovely Professional University
+  - Campus Safety
+  - Free Speech
+  - Investigations
+preview: "Reflecting on the LPU student protests, institutional accountability, and why the instinct to question authority matters regardless of the outcome."
 ---
 
 What happened at Lovely Professional University is disturbing, but what interests me most is the reaction of the students. The protests began after allegations that a female student had been sexually assaulted on campus by an outsider and that the hostel warden had been informed but failed to act. The university denied the allegations and initially described them as false and fabricated. Police nevertheless registered a rape case against an unidentified person and formed an SIT to investigate. At this point, the allegation itself has not been established, and that distinction matters. But so does the fact that students clearly felt that something was wrong enough to take to the streets.  

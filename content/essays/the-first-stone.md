@@ -7,6 +7,14 @@ title: "The First Stone"
 subtitle: "I no longer know what I believe about God, but the words of Jesus still make me stop and think."
 category: "Philosophy"
 cover: "/assets/uploads/1792561606820-image.avif"
+tags:
+  - Agnosticism
+  - The Chosen
+  - Mary Magdalene
+  - Lilith
+  - Faith
+  - Identity
+preview: "Reflecting on faith, agnosticism, and a powerful moment from 'The Chosen' about being truly seen and called by your real name."
 ---
 
 Though I was born and raised a Christian, I find it difficult to call myself religious anymore, at least not in the traditional sense. I do not attend church regularly, quote scripture in everyday conversations, or shape my life around divine commandments. But I cannot call myself an atheist either. I do not know whether there is a higher power, and I am not convinced that I need to arrive at a definite answer. I suppose agnosticism comes closest to describing where I stand, though even that feels like putting a label on something I am still trying to understand. I am open to belief, but unconvinced. For now, I find myself more comfortable admitting what I do not know than pretending to be certain.

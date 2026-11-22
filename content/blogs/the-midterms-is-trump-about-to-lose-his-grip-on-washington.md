@@ -7,6 +7,13 @@ title: "The Midterms: Is Trump About to Lose His Grip on Washington?"
 subtitle: "Why America’s November elections matter, how Congress works, and why the results could become a serious problem for Donald Trump."
 category: "Politics"
 cover: "/assets/uploads/1793337945570-1image.avif"
+tags:
+  - US Politics
+  - Midterm Elections
+  - Donald Trump
+  - US Congress
+  - Political Analysis
+preview: "An analysis of the 2026 US midterm elections, examining how Trump's low approval ratings threaten his control over Congress."
 ---
 
 Before understanding the midterms, it helps to understand how the American political system works. The US Congress is the country’s legislature, responsible for making federal laws, approving budgets, investigating the government and exercising checks on the President. It has two chambers: the House of Representatives and the Senate. The House has 435 voting members, called Representatives, elected from districts according to population. They serve two-year terms, so every seat is contested every two years. The Senate has 100 members, with two representing each state regardless of population. Senators serve six-year terms, with roughly one-third of the seats contested every two years. If you are familiar with Indian politics, think of the House as somewhat similar to the Lok Sabha and the Senate as somewhat similar to the Rajya Sabha. Both systems have two legislative chambers, but the comparison is not exact: America’s Senate is directly elected, and its members have much greater independence from state governments than India’s Rajya Sabha members. Together, these two chambers form Congress, and both have to agree on federal legislation. A President may occupy the White House, but he cannot simply make every decision without dealing with Congress.  

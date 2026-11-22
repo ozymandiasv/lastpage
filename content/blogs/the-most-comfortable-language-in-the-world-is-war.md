@@ -7,6 +7,13 @@ title: "The Most Comfortable Language in the World Is War"
 subtitle: "How strikes become \"successful\" and retaliation becomes \"necessary\" while the human cost gets left out of the sentence."
 category: "Politics"
 cover: "/assets/uploads/1789969738739-image.avif"
+tags:
+  - Geopolitics
+  - War and Conflict
+  - Russia-Ukraine War
+  - US-Iran Relations
+  - Global Violence
+preview: "An examination of how the normalized language of retaliation and justification keeps the cycle of global conflict spinning endlessly."
 ---
 
 Wars and boasting seem to be becoming more constant than I remember. I went and checked the numbers, since I couldn't tell if this was just the feeling that creeps in from reading too much news. Turns out it wasn't far off. ACLED recorded more than 185,000 violent events around the world in 2025, nearly twice what it recorded in 2021, with more than 56,000 incidents specifically targeting civilians.

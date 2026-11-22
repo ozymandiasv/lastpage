@@ -9,6 +9,13 @@ category: "Media"
 cover: "/assets/uploads/1794548222586-Watercolour_Backwater_Cottage_Retreat.avif"
 reviewType: "Movie"
 rating: 10
+tags:
+  - Kumbalangi Nights
+  - Malayalam Cinema
+  - Madhu C. Narayanan
+  - Film Review
+  - Fahadh Faasil
+preview: "An appreciation of Kumbalangi Nights, exploring the genuine characters, stellar performances, and a profound cinematic happiness that lingers."
 ---
 
 Yesterday, I came across a post announcing that Madhu C. Narayanan's next directorial venture had completed shooting, and it made me want to write about his first film all over again. This man has directed just one feature film so far, and that film was Kumbalangi Nights (2019). I admire Malayalam cinema deeply. I genuinely believe it is one of the richest film industries in India, and I wouldn't hesitate for even a moment to call Kumbalangi Nights one of the finest films of modern Malayalam cinema. It took a collection of relatively young, emerging actors and brought them together to create something extraordinary. But what makes this film particularly special to me is the way it ends. There is a certain happiness you experience when a film concludes, something that is incredibly difficult to describe. I have felt it while watching older Malayalam classics, Dead Poets Society, Scent of a Woman and a handful of other films. It isn't simply happiness because the story has a happy ending. It is something deeper, almost as though your heart has been filled with the beauty of what you have just witnessed. Kumbalangi Nights was the last film that left me with that feeling.

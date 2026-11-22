@@ -7,6 +7,13 @@ title: "Inquilab Zindabad: India’s Long History of Defiance"
 subtitle: "From the revolts against colonial rule to the Emergency and the protests of today, India’s history belongs to those who refused to be silenced."
 category: "History"
 cover: "/assets/uploads/1791688041170-image.avif"
+tags:
+  - India
+  - History
+  - Resistance
+  - Dissent
+  - Revolt of 1857
+preview: "Explore India's long, unbroken history of defiance, from early colonial resistance to modern protests, proving dissent shapes the nation."
 ---
 
 India’s history is not merely the history of kings who ruled, empires that rose and fell, or governments that came to power. It is also the history of people who challenged authority, resisted exploitation and refused to accept that power gave anyone the right to silence them. From the Koonan Kurishu Sathyam of 1653 to the Attingal Revolt of 1721, from the uprising of 1857 to the revolutionary cry of Inquilab Zindabad, the subcontinent has witnessed countless struggles against authority. The story continued through the Swadeshi movement, the Salt March, the Quit India Movement, the resistance during the Emergency, the farmers’ protests and the demonstrations of recent years. These events emerged from different circumstances, and their participants did not always share the same objectives. Some fought foreign domination, others challenged social injustice, and many demanded accountability from governments of their own country. Yet they form part of a larger historical tradition, the determination of people to question power and fight for what they believe is right. Dissent is not an interruption of India’s history. It is one of the forces that has repeatedly shaped it.

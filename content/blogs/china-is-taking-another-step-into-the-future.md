@@ -7,6 +7,13 @@ title: "China Is Taking Another Step Into the Future"
 subtitle: "The CE-25A, electric aviation and a country that seems determined to surprise the world."
 category: "Technology"
 cover: "/assets/uploads/1794977851169-COMAC_CE-25A_Takes_Flight.avif"
+tags:
+  - Electric Aviation
+  - China
+  - COMAC
+  - CATL
+  - Aerospace Engineering
+preview: "China's CE-25A fully electric aircraft completes its first piloted flight, signaling a major milestone for the future of regional aviation."
 ---
 
 Every now and then, I come across something that genuinely makes me stop and admire what human engineering is capable of. This time, it is the CE-25A, China's newly developed, fully electric commercial aircraft. A couple of days ago, the aircraft completed its first piloted flight in Shandong, carrying two pilots and a flight-test engineer. And what makes it particularly fascinating is its design. Instead of conventional jet engines or turboprop engines, the aircraft uses ten electric ducted fans distributed across its wings, five on each side. It is a 10-tonne aircraft designed to carry 19 passengers, with a cruising speed of around 300 kilometres per hour and a reported range of 400 kilometres. Just imagine boarding a passenger aircraft that operates entirely on electric propulsion. We have spent decades electrifying cars, then buses and trucks, and now we are beginning to see serious attempts to take that technology into commercial aviation. The CE-25A is still a prototype undergoing testing, but its first piloted flight is a remarkable engineering milestone. And I find the idea of electric regional aviation particularly exciting.

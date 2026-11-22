@@ -6,6 +6,14 @@ title: "The Silence Strategy"
 subtitle: "Two incidents, one week apart, show how accountability in India is quietly being opted out of."
 category: "Politics"
 cover: "/assets/uploads/1789395543688-image1.avif"
+tags:
+  - Press Freedom
+  - Journalism
+  - Indian Politics
+  - Yogi Adityanath
+  - Accountability
+  - Media
+preview: "An analysis of how political leaders avoid tough questions through controlled press conferences, strategic silence, and targeted deflection."
 ---
 
 Remember when Prime Minister Narendra Modi dodged a journalist's question during his recent visit to Norway? Unfortunately, that wasn't an isolated moment. Our World Press Freedom Index rank is extremely low: we are currently ranked 157 out of 180 countries, close to countries like Pakistan and Bangladesh. India's decline in this ranking over the years has been significant, and it raises serious questions about how much space journalists actually have to question those in power. What bothers me isn't just a number on a ranking, though. It's the silence when questions are actually asked. I recently watched a journalist question Uttar Pradesh Chief Minister Yogi Adityanath and get nothing back. When someone in power is asked a legitimate question and simply refuses to answer, that silence can say more than any answer would. And silence, it turns out, isn't even the only tactic.

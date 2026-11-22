@@ -7,6 +7,13 @@ title: "The Trouble With a Boring, Happy Couple"
 subtitle: "From American sitcoms to Indian soaps, entertainment shapes our sense of normal more than our actions."
 category: "Culture"
 cover: "/assets/uploads/1789635182294-image.avif"
+tags:
+  - Relationships
+  - Television
+  - Culture
+  - Media Influence
+  - Statistics
+preview: "How television shapes our perception of modern romance, and the vast gap between fictional dating habits and statistical reality."
 ---
 
 I was watching the trailer for a series called The Miniature Wife, and a comment underneath it caught me off guard. Someone was thrilled that Hollywood had finally shown a healthy romantic relationship. Why would someone specifically notice and celebrate the fact that a fictional series was showing a healthy relationship? And considering that The Miniature Wife is a sitcom, I also have my doubts about how long that healthy relationship is going to remain healthy. A couple that communicates, trusts each other and stays faithful makes for a great marriage. It doesn't make for great television. Add an ex who won't stay gone, a secret affair, a love triangle, and you've got a season's worth of plot. That comment stuck with me longer than the show itself. Entertainment doesn't tell us how to live, but it shapes what we think normal looks like.

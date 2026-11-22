@@ -7,6 +7,13 @@ title: "The Energy War Nobody's Talking About"
 subtitle: "Fission got us here, but fusion is the technology that could decide who leads the next century."
 category: "Science"
 cover: "/assets/uploads/1789521660630-image.avif"
+tags:
+  - Energy
+  - Fusion
+  - Fission
+  - Nuclear
+  - Science
+preview: "Fission powers our world today, but fusion holds the key to our future. Explore the high-stakes energy war nobody is talking about."
 ---
 
 I keep coming back to one idea whenever I read about fusion. Whoever actually cracks this problem doesn't just solve an energy problem. They rewrite what's possible for the next century. That sounds dramatic, but the more I read about fission and fusion side by side, the more I think it's actually true.

@@ -62,11 +62,13 @@
 
   document.getElementById('loginForm').addEventListener('submit', async (e) => {
     e.preventDefault();
+    const userEl = document.getElementById('loginUsername');
+    const username = userEl ? userEl.value.trim() : '';
     const pw = document.getElementById('loginPassword').value;
     const err = document.getElementById('loginError');
     err.textContent = '';
     try {
-      await api('/api/login', { method: 'POST', body: { password: pw } });
+      await api('/api/login', { method: 'POST', body: { username, password: pw } });
       loginScreen.classList.add('hidden');
       app.classList.remove('hidden');
       router();
@@ -186,11 +188,30 @@
           <td>${esc(p.date) || '—'}</td>
           <td><span class="pill ${p.scheduled ? 'pill-scheduled' : (p.published ? 'pill-published' : 'pill-draft')}">${p.scheduled ? 'Scheduled' : (p.published ? 'Published' : 'Draft')}</span></td>
           <td class="row-actions">
+            <select class="type-changer-select" data-type-for="${p.typeId}/${p.slug}" title="Change type">
+              ${cfg.contentTypes.map(t => `<option value="${t.id}" ${t.id === p.typeId ? 'selected' : ''}>${t.label}</option>`).join('')}
+            </select>
             <a class="btn btn-sm" href="#/editor/edit/${p.typeId}/${p.slug}">Edit</a>
             <button class="btn btn-sm btn-danger" data-del="${p.typeId}/${p.slug}">Delete</button>
           </td>
         </tr>
       `).join('') : '<tr><td colspan="6" class="small-note" style="padding:20px 10px;">No posts match.</td></tr>';
+
+      document.getElementById('postsTableBody').querySelectorAll('.type-changer-select').forEach(sel => {
+        sel.addEventListener('change', async () => {
+          const [currType, slug] = sel.dataset.typeFor.split('/');
+          const newType = sel.value;
+          if (newType === currType) return;
+          try {
+            await api(`/api/posts/${currType}/${slug}`, { method: 'PUT', body: { newType } });
+            toast(`Moved to ${TYPE_LABELS[newType] || newType}`, 'success');
+            load();
+          } catch (err) {
+            toast(err.message, 'error');
+            sel.value = currType;
+          }
+        });
+      });
 
       document.getElementById('postsTableBody').querySelectorAll('[data-del]').forEach(btn => {
         btn.addEventListener('click', async () => {
@@ -287,6 +308,14 @@
         </div>
 
         <div class="editor-sidebar">
+          <div class="panel">
+            <label for="eTypeSelect">Post type</label>
+            <select id="eTypeSelect" style="width:100%;">
+              ${cfg.contentTypes.map(t => `<option value="${t.id}" ${t.id === type ? 'selected' : ''}>${t.label}</option>`).join('')}
+            </select>
+            <div class="small-note" style="margin-top:5px;">Change type to move between Essay, Blog, Review, Note, Verse.</div>
+          </div>
+
           <div class="panel">
             <label>Status</label>
             <select id="ePublishStatus" style="width:100%;">
@@ -542,8 +571,9 @@
     document.getElementById('eSave').addEventListener('click', async () => {
       const publishStatus = publishStatusEl.value;
       const selectedDate = document.getElementById('eDate').value;
+      const targetType = document.getElementById('eTypeSelect') ? document.getElementById('eTypeSelect').value : type;
       const data = Object.assign({}, post.data, {
-        type: TYPE_LABELS[type],
+        type: TYPE_LABELS[targetType] || TYPE_LABELS[type],
         published: publishStatus === 'published',
         publishStatus,
         date: selectedDate,
@@ -555,33 +585,46 @@
       } else {
         delete data.scheduledDate;
       }
-      if (!isNote) {
-        data.title = document.getElementById('eTitle').value.trim();
-        data.subtitle = document.getElementById('eSubtitle').value.trim();
-        data.category = document.getElementById('eCategory').value;
-        data.cover = document.getElementById('eCover').value.trim();
+      if (targetType !== 'note') {
+        const titleEl = document.getElementById('eTitle');
+        data.title = titleEl ? titleEl.value.trim() : (post.data.title || '');
+        const subEl = document.getElementById('eSubtitle');
+        data.subtitle = subEl ? subEl.value.trim() : (post.data.subtitle || '');
+        const catEl = document.getElementById('eCategory');
+        data.category = catEl ? catEl.value : (post.data.category || '');
+        const covEl = document.getElementById('eCover');
+        data.cover = covEl ? covEl.value.trim() : (post.data.cover || '');
         const prevEl = document.getElementById('ePreviewText');
         if (prevEl) data.preview = prevEl.value.trim();
         if (!data.title) return toast('Title is required', 'error');
+      } else {
+        const titleEl = document.getElementById('eTitle');
+        if (titleEl && titleEl.value.trim()) data.title = titleEl.value.trim();
       }
-      if (isReview) {
-        data.reviewType = document.getElementById('eReviewType').value;
-        data.rating = Number(document.getElementById('eRating').value || 0);
+      if (targetType === 'review') {
+        const revEl = document.getElementById('eReviewType');
+        if (revEl) data.reviewType = revEl.value;
+        const ratEl = document.getElementById('eRating');
+        if (ratEl) data.rating = Number(ratEl.value || 0);
       }
 
-      if (isVerse) {
-        data.format = document.getElementById('eVerseFormat').value;
+      if (targetType === 'verse') {
+        const verEl = document.getElementById('eVerseFormat');
+        if (verEl) data.format = verEl.value;
       }
 
       const body = document.getElementById('eBody').value;
       try {
         if (isNew) {
-          const r = await api(`/api/posts/${type}`, { method: 'POST', body: { data, body } });
+          const r = await api(`/api/posts/${targetType}`, { method: 'POST', body: { data, body } });
           toast('Created', 'success');
-          location.hash = `#/editor/edit/${type}/${r.slug}`;
+          location.hash = `#/editor/edit/${targetType}/${r.slug}`;
         } else {
-          await api(`/api/posts/${type}/${slug}`, { method: 'PUT', body: { data, body } });
-          toast('Saved', 'success');
+          const r = await api(`/api/posts/${type}/${slug}`, { method: 'PUT', body: { newType: targetType, data, body } });
+          toast(r.typeId !== type ? `Moved to ${TYPE_LABELS[r.typeId] || r.typeId} and saved` : 'Saved', 'success');
+          if (r.typeId !== type || r.slug !== slug) {
+            location.hash = `#/editor/edit/${r.typeId}/${r.slug}`;
+          }
         }
       } catch (e) {
         toast(e.message, 'error');

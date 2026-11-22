@@ -3,7 +3,7 @@
   "siteTagline": "O IV",
   "author": "O IV",
   "authorFullName": "amal.v",
-  "siteUrl": "https://lastpage.example.com",
+  "siteUrl": "https://lastpage-oiv.vercel.app",
   "description": "Essays, blogs, reviews, notes and verse by O IV.",
   "social": {
     "x": "https://x.com/theozymandiasiv",
@@ -16,26 +16,95 @@
     "categoryId": "DIC_kwDOTT4aAs4DHYRg"
   },
   "contentTypes": [
-    { "id": "essay",  "label": "Essay",  "plural": "Essays",  "path": "essay" },
-    { "id": "blog",   "label": "Blog",   "plural": "Blogs",   "path": "blog" },
-    { "id": "review", "label": "Review", "plural": "Reviews", "path": "review" },
-    { "id": "note",   "label": "Note",   "plural": "Notes",   "path": "note" },
-    { "id": "verse",  "label": "Verse",  "plural": "Verses",  "path": "verse" }
+    {
+      "id": "essay",
+      "label": "Essay",
+      "plural": "Essays",
+      "path": "essay"
+    },
+    {
+      "id": "blog",
+      "label": "Blog",
+      "plural": "Blogs",
+      "path": "blog"
+    },
+    {
+      "id": "review",
+      "label": "Review",
+      "plural": "Reviews",
+      "path": "review"
+    },
+    {
+      "id": "note",
+      "label": "Note",
+      "plural": "Notes",
+      "path": "note"
+    },
+    {
+      "id": "verse",
+      "label": "Verse",
+      "plural": "Verses",
+      "path": "verse"
+    }
   ],
   "categories": [
-    "Politics", "History", "Philosophy", "Literature", "Media",
-    "Sports", "Science", "Technology", "Culture", "Life"
+    "Politics",
+    "History",
+    "Philosophy",
+    "Literature",
+    "Media",
+    "Sports",
+    "Science",
+    "Technology",
+    "Culture",
+    "Life"
   ],
   "reviewTypes": [
-    "Movie", "TV Series", "Anime", "Book", "Manga", "Game", "Documentary", "Album", "Podcast"
+    "Movie",
+    "TV Series",
+    "Anime",
+    "Book",
+    "Manga",
+    "Game",
+    "Documentary",
+    "Album",
+    "Podcast"
   ],
   "nav": [
-    { "label": "Home", "href": "/", "active": "home" },
-    { "label": "Blog", "href": "/type/blog/", "active": "blog" },
-    { "label": "Essay", "href": "/type/essay/", "active": "essay" },
-    { "label": "Review", "href": "/type/review/", "active": "review" },
-    { "label": "Verse", "href": "/type/verse/", "active": "verse" },
-    { "label": "Notes", "href": "/notes/", "active": "notes" },
-    { "label": "Archive", "href": "/archive/", "active": "archive" }
+    {
+      "label": "Home",
+      "href": "/",
+      "active": "home"
+    },
+    {
+      "label": "Blog",
+      "href": "/type/blog/",
+      "active": "blog"
+    },
+    {
+      "label": "Essay",
+      "href": "/type/essay/",
+      "active": "essay"
+    },
+    {
+      "label": "Review",
+      "href": "/type/review/",
+      "active": "review"
+    },
+    {
+      "label": "Verse",
+      "href": "/type/verse/",
+      "active": "verse"
+    },
+    {
+      "label": "Notes",
+      "href": "/notes/",
+      "active": "notes"
+    },
+    {
+      "label": "Archive",
+      "href": "/archive/",
+      "active": "archive"
+    }
   ]
 }

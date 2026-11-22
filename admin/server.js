@@ -84,7 +84,35 @@ function parseCookies(req) {
 }
 function isAuthed(req) {
   const cookies = parseCookies(req);
-  return cookies.session && sessions.has(cookies.session);
+  if (cookies.session && sessions.has(cookies.session)) return true;
+
+  const adminCfg = loadJson(ADMIN_CONFIG_PATH, { username: 'ozymandias', password: 'changeme' });
+  const configuredUser = adminCfg.username || 'ozymandias';
+  const configuredPass = adminCfg.password;
+
+  const authHeader = req.headers.authorization;
+  if (authHeader) {
+    if (authHeader.startsWith('Basic ')) {
+      try {
+        const decoded = Buffer.from(authHeader.slice(6), 'base64').toString('utf8');
+        const colonIdx = decoded.indexOf(':');
+        if (colonIdx !== -1) {
+          const u = decoded.slice(0, colonIdx);
+          const p = decoded.slice(colonIdx + 1);
+          if (u === configuredUser && p === configuredPass) return true;
+        }
+      } catch (_) {}
+    } else if (authHeader.startsWith('Bearer ')) {
+      const token = authHeader.slice(7).trim();
+      if (token === configuredPass) return true;
+    }
+  }
+
+  if (req.headers['x-api-key'] && req.headers['x-api-key'] === configuredPass) {
+    return true;
+  }
+
+  return false;
 }
 
 // ---------------------------------------------------------------------------
@@ -329,13 +357,19 @@ route('GET', '/api/session', async (req, res) => {
   sendJson(res, 200, { loggedIn: isAuthed(req) });
 });
 route('POST', '/api/login', async (req, res, params, body) => {
-  const adminCfg = loadJson(ADMIN_CONFIG_PATH, { password: 'changeme' });
-  if (body.password !== adminCfg.password) {
-    return sendJson(res, 401, { error: 'Incorrect password' });
+  const adminCfg = loadJson(ADMIN_CONFIG_PATH, { username: 'ozymandias', password: 'changeme' });
+  const configuredUser = adminCfg.username || 'ozymandias';
+  const configuredPass = adminCfg.password;
+
+  const userOk = !adminCfg.username || !body.username || body.username.trim() === configuredUser;
+  const passOk = body.password === configuredPass;
+
+  if (!userOk || !passOk) {
+    return sendJson(res, 401, { error: 'Incorrect username or password' });
   }
   const token = newSession();
-  res.setHeader('Set-Cookie', `session=${token}; HttpOnly; Path=/; SameSite=Strict`);
-  sendJson(res, 200, { ok: true });
+  res.setHeader('Set-Cookie', `session=${token}; HttpOnly; Path=/; SameSite=Lax`);
+  sendJson(res, 200, { ok: true, user: configuredUser });
 });
 route('POST', '/api/logout', async (req, res) => {
   const cookies = parseCookies(req);
@@ -427,18 +461,71 @@ route('POST', '/api/posts/:type', async (req, res, params, body) => {
 });
 
 route('PUT', '/api/posts/:type/:slug', async (req, res, params, body) => {
-  const typeId = params.type;
-  const oldPath = postFilePath(typeId, params.slug);
+  const currentTypeId = params.type;
+  const oldPath = postFilePath(currentTypeId, params.slug);
   if (!fs.existsSync(oldPath)) return sendJson(res, 404, { error: 'Not found' });
+
+  const raw = fs.readFileSync(oldPath, 'utf8');
+  const existing = parseFrontmatter(raw);
+
+  const targetTypeId = body.newType || body.typeId || currentTypeId;
+  if (!TYPE_DIR[targetTypeId]) return sendJson(res, 400, { error: 'Unknown content type' });
+
+  const isTypeChange = targetTypeId !== currentTypeId;
   let slug = params.slug;
-  if (body.slug && slugify(body.slug) !== params.slug) {
-    slug = uniqueSlug(typeId, slugify(body.slug), params.slug);
+
+  if (isTypeChange || (body.slug && slugify(body.slug) !== params.slug)) {
+    const desiredBase = body.slug ? slugify(body.slug) : params.slug;
+    slug = uniqueSlug(targetTypeId, desiredBase, isTypeChange ? undefined : params.slug);
     fs.unlinkSync(oldPath);
   }
-  const data = Object.assign({ type: TYPE_LABEL[typeId] }, body.data);
-  fs.writeFileSync(postFilePath(typeId, slug), stringifyFrontmatter(data, body.body || ''));
+
+  const postBody = body.body !== undefined ? body.body : existing.body;
+  const data = Object.assign({}, existing.data, body.data, { type: TYPE_LABEL[targetTypeId] });
+  fs.writeFileSync(postFilePath(targetTypeId, slug), stringifyFrontmatter(data, postBody || ''));
   if (data.tags && data.tags.length) addTagsToStore(data.tags);
-  sendJson(res, 200, { ok: true, slug });
+  sendJson(res, 200, { ok: true, slug, typeId: targetTypeId });
+});
+
+// ---- Quick Note (for Apple Shortcut & quick capture) ----
+route('POST', '/api/notes/quick', async (req, res, params, body) => {
+  let noteText = '';
+  if (typeof body === 'string') {
+    noteText = body;
+  } else if (body && typeof body === 'object') {
+    noteText = body.text || body.content || body.message || body.body || '';
+  }
+  const trimmed = String(noteText || '').trim();
+  if (!trimmed) {
+    return sendJson(res, 400, { error: 'Note text cannot be empty' });
+  }
+
+  const todayStr = indiaDateString();
+  const slug = uniqueSlug('note', 'untitled');
+
+  const data = {
+    type: 'Note',
+    published: false,
+    publishStatus: 'draft',
+    date: todayStr
+  };
+
+  if (body && Array.isArray(body.tags) && body.tags.length) {
+    data.tags = body.tags;
+    addTagsToStore(body.tags);
+  }
+
+  const fp = postFilePath('note', slug);
+  fs.writeFileSync(fp, stringifyFrontmatter(data, trimmed + '\n'));
+
+  sendJson(res, 200, {
+    ok: true,
+    slug,
+    typeId: 'note',
+    filePath: 'content/notes/' + slug + '.md',
+    status: 'draft',
+    message: 'Note saved to working tree (draft)'
+  });
 });
 
 route('DELETE', '/api/posts/:type/:slug', async (req, res, params) => {

@@ -1,5 +1,5 @@
 ---
-type: "Blog"
+type: "Essay"
 published: true
 date: "2026-11-20"
 publishStatus: "published"

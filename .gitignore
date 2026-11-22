@@ -11,3 +11,8 @@ node_modules/
 # Logs
 *.log
 .env
+
+# Tailscale local container
+tailscale-config/
+tailscale-state/
+docker-compose.yml

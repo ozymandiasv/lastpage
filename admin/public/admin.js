@@ -362,17 +362,28 @@
           </div>` : ''}
 
           <div class="panel" id="aiPanel">
-            <div class="panel-title">Gemini editor</div>
-            <div class="small-note" style="margin-bottom:10px;">Choose one or more tools. They run in the order selected below. Your original draft stays untouched until you apply the final result.</div>
+            <div class="panel-title">AI Writing Assistant</div>
+            <div class="small-note" style="margin-bottom:10px;">Write a raw draft or gist. AI rewrites in your distinct voice (intro hook, no heading on first paragraph, thematic section headings, tags &amp; preview text).</div>
             <div class="ai-actions">
-              <label class="ai-option"><input type="checkbox" class="ai-check" value="factcheck"> <span><b>Fact check + rewrite</b><small>Report claims, sources, and correct unsupported or inaccurate claims.</small></span></label>
-              <label class="ai-option"><input type="checkbox" class="ai-check" value="grammar"> <span><b>Grammar + rewrite</b><small>Clean grammar, spelling and clarity without changing your meaning.</small></span></label>
-              <label class="ai-option"><input type="checkbox" class="ai-check" value="expand"> <span><b>Expand in my style</b><small>Develop thin sections using your Last Page voice.</small></span></label>
-              <label class="ai-option"><input type="checkbox" class="ai-check" value="format"> <span><b>Format for Last Page</b><small>Add useful headings and quotations without over-formatting.</small></span></label>
+              <label class="ai-option">
+                <input type="radio" name="aiTool" class="ai-tool-radio" value="rewrite" checked>
+                <span><b>✨ Complete Rewrite in My Voice</b><small>Full essay/blog in your language + opening hook + subheadings + tags + preview.</small></span>
+              </label>
+              <label class="ai-option">
+                <input type="radio" name="aiTool" class="ai-tool-radio" value="grammar">
+                <span><b>📝 Grammar &amp; Polish Only</b><small>Fixes spelling &amp; typos only without changing your words or opinions.</small></span>
+              </label>
+              <label class="ai-option">
+                <input type="radio" name="aiTool" class="ai-tool-radio" value="factcheck_grammar">
+                <span><b>🔍 Fact Check + Grammar</b><small>Gently checks dates &amp; facts without altering your critique or voice.</small></span>
+              </label>
+              <label class="ai-option">
+                <input type="radio" name="aiTool" class="ai-tool-radio" value="tags_preview">
+                <span><b>🏷️ Generate Tags &amp; Preview</b><small>Extracts 4–6 relevant tags and a 1–2 sentence summary for card previews.</small></span>
+              </label>
             </div>
-            <button type="button" class="btn btn-primary ai-run-selected" id="aiRunSelected">Run selected tools</button>
-            <div class="small-note" style="margin-top:7px;">Tip: select only what you need — for example, Fact check + Grammar, or all four.</div>
-            <div id="aiResult" class="ai-result hidden"></div>
+            <button type="button" class="btn btn-primary ai-run-btn" id="aiRunBtn" style="width:100%;margin-top:10px;">Run AI Assistant</button>
+            <div id="aiResult" class="ai-result hidden" style="margin-top:12px;"></div>
           </div>
 
           <div class="panel">
@@ -483,80 +494,153 @@
         }
       });
     }
-    // Gemini editorial tools
+    // Gemini editorial assistant
     const aiResult = document.getElementById('aiResult');
-    const aiRunSelected = document.getElementById('aiRunSelected');
-    const aiChecks = Array.from(document.querySelectorAll('.ai-check'));
+    const aiRunBtn = document.getElementById('aiRunBtn');
 
-    function aiLabel(action) {
-      return ({ factcheck: 'Fact check', grammar: 'Grammar + rewrite', expand: 'Expand in my style', format: 'Format for Last Page' })[action] || action;
-    }
+    if (aiRunBtn) {
+      aiRunBtn.addEventListener('click', async () => {
+        const action = document.querySelector('input[name="aiTool"]:checked')?.value || 'rewrite';
+        const originalText = document.getElementById('eBody').value.trim();
+        if (!originalText) return toast('Write a draft or gist in the editor first', 'error');
 
-    function renderAIStep(action, result) {
-      let html = `<div class="ai-step"><strong>${esc(aiLabel(action))}</strong>`;
-      if (action === 'factcheck' && result.report) {
-        const report = result.report;
-        html += `<div>${esc(report.overall || 'Fact-check complete')}</div>`;
-        for (const [key, label] of [['verified','Verified'],['questionable','Questionable'],['unsupported','Unsupported']]) {
-          const items = report[key] || [];
-          if (!items.length) continue;
-          html += `<h4>${label}</h4>` + items.map(x =>
-            `<div class="claim"><b>${esc(x.claim || '')}</b><br>${esc(x.reason || x.issue || '')}${x.source ? `<br><span class="small-note">Source: ${esc(x.source)}</span>` : ''}${x.suggested_change ? `<br><span class="small-note">Suggested: ${esc(x.suggested_change)}</span>` : ''}</div>`
-          ).join('');
-        }
-      } else {
-        html += `<p>${esc(result.notes || 'Gemini completed this step.')}</p>`;
-        if (result.changes?.length) html += `<ul>${result.changes.map(x => `<li>${esc(x)}</li>`).join('')}</ul>`;
-        if (result.added?.length) html += `<ul>${result.added.map(x => `<li>${esc(x)}</li>`).join('')}</ul>`;
-      }
-      return html + '</div>';
-    }
+        aiResult.classList.remove('hidden');
+        aiResult.innerHTML = '<div class="ai-loading">Running AI assistant…</div>';
+        aiRunBtn.disabled = true;
 
-    aiRunSelected.addEventListener('click', async () => {
-      const selected = aiChecks.filter(c => c.checked).map(c => c.value);
-      if (!selected.length) return toast('Select at least one Gemini tool', 'error');
-      const original = document.getElementById('eBody').value.trim();
-      if (!original) return toast('Write something first', 'error');
-
-      aiResult.classList.remove('hidden');
-      aiResult.innerHTML = '<div class="ai-loading">Gemini is preparing your selected edits…</div>';
-      aiRunSelected.disabled = true;
-      aiChecks.forEach(c => c.disabled = true);
-
-      let workingText = original;
-      let combinedHtml = '';
-      try {
-        for (const action of selected) {
-          aiResult.innerHTML = `${combinedHtml}<div class="ai-loading">Running ${esc(aiLabel(action))}…</div>`;
+        try {
           const r = await api('/api/ai', {
             method: 'POST',
             body: {
               action,
-              body: workingText,
+              body: originalText,
               meta: {
                 title: document.getElementById('eTitle')?.value || post.data.title || '',
-                type: TYPE_LABELS[type],
+                type: TYPE_LABELS[type] || 'Essay',
                 category: document.getElementById('eCategory')?.value || post.data.category || ''
               }
             }
           });
-          if (r.result.rewritten) workingText = r.result.rewritten;
-          combinedHtml += renderAIStep(action, r.result);
-          aiResult.innerHTML = combinedHtml;
-        }
 
-        aiResult.innerHTML += `<button type="button" class="btn btn-primary ai-apply" id="aiApply">Apply final version</button><div class="small-note">Original draft remains untouched. Applied in sequence: ${selected.map(aiLabel).join(' → ')}.</div>`;
-        document.getElementById('aiApply').addEventListener('click', () => {
-          document.getElementById('eBody').value = workingText;
-          toast('Final AI version applied — review it before saving', 'success');
-        });
-      } catch (e) {
-        aiResult.innerHTML = combinedHtml + `<span style="color:var(--danger);">${esc(e.message)}</span>`;
-      } finally {
-        aiRunSelected.disabled = false;
-        aiChecks.forEach(c => c.disabled = false);
-      }
-    });
+          const res = r.result || {};
+          let html = `<div class="ai-step">`;
+
+          if (res.title || res.subtitle) {
+            html += `<div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid var(--border);">`;
+            if (res.title) html += `<b>Suggested Title:</b> ${esc(res.title)}<br>`;
+            if (res.subtitle) html += `<span class="small-note"><b>Subtitle:</b> ${esc(res.subtitle)}</span><br>`;
+            html += `<button type="button" class="btn btn-sm" id="aiApplyTitle" style="margin-top:5px;">Apply Title & Subtitle</button></div>`;
+          }
+
+          if (res.tags && res.tags.length) {
+            html += `<div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid var(--border);">`;
+            html += `<b>Suggested Tags:</b> ${res.tags.map(t => `<span class="type-chip">${esc(t)}</span>`).join(' ')}<br>`;
+            html += `<button type="button" class="btn btn-sm" id="aiApplyTags" style="margin-top:5px;">Apply Tags</button></div>`;
+          }
+
+          if (res.preview) {
+            html += `<div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid var(--border);">`;
+            html += `<b>Preview Text:</b> ${esc(res.preview)}<br>`;
+            html += `<button type="button" class="btn btn-sm" id="aiApplyPreview" style="margin-top:5px;">Apply Preview Text</button></div>`;
+          }
+
+          if (res.report) {
+            const rep = res.report;
+            html += `<div style="margin-bottom:8px;"><b>Fact Check:</b> ${esc(rep.overall || 'Complete')}`;
+            for (const [key, label] of [['questionable','Questionable'],['unsupported','Unsupported'],['verified','Verified']]) {
+              const items = rep[key] || [];
+              if (!items.length) continue;
+              html += `<h4>${label}</h4>` + items.map(x =>
+                `<div class="claim"><b>${esc(x.claim || '')}</b><br>${esc(x.reason || x.issue || '')}${x.suggested_change ? `<br><span class="small-note">Suggested: ${esc(x.suggested_change)}</span>` : ''}</div>`
+              ).join('');
+            }
+            html += `</div>`;
+          }
+
+          if (res.changes && res.changes.length) {
+            html += `<div><b>Changes:</b><ul>${res.changes.map(c => `<li>${esc(c)}</li>`).join('')}</ul></div>`;
+          }
+
+          if (res.notes) {
+            html += `<div class="small-note" style="margin-top:6px;">${esc(res.notes)}</div>`;
+          }
+
+          if (res.rewritten) {
+            html += `<div style="margin-top:12px;display:flex;flex-direction:column;gap:6px;">
+              <button type="button" class="btn btn-primary" id="aiApplyAll">Apply All (Text, Title, Tags, Preview)</button>
+              <button type="button" class="btn btn-sm" id="aiApplyText">Apply Text Only</button>
+            </div>`;
+          }
+
+          html += `</div>`;
+          aiResult.innerHTML = html;
+
+          // Wire up apply handlers
+          const btnApplyText = document.getElementById('aiApplyText');
+          if (btnApplyText) {
+            btnApplyText.addEventListener('click', () => {
+              if (res.rewritten) {
+                document.getElementById('eBody').value = res.rewritten;
+                toast('Rewritten text applied to editor', 'success');
+              }
+            });
+          }
+
+          const btnApplyTitle = document.getElementById('aiApplyTitle');
+          if (btnApplyTitle) {
+            btnApplyTitle.addEventListener('click', () => {
+              if (res.title && document.getElementById('eTitle')) document.getElementById('eTitle').value = res.title;
+              if (res.subtitle && document.getElementById('eSubtitle')) document.getElementById('eSubtitle').value = res.subtitle;
+              toast('Title & subtitle applied', 'success');
+            });
+          }
+
+          const btnApplyTags = document.getElementById('aiApplyTags');
+          if (btnApplyTags) {
+            btnApplyTags.addEventListener('click', () => {
+              if (res.tags && Array.isArray(res.tags)) {
+                res.tags.forEach(t => { if (!tagState.includes(t)) tagState.push(t); });
+                renderTags();
+                toast('Tags applied', 'success');
+              }
+            });
+          }
+
+          const btnApplyPreview = document.getElementById('aiApplyPreview');
+          if (btnApplyPreview) {
+            btnApplyPreview.addEventListener('click', () => {
+              const prevEl = document.getElementById('ePreviewText');
+              if (prevEl && res.preview) {
+                prevEl.value = res.preview;
+                toast('Preview text applied', 'success');
+              }
+            });
+          }
+
+          const btnApplyAll = document.getElementById('aiApplyAll');
+          if (btnApplyAll) {
+            btnApplyAll.addEventListener('click', () => {
+              if (res.rewritten) document.getElementById('eBody').value = res.rewritten;
+              if (res.title && document.getElementById('eTitle')) document.getElementById('eTitle').value = res.title;
+              if (res.subtitle && document.getElementById('eSubtitle')) document.getElementById('eSubtitle').value = res.subtitle;
+              if (res.tags && Array.isArray(res.tags)) {
+                res.tags.forEach(t => { if (!tagState.includes(t)) tagState.push(t); });
+                renderTags();
+              }
+              const prevEl = document.getElementById('ePreviewText');
+              if (prevEl && res.preview) prevEl.value = res.preview;
+              toast('All AI content applied!', 'success');
+            });
+          }
+
+        } catch (err) {
+          aiResult.innerHTML = `<span style="color:var(--danger);">${esc(err.message)}</span>`;
+        } finally {
+          aiRunBtn.disabled = false;
+        }
+      });
+    }
+
     const publishStatusEl = document.getElementById('ePublishStatus');
     const dateLabelEl = document.getElementById('eDateLabel');
     const scheduleNoteEl = document.getElementById('eScheduleNote');

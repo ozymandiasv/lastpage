@@ -239,8 +239,23 @@ function tagsWithCounts() {
 // Gemini AI helpers
 // ---------------------------------------------------------------------------
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY || '';
-const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
+function getGeminiConfig() {
+  const envPath = path.join(ROOT, '.env');
+  let key = process.env.GEMINI_API_KEY || '';
+  let model = process.env.GEMINI_MODEL || 'gemini-3.5-flash';
+  if (fs.existsSync(envPath)) {
+    try {
+      fs.readFileSync(envPath, 'utf8').split(/\r?\n/).forEach(line => {
+        const m = line.match(/^\s*([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(.*?)\s*$/);
+        if (m) {
+          if (m[1] === 'GEMINI_API_KEY') key = m[2].replace(/^['"]|['"]$/g, '');
+          if (m[1] === 'GEMINI_MODEL') model = m[2].replace(/^['"]|['"]$/g, '');
+        }
+      });
+    } catch (_) {}
+  }
+  return { key, model };
+}
 
 function writingStyleReport() {
   const p = path.join(ROOT, 'data', 'writing-style.json');
@@ -280,68 +295,181 @@ function geminiPromptFor(action, body, meta) {
     title: meta.title || '',
     type: meta.type || '',
     category: meta.category || '',
-    style,
   });
-  const base = `You are the private editorial assistant for Last Page, a personal writing site.
-Never invent facts, sources, quotations, statistics, events, or citations. Never silently change the author's opinion or political position.
-Preserve the author's personality. The writing should sound human and personal, not like generic AI prose.
-Return valid JSON only. No Markdown fences around the JSON.
-EDITOR CONTEXT:
+
+  const base = `You are the private AI writing partner and editor for Last Page (the personal website of O IV / amal.v).
+AUTHOR WRITING STYLE & CORE PHILOSOPHY:
+${style}
+
+CRITICAL RULES:
+1. Always sound human, authentic, intellectually curious, and reflective. Never sound like generic, sanitized, polite AI prose.
+2. Tone is grounded, conversational, slightly cynical/wry, skeptical of corporate hype, consumerism, and institutional power.
+3. First-person POV ("I", "my", "we").
+4. Never invent facts, sources, or citations. Never change the author's opinions, arguments, or critique.
+5. Return strictly valid JSON. Do not wrap in Markdown fences.
+
+CONTEXT:
 ${context}
-CURRENT DRAFT:
+INPUT DRAFT / TEXT:
 ${body}`;
 
-  if (action === 'grammar') return `${base}
-TASK: Correct grammar, spelling, punctuation, awkward phrasing, and obvious clarity problems while preserving meaning, tone, structure, and opinions.
-Return: {"rewritten":"...","changes":["short description of important changes"],"notes":"..."}
-Do not add new facts or arguments.`;
+  if (action === 'rewrite') {
+    return `${base}
 
-  if (action === 'expand') return `${base}
-TASK: Expand this draft only where an idea is underdeveloped. Continue in the same writing voice and reasoning pattern described in the style report. Add context, explanation, examples, or transitions only when they naturally follow from the existing argument. Do not invent factual claims. Keep the author's viewpoint unchanged.
-Return: {"rewritten":"...","added":["what was expanded"],"notes":"..."}
-If expansion is unnecessary, make only light improvements and say so.`;
+TASK: Complete Rewrite in O IV's Distinct Voice and Structure.
+Take the user's gist, rough draft, or detailed writeup and rewrite it into a rich, captivating, publication-ready piece for Last Page.
 
-  if (action === 'format') return `${base}
-TASK: Improve the Markdown structure without changing the substantive writing. Infer useful section headings from the actual content. Add headings, subheadings, and blockquotes only where genuinely useful. A heading MUST be immediately followed by its paragraph on the next line: "## Heading\\nParagraph text", NOT "## Heading\\n\\nParagraph text". Do not turn normal prose into bullet points. Do not add decorative formatting.
-Return: {"rewritten":"...","changes":["formatting changes"],"notes":"..."} `;
+MANDATORY STRUCTURAL RULES:
+1. OPENING HOOK (PARAGRAPH 1):
+   - You MUST plunge directly into the narrative with the first paragraph.
+   - ABSOLUTE RULE: DO NOT put any title, heading, or label above the opening paragraph.
+   - Start with a personal memory, sharp concrete observation, or central tension (e.g. "I still remember...", "I sometimes find myself sitting and wondering...", "I have never understood...").
+2. SUBSEQUENT SECTIONS WITH HEADINGS:
+   - Headings start ONLY from the second section onward.
+   - Use 2 to 4 evocative thematic headings in Title Case: "## Heading Name".
+   - Under each heading, develop the reasoning with nuance, fair concessions ("I understand that...", "There is nothing wrong with..."), and critical counter-arguments.
+3. CLOSING SECTION:
+   - End with a thought-provoking, open reflection or poignant takeaway. NEVER write "In conclusion" or a bland summary.
+4. METADATA:
+   - "title": Thoughtful, compelling Title Case title matching O IV's style.
+   - "subtitle": 1-2 sentence subtitle capturing the tension.
+   - "tags": Array of 4 to 6 relevant tags.
+   - "preview": 1-2 sentence engaging summary (under 160 characters) suitable for article card previews and RSS.
+   - "category": Recommended category (e.g. Technology, Philosophy, Media, Politics, Life, Culture).
 
-  if (action === 'factcheck') return `${base}
-TASK: Fact-check the factual claims in this draft. Be especially careful with dates, names, statistics, legal claims, quotations, historical claims, and claims about current events. Separate verified, questionable, and unsupported claims. If web grounding is available, use it. Never treat the author's opinion as a factual claim.
-Then produce a fact-checked rewrite that changes ONLY claims that are unsupported or materially inaccurate. Preserve the author's argument and voice.
-Return:
-{"report":{"overall":"...","verified":[{"claim":"...","reason":"...","source":"..."}],"questionable":[{"claim":"...","issue":"...","suggested_change":"...","source":"..."}],"unsupported":[{"claim":"...","issue":"...","suggested_change":"..."}]},"rewritten":"...","notes":"..."} `;
+Return JSON:
+{
+  "rewritten": "...markdown starting with hook (NO heading on first paragraph) then ## headings...",
+  "title": "Title in Author Voice",
+  "subtitle": "Subtitle capturing the tension",
+  "tags": ["Tag1", "Tag2", "Tag3", "Tag4"],
+  "preview": "Concise 1-2 sentence preview text for cards.",
+  "category": "Technology",
+  "notes": "Brief summary of voice and structure choices"
+}`;
+  }
 
-  return `${base}\nReturn {"rewritten":"${body.replace(/"/g,'\\"')}","notes":"No action"} `;
+  if (action === 'grammar') {
+    return `${base}
+
+TASK: Grammar, Spelling, and Clarity Polish ONLY.
+- Correct spelling, grammar, punctuation, and typographical errors.
+- STRICT RULE: Do not paraphrase. Do not rewrite sentences. Do not alter the author's vocabulary, cadence, tone, opinions, or meaning.
+- Preserve existing headings, formatting, and line breaks exactly.
+Return JSON:
+{
+  "rewritten": "...corrected text...",
+  "changes": ["summary of grammar fixes"],
+  "notes": "Grammar and spelling polished while keeping your exact words and voice intact."
+}`;
+  }
+
+  if (action === 'factcheck_grammar' || action === 'factcheck') {
+    return `${base}
+
+TASK: Fact Check + Grammar Polish.
+- Verify factual claims (dates, names, statistics, quotes, historical claims, event timelines) using Google Search grounding.
+- CRITICAL RULE: DO NOT aggressively or rigidly change the author's critique, arguments, or opinion. Never sanitize or tone down the author's voice.
+- Only correct claims that are materially inaccurate or mistaken, while polishing grammar and awkward phrasing.
+- Generate tags and preview text as well.
+Return JSON:
+{
+  "report": {
+    "overall": "Brief summary of fact check and grammar review",
+    "verified": [{"claim": "...", "source": "..."}],
+    "questionable": [{"claim": "...", "issue": "...", "suggested_change": "..."}],
+    "unsupported": [{"claim": "...", "issue": "..."}]
+  },
+  "rewritten": "...fact-checked and grammar-polished markdown...",
+  "tags": ["Tag1", "Tag2", "Tag3"],
+  "preview": "Optional preview text",
+  "notes": "Factual claims checked gently; your core argument and opinions remain untouched."
+}`;
+  }
+
+  if (action === 'tags_preview') {
+    return `${base}
+
+TASK: Generate Tags & Preview Text.
+- Extract 4 to 6 specific, high-relevance tags (topics, people, themes, works).
+- Write a 1-2 sentence preview text (under 160 characters) that hooks the reader on article cards.
+Return JSON:
+{
+  "tags": ["Tag1", "Tag2", "Tag3", "Tag4"],
+  "preview": "Concise card preview summary",
+  "category": "Suggested category"
+}`;
+  }
+
+  if (action === 'expand') {
+    return `${base}
+TASK: Expand this draft only where an idea is underdeveloped. Continue in the same writing voice and reasoning pattern.
+Return JSON:
+{"rewritten":"...","added":["what was expanded"],"notes":"..."}`;
+  }
+
+  if (action === 'format') {
+    return `${base}
+TASK: Improve formatting with headings only from section 2 onward (NO heading for paragraph 1).
+Return JSON:
+{"rewritten":"...","changes":["formatting changes"],"notes":"..."}`;
+  }
+
+  return `${base}\nReturn JSON: {"rewritten":"${body.replace(/"/g,'\\\"')}","notes":"No action"}`;
 }
 
 async function callGemini(action, body, meta) {
-  if (!GEMINI_API_KEY) throw new Error('Gemini is not configured. Set GEMINI_API_KEY in the server environment.');
-  const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(GEMINI_MODEL)}:generateContent?key=${encodeURIComponent(GEMINI_API_KEY)}`;
-  const payload = {
-    contents: [{ role: 'user', parts: [{ text: geminiPromptFor(action, body, meta) }] }],
-    generationConfig: { temperature: action === 'factcheck' ? 0.15 : 0.35, responseMimeType: 'application/json' }
-  };
-  if (action === 'factcheck') {
-    payload.tools = [{ google_search: {} }];
+  const { key, model } = getGeminiConfig();
+  if (!key) throw new Error('Gemini is not configured. Set GEMINI_API_KEY in the server environment.');
+
+  const modelsToTry = [model, 'gemini-3.5-flash', 'gemini-3.8-flash', 'gemini-3.5-flash-lite'].filter((v, i, a) => v && a.indexOf(v) === i);
+  let lastErr = null;
+
+  for (const m of modelsToTry) {
+    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(m)}:generateContent?key=${encodeURIComponent(key)}`;
+    const payload = {
+      contents: [{ role: 'user', parts: [{ text: geminiPromptFor(action, body, meta) }] }],
+      generationConfig: {
+        temperature: (action === 'grammar' || action === 'factcheck_grammar' || action === 'factcheck') ? 0.2 : 0.45,
+        responseMimeType: 'application/json'
+      }
+    };
+    if (action === 'factcheck' || action === 'factcheck_grammar') {
+      payload.tools = [{ google_search: {} }];
+    }
+
+    try {
+      const r = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const raw = await r.text();
+      let data;
+      try { data = JSON.parse(raw); } catch (_) { throw new Error(`Gemini returned invalid JSON (${r.status}).`); }
+      if (!r.ok) {
+        const errMsg = data.error?.message || `Gemini request failed (${r.status}).`;
+        if (r.status === 503 || r.status === 429) {
+          lastErr = new Error(errMsg);
+          continue;
+        }
+        throw new Error(errMsg);
+      }
+      const text = data.candidates?.[0]?.content?.parts?.map(p => p.text || '').join('') || '';
+      if (!text) throw new Error('Gemini returned an empty response.');
+      const cleaned = text.replace(/^```json\s*/i, '').replace(/\s*```$/i, '').trim();
+      return JSON.parse(cleaned);
+    } catch (err) {
+      lastErr = err;
+      if (err.message && (err.message.includes('503') || err.message.includes('429') || err.message.includes('high demand'))) {
+        continue;
+      }
+      throw err;
+    }
   }
-  const r = await fetch(endpoint, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload),
-  });
-  const raw = await r.text();
-  let data;
-  try { data = JSON.parse(raw); } catch (_) { throw new Error(`Gemini returned invalid JSON (${r.status}).`); }
-  if (!r.ok) throw new Error(data.error?.message || `Gemini request failed (${r.status}).`);
-  const text = data.candidates?.[0]?.content?.parts?.map(p => p.text || '').join('') || '';
-  if (!text) throw new Error('Gemini returned an empty response.');
-  try { return JSON.parse(text); } catch (_) {
-    const cleaned = text.replace(/^```json\s*/i, '').replace(/\s*```$/i, '').trim();
-    try { return JSON.parse(cleaned); } catch (e) { throw new Error('Gemini returned malformed JSON.'); }
-  }
+  throw lastErr || new Error('All Gemini model fallbacks failed.');
 }
 
-// ---------------------------------------------------------------------------
 // Route handlers
 // ---------------------------------------------------------------------------
 
@@ -537,10 +665,10 @@ route('DELETE', '/api/posts/:type/:slug', async (req, res, params) => {
 
 // ---- Gemini editorial tools ----
 route('GET', '/api/ai/status', async (req, res) => {
-  sendJson(res, 200, { configured: !!GEMINI_API_KEY, model: GEMINI_MODEL, style: writingStyleReport() });
+  const cfg = getGeminiConfig(); sendJson(res, 200, { configured: !!cfg.key, model: cfg.model, style: writingStyleReport() });
 });
 route('POST', '/api/ai', async (req, res, params, body) => {
-  const allowed = new Set(['factcheck', 'grammar', 'expand', 'format']);
+  const allowed = new Set(['rewrite', 'grammar', 'factcheck_grammar', 'factcheck', 'tags_preview', 'expand', 'format']);
   if (!allowed.has(body.action)) return sendJson(res, 400, { error: 'Unknown AI action' });
   const text = String(body.body || '').trim();
   if (!text) return sendJson(res, 400, { error: 'Write something first.' });

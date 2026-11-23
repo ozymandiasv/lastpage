@@ -1,7 +1,7 @@
 ---
 type: "Note"
-published: false
-publishStatus: "draft"
+published: true
+publishStatus: "published"
 date: "2026-11-23"
 ---
 

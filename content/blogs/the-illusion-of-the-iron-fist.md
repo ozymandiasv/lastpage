@@ -12,6 +12,8 @@ tags:
 title: "The Illusion of the Iron Fist"
 subtitle: "Why authoritarian shortcuts fail, and where India's real economic leverage actually lies."
 preview: "We often champion China's autocratic growth while ignoring the failures of central planning. Real economic leverage lies in institutions, not strongmen."
+category: "Politics"
+cover: "/assets/uploads/1795396129381-Rainy_Chengdu_Street_in_Watercolour.avif"
 ---
 
 I was scrolling through a Reddit thread yesterday when I stumbled upon a claim that has become maddeningly common in economic discourse: if a developing nation truly wants to rise, it must abandon the messy friction of democracy and copy China. It is an enticingly simple narrative, built on images of high-speed rail networks and gleaming skylines assembled overnight. But it utterly ignores the long, grim list of authoritarian regimes across Latin America and Sub-Saharan Africa that centralized power, silenced dissent, and managed only to deliver generational stagnation. Strongmen are easy to come by; functioning, inclusive institutions are rare.

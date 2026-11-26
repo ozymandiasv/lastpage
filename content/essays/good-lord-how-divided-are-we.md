@@ -7,6 +7,13 @@ title: "Good Lord, How Divided Are We?"
 subtitle: "From wealth and professional status to religion and caste, we seem to have found yet another way to divide ourselves, even when it comes to something as personal as choosing a life partner."
 category: "Philosophy"
 cover: "/assets/uploads/1795505459287-Lavish_Indian_Wedding_Under_Fireworks.avif"
+tags:
+  - Classism
+  - Caste
+  - Social Hierarchy
+  - Wealth Inequality
+  - Matrimonial Services
+preview: "An ad for a ₹200 crore matrimonial tier made me wonder: why are we so comfortable turning social hierarchy into a premium lifestyle feature?"
 ---
 
 Yesterday, I saw a rather fascinating advertisement on television. Elite Matrimony, apparently a matchmaking service for the affluent sections of society. Hmm, what? An exclusive matrimonial service for the wealthy? I was curious enough to look it up, and apparently they have different categories for professionals, business owners and even an Aristocrat tier for people with a net worth exceeding ₹200 crore. Two hundred crore! I wonder what the matrimonial profile looks like. Anyway, jokes aside, the advertisement got me thinking about something much bigger than a matchmaking service. When did we become so comfortable with the idea of categorising people according to how much they earn, what they own and which social circles they belong to? I know matrimonial services have existed for decades, but something about seeing wealth marketed so explicitly as a qualification for finding a partner felt rather strange. We are comfortable turning marriage into another opportunity to establish where we stand in the social hierarchy.

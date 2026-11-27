@@ -7,6 +7,13 @@ title: "Poverty Is Not Just Multiplication"
 subtitle: "When we reduce poverty to the number of children poor people have, we stop asking why poverty exists in the first place."
 category: "Culture"
 cover: "/assets/uploads/1795695006258-Two_Roads__Two_Realities.avif"
+tags:
+  - Poverty
+  - Economic Inequality
+  - Class Conflict
+  - Indian Economy
+  - Demographics
+preview: "Blaming poverty on large families ignores structural inequality. The problem isn't just population—it's the world waiting for them when they are born."
 ---
 
 Whenever poverty comes up in India, one of the first arguments I see is that poor people have too many children. Two poor people marry, four poor children are born, and poverty continues. It is a convenient explanation because it gives us someone to blame. We don't have to discuss unemployment, unequal access to education, landlessness, low wages, poor healthcare or the concentration of wealth. We can simply point at a poor family and say they should have had fewer children. But I think we need to look at poverty differently. A child born into poverty is not the cause of poverty. They are someone who has inherited the circumstances of it. Their parents did not create every condition that keeps them poor, and their children will not automatically escape those conditions simply because they are born into a smaller family. Population matters, of course, but poverty is not just multiplication. It is also about the opportunities available to people, the value of their labour, the quality of public services and whether they have any realistic chance of improving their lives. If we want to understand why poverty persists, we have to look beyond the number of people being born and ask why so many people remain poor after they are born.
